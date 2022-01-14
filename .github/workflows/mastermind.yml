@@ -15,4 +15,5 @@ jobs:
     steps:
       - uses: Resnovas/label-mastermind@2.1.3
         with:
+          mode: 'environment'
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
