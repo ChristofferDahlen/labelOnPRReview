@@ -3,16 +3,22 @@
     "Size-M": {
       "name": "Size-M",
       "color": "0eb7c7",
-      "description": ""
+      "description": "ttttt"
     }
   },
   "runners":[
     {
       "root": ".",
-      "projectType": "other",
       "versioning": {
         "source": "milestones",
         "type": "SemVer"
+      },
+      "issue": {
+        "labels" : {
+          "Size-M": {
+
+          }
+          }
       },
       "pr": {
         "labels" :{
