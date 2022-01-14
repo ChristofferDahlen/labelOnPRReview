@@ -1,268 +1,746 @@
-{
-  "labels": {
-    "Awaiting Review :eyes:": {
-      "name": "Awaiting Review :eyes:",
-      "description": "This PR is awaiting rerview",
-      "color": "9bad4c"
-    },
-    "Blocked :no_entry_sign:": {
-      "name": "Blocked :no_entry_sign:",
-      "color": "1b4a25"
-    },
-    "Blocking :exclamation:": {
-      "name": "Blocking :exclamation:",
-      "description": "This issue is blocking work",
-      "color": "b60205"
-    },
-    "Cannot-Reproduce": {
-      "name": "Cannot-Reproduce",
-      "description": "This issue isn't reproducible",
-      "color": "e053fa"
-    },
-    "Cost-Large": {
-      "name": "Cost-Large",
-      "description": "Approximately 4–12 months of work.",
-      "color": "645460"
-    },
-    "Cost-Medium": {
-      "name": "Cost-Medium",
-      "description": "Approximately 1–3 months of work.",
-      "color": "645460"
-    },
-    "Cost-Small": {
-      "name": "Cost-Small",
-      "description": "Approximately 10–30 days of work.",
-      "color": "645460"
-    },
-    "Cost-XLarge": {
-      "name": "Cost-XLarge",
-      "description": "Approximately 12–24 months of work.",
-      "color": "645460"
-    },
-    "Cost-XSmall": {
-      "name": "Cost-XSmall",
-      "description": "Approximately 0-10 days of work.",
-      "color": "645460"
-    },
-    "Cost-XXLarge": {
-      "name": "Cost-XXLarge",
-      "description": "Approximately 24+ months of work.",
-      "color": "645460"
-    },
-    "Customer-Enel": {
-      "name": "Customer-Enel",
-      "color": "c889d7"
-    },
-    "Customer-EPC": {
-      "name": "Customer-EPC",
-      "color": "c889d7"
-    },
-    "Customer-Luminus": {
-      "name": "Customer-Luminus",
-      "color": "c889d7"
-    },
-    "Customer-Uniper": {
-      "name": "Customer-Uniper",
-      "color": "c889d7"
-    },
-    "Dev-Tools": {
-      "name": "Dev-Tools",
-      "color": "327692"
-    },
-    "duplicate :grey_exclamation:": {
-      "name": "duplicate :grey_exclamation:",
-      "color": "fef2c0"
-    },
-    "Help Wanted :hand:": {
-      "name": "Help Wanted :hand:",
-      "color": "0e8a16"
-    },
-    "In Progress :gear:": {
-      "name": "In Progress :gear:",
-      "description": "This PR is being worked on",
-      "color": "734b91"
-    },
-    "Kind-Bug :lady_beetle:": {
-      "name": "Kind-Bug :lady_beetle:",
-      "color": "b60205"
-    },
-    "Kind-Cleanup :broom:": {
-      "name": "Kind-Cleanup :broom:",
-      "description": "Somebody need to clean",
-      "color": "bfdadc"
-    },
-    "Kind-Documentation :scroll:": {
-      "name": "Kind-Documentation :scroll:",
-      "description": "Time to document!",
-      "color": "0052cc"
-    },
-    "Kind-Enhancement :sparkler:": {
-      "name": "Kind-Enhancement :sparkler:",
-      "description": "Make something better",
-      "color": "9032f7"
-    },
-    "Kind-Feature": {
-      "name": "Kind-Feature",
-      "color": "8feb7b"
-    },
-    "Kind-RFC": {
-      "name": "Kind-RFC",
-      "description": "Request For Comment",
-      "color": "ecb39f"
-    },
-    "Needs-Triage": {
-      "name": "Needs-Triage",
-      "color": "0e8a16"
-    },
-    "PR-Accepted :heavy_check_mark:": {
-      "name": "PR-Accepted  :heavy_check_mark:",
-      "description": "This PR Has been accepted",
-      "color": "072dbc"
-    },
-    "PR-PackageUpdate :package:": {
-      "name": "PR-PackageUpdate :package:",
-      "description": "This PR leads to a package update",
-      "color": "5319e7"
-    },
-    "Priority-High": {
-      "name": "Priority-High",
-      "description": "This Issue/PR has high priority",
-      "color": "fef2c0"
-    },
-    "Priority-Low": {
-      "name": "Priority-Low",
-      "color": "fef2c0"
-    },
-    "Priority-Medium": {
-      "name": "Priority-Medium",
-      "color": "fef2c0"
-    },
-    "Priority :question:": {
-      "name": "Priority :question:",
-      "color": "fef2c0"
-    },
-    "Product-ConnectingProdrisk": {
-      "name": "Product-ConnectingProdrisk",
-      "color": "24fcbb"
-    },
-    "Product-ConnectingShop": {
-      "name": "Product-ConnectingShop",
-      "color": "24fcbb"
-    },
-    "Product-ConnectingSpotbid": {
-      "name": "Product-ConnectingSpotbid",
-      "color": "24fcbb"
-    },
-    "Product-Gateway": {
-      "name": "Product-Gateway",
-      "description": "Powel Optimal Gateway",
-      "color": "24fcbb"
-    },
-    "Product-POM": {
-      "name": "Product-POM",
-      "description": "Powel Optimal Midterm",
-      "color": "24fcbb"
-    },
-    "Product-POMA": {
-      "name": "Product-POMA",
-      "color": "5319e7"
-    },
-    "Risk-High": {
-      "name": "Risk-High",
-      "color": "b60205"
-    },
-    "Risk-Low": {
-      "name": "Risk-Low",
-      "color": "006b75"
-    },
-    "Risk-Medium": {
-      "name": "Risk-Medium",
-      "description": null,
-      "color": "1d76db"
-    },
-    "Risk-None": {
-      "name": "Risk-None",
-      "color": "006b75"
-    },
-    "Severity-Critical :boom:": {
-      "name": "Severity-Critical :boom:",
-      "description": "The software does not execute correctly. Severe adverse impact and no workaround.",
-      "color": "c6bdf4"
-    },
-    "Severity-Major :warning:": {
-      "name": "Severity-Major :warning:",
-      "description": "Major impairments in functionality. Major adverse impact and no workaround.",
-      "color": "abcc53"
-    },
-    "Severity-Minor :construction:": {
-      "name": "Severity-Minor :construction:",
-      "description": "Minor impairments in functionality.",
-      "color": "010fdf"
-    },
-    "Size-L": {
-      "name": "Size-L",
-      "color": "0eb7c7"
-    },
-    "Size-M": {
-      "name": "Size-M",
-      "color": "0eb7c7"
-    },
-    "Size-S": {
-      "name": "Size-S",
-      "color": "0eb7c7"
-    },
-    "Size-XL": {
-      "name": "Size-XL",
-      "color": "0eb7c7"
-    },
-    "Size-XS": {
-      "name": "Size-XS",
-      "color": "0eb7c7"
-    },
-    "Size-XXL": {
-      "name": "Size-XXL",
-      "color": "0eb7c7"
-    },
-    "SupportIssue": {
-      "name": "SupportIssue",
-      "description": "This issue comes from support",
-      "color": "fbca04"
-    },
-    "Urgent :bangbang:": {
-      "name": "Urgent :bangbang:",
-      "color": "ce4727"
-    },
-    "v1.7.1": {
-      "name": "v1.7.1",
-      "description": "Version 1.7.1",
-      "color": "5978d8"
-    },
-    "v1.8.0": {
-      "name": "v1.8.0",
-      "description": "version 1.8.0",
-      "color": "5978d8"
-    },
-    "v-Develop": {
-      "name": "v-Develop",
-      "description": "The Develop Version",
-      "color": "5978d8"
-    },
-    "VersionOne": {
-      "name": "VersionOne",
-      "description": "This comes from version one",
-      "color": "ea02b6"
-    },
-    "WaitingForTest :clock130:": {
-      "name": "WaitingForTest :clock130:",
-      "color": "289bfb"
-    },
-    "WaitingOnAuthor :zzz:": {
-      "name": "WaitingOnAuthor :zzz:",
-      "color": "1b4623"
-    },
-    "WaitingOnFuture :calendar:": {
-      "name": "WaitingOnFuture :calendar:",
-      "color": "b04e2d"
-    }
-  }
-}
+[
+	{
+		"root": ".",
+		"versioning": {
+			"source": "milestones",
+			"type": "SemVer"
+		},
+		"prereleaseName": "alpha",
+		"sharedConfig": {
+			"labels": {
+				"bug": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^bug(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/(created|new|opened|made)( an| a)? bug/i"
+						}
+					]
+				},
+				"chore": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^chore(\\(.*\\))?(!)?:/i"
+						}
+					]
+				},
+				"optimisation": {
+					"requires": 2,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^opt(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^optimisation(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maint(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^type:(,| |Style|Refactoring|Revert|Deprecated|Removal)*optimisation/im"
+						}
+					]
+				},
+				"style": {
+					"requires": 2,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^style(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maint(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^type:(,| |Refactoring|Optimisation|Revert|Deprecated|Removal)*style/im"
+						}
+					]
+				},
+				"refactor": {
+					"requires": 2,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^ref(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^refactor(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maint(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^type:(,| |Style|Optimisation|Revert|Deprecated|Removal)*refactoring/im"
+						}
+					]
+				},
+				"revert": {
+					"requires": 2,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^revert(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maint(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^type:(,| |Style|Refactoring|Optimisation|Deprecated|Removal)*revert/im"
+						}
+					]
+				},
+				"deprecated": {
+					"requires": 2,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^dep(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^deprecated(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maint(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^type:(,| |Style|Refactoring|Optimisation|Revert|Removal)*deprecated/im"
+						}
+					]
+				},
+				"removal": {
+					"requires": 2,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^removal(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maint(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^type:(,| |Style|Refactoring|Optimisation|Revert|Deprecated)*removal/im"
+						}
+					]
+				},
+				"discussion": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^discussion(\\(.*\\))?(!)?:/i"
+						}
+					]
+				},
+				"documentation": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^docs(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^documentation(\\(.*\\))?(!)?:/i"
+						}
+					]
+				},
+				"feature": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^feat(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^enhance(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^feature(\\(.*\\))?(!)?:/i"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^enhancement(\\(.*\\))?(!)?:/i"
+						}
+					]
+				},
+				"fix": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^fix(\\(.*\\))?(!)?:/i"
+						}
+					]
+				},
+				"workflow": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "/^.*\\(workflow\\)(!)?:/i"
+						}
+					]
+				},
+				"releaseMastermind": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- package\\(s\\):.*(@videndum\\/)?release-mastermind.*/im"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^.*\\((@videndum\\/)?release-mastermind\\)(!)?:/i"
+						}
+					]
+				},
+				"labelMastermind": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- package\\(s\\):.*(@videndum\\/)?label-mastermind.*/im"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^.*\\((@videndum\\/)?label-mastermind\\)(!)?:/i"
+						}
+					]
+				},
+				"variableMastermind": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- package\\(s\\):.*(@videndum\\/)?variable-mastermind.*/im"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^.*\\((@videndum\\/)?variable-mastermind\\)(!)?:/i"
+						}
+					]
+				},
+				"installer": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- package\\(s\\):.*(@videndum\\/)?action-masterminds.*/im"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "/^.*\\(installer\\)(!)?:/i"
+						}
+					]
+				},
+				"priorityCritical": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "titleMatches",
+							"pattern": "!:.*(critical|urgent)?|!?:.*(critical|urgent)"
+						}
+					]
+				}
+			}
+		},
+		"pr": {
+			"labels": {
+				"xs": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "changesSize",
+							"min": 0,
+							"max": 10
+						}
+					]
+				},
+				"s": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "changesSize",
+							"min": 10,
+							"max": 30
+						}
+					]
+				},
+				"m": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "changesSize",
+							"min": 40,
+							"max": 100
+						}
+					]
+				},
+				"l": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "changesSize",
+							"min": 100,
+							"max": 500
+						}
+					]
+				},
+				"xl": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "changesSize",
+							"min": 500,
+							"max": 1000
+						}
+					]
+				},
+				"xxl": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "changesSize",
+							"min": 1000
+						}
+					]
+				},
+				"fixConfirmed": {
+					"requires": 6,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] fix Confirmed by ((@.*& .*){4,}|(@.*& )*@(tgtgamer|videndum\\/.*))/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have fixed on a clean installation/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have fixed on a stable build/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have fixed on a development build/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have included logs or screenshots/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have linked any related/im"
+						}
+					]
+				},
+				"devOpsReviewing": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "pendingReview",
+							"value": true
+						}
+					]
+				},
+				"devOpsRejected": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "requestedChanges",
+							"value": true
+						}
+					]
+				}
+			}
+		},
+		"issue": {
+			"ref": "develop",
+			"labels": {
+				"android": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*android/im"
+						}
+					]
+				},
+				"aws": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*aws/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*amazon web service/im"
+						}
+					]
+				},
+				"google": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*google/im"
+						}
+					]
+				},
+				"ios": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*ios/im"
+						}
+					]
+				},
+				"ubuntu": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*ubuntu/im"
+						}
+					]
+				},
+				"fedora": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*fedora/im"
+						}
+					]
+				},
+				"debian": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*debian/im"
+						}
+					]
+				},
+				"macos": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*macos/im"
+						}
+					]
+				},
+				"windows": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- platform:.*windows/im"
+						}
+					]
+				},
+				"bugConfirmed": {
+					"requires": 8,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] bug Confirmed by ((@.*& .*){4,}|(@.*& )*@(tgtgamer|videndum\\/.*))/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have reproduced on my application version/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have reproduced on a clean installation/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have reproduced on a development build/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have included logs or screenshots/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have contacted support/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have asked the community/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have linked any related/im"
+						}
+					]
+				},
+				"fixConfirmed": {
+					"requires": 6,
+					"conditions": [
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] fix Confirmed by ((@.*& .*){4,}|(@.*& )*@(tgtgamer|videndum\\/.*))/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have fixed on a clean installation/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have fixed on a stable build/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have fixed on a development build/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have included logs or screenshots/im"
+						},
+						{
+							"type": "descriptionMatches",
+							"pattern": "/^- \\[x\\] have linked any related/im"
+						}
+					]
+				}
+			}
+		},
+		"project": {
+			"ref": "develop",
+			"labels": {
+				"available": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Requested"
+						}
+					]
+				},
+				"pending": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Accepted"
+						}
+					]
+				},
+				"progress": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "In Progress"
+						},
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Testing"
+						}
+					]
+				},
+				"review": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Reviewing"
+						}
+					]
+				},
+				"completed": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Completed"
+						}
+					]
+				},
+				"doNotDevelop": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Rejected"
+						}
+					]
+				},
+				"devOpsAccepted": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Accepted"
+						}
+					]
+				},
+				"devOpsDeveloping": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "In Progress"
+						}
+					]
+				},
+				"devOpsTesting": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Testing"
+						}
+					]
+				},
+				"devOpsReviewing": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Reviewing"
+						}
+					]
+				},
+				"devOpsStaging": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Staging"
+						}
+					]
+				},
+				"devOpsCompleted": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Completed"
+						}
+					]
+				},
+				"devOpsRejected": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Developer Operations",
+							"column": "Rejected"
+						}
+					]
+				},
+				"priorityLow": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Issues",
+							"column": "Low Priority"
+						}
+					]
+				},
+				"priorityMedium": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Issues",
+							"column": "Medium Priority"
+						}
+					]
+				},
+				"priorityHigh": {
+					"requires": 1,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Issues",
+							"column": "High Priority"
+						}
+					]
+				},
+				"priorityCritical": {
+					"requires": 2,
+					"conditions": [
+						{
+							"type": "onColumn",
+							"project": "Issues",
+							"column": "High Priority"
+						},
+						{
+							"type": "titleMatches",
+							"pattern": "!:.*(critical|urgent)?|!?:.*(critical|urgent)"
+						}
+					]
+				}
+			}
+		}
+	}
+]
