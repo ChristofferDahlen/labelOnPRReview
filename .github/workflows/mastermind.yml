@@ -14,5 +14,6 @@ jobs:
     name: Label issues and pull requests
     steps:
       - uses: Resnovas/label-mastermind@2.1.3
+        name: Lable
         with:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
