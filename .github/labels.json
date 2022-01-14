@@ -1,5 +1,4 @@
 {
-    "$schema": "../schema/labels.json",
     "Awaiting Review :eyes:": {
       "name": "Awaiting Review :eyes:",
       "description": "This PR is awaiting rerview",
