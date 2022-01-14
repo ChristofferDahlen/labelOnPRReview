@@ -265,7 +265,8 @@
       "name": "WaitingOnFuture :calendar:",
       "color": "b04e2d"
     }
-  },  
+  },
+  "runners":[
   "issue": {
     "Awaiting Review": {
       "requires": 1,
@@ -275,5 +276,5 @@
         "pattern": "^ChristofferDahlen"
         }
       ]
-    }
+    }]
   }
