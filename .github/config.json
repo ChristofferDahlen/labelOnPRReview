@@ -269,6 +269,7 @@
   "runners":[
     {
       "root": ".",
+      "projectType": "other",
       "versioning": {
         "source": "milestones",
         "type": "SemVer"
@@ -284,7 +285,8 @@
                 "max": 100000
               }
             ]
-          }        }
+          }
+        }
       }
     }
     ]
