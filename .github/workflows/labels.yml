@@ -12,7 +12,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: Videndum/label-mastermind@2.1.1
+      - uses: Videndum/label-mastermind@1.4.0-alpha.5
 
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
