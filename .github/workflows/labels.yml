@@ -1,18 +1,14 @@
-# @format
-
 on:
-  issues:
-    types: [opened, edited, closed, reopened]
+  issues: [opened, edited, closed, reopened]
   pull_request:
-    types: [opened, edited, closed, reopened, synchronize]
-  project_card:
-    types: [created, moved, deleted]
+    types: [opened, edited, closed, reopened, ready_for_review, synchronize]
 
 jobs:
-  run:
+  label:
     runs-on: ubuntu-latest
+    name: Label issues and pull requests
     steps:
       - uses: actions/checkout@v2
       - uses: IvanFon/super-labeler-action@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
