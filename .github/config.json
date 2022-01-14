@@ -1,11 +1,11 @@
 [
   "issue": {
-    "bugfix": {
+    "Awaiting Review": {
       "requires": 1,
       "conditions": [
         {
-          "type": "branchMatches",
-          "pattern": "^bugfix"
+        "type": "creatorMatches",
+        "pattern": "^ChristofferDahlen"
         }
       ]
     }
