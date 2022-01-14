@@ -253,7 +253,7 @@
       "description": "This comes from version one",
       "color": "ea02b6"
     },
-    "WaitingForTest :clock130:": {
+    "WaitingForTest": {
       "name": "WaitingForTest :clock130:",
       "color": "289bfb"
     },
@@ -267,14 +267,26 @@
     }
   },
   "runners":[
-  "issue": {
-    "Awaiting Review": {
-      "requires": 1,
-      "conditions": [
-        {
-        "type": "creatorMatches",
-        "pattern": "^ChristofferDahlen"
-        }
-      ]
-    }]
+    {
+      "root": ".",
+      "versioning": {
+        "source": "milestones",
+        "type": "SemVer"
+      },
+      "pr": {
+        "labels" :{
+          "Size-M": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "changesSize",
+                "min": 0,
+                "max": 100000
+              }
+            ]
+          }        }
+      }
+    }
+    ]
   }
+}
