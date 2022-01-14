@@ -1,6 +1,5 @@
 {
   "labels": {
-     "labels": {
     "Awaiting Review :eyes:": {
       "name": "Awaiting Review :eyes:",
       "description": "This PR is awaiting rerview",
@@ -207,63 +206,6 @@
     "Size-M": {
       "name": "Size-M",
       "color": "0eb7c7"
-    },
-    "Size-S": {
-      "name": "Size-S",
-      "color": "0eb7c7"
-    },
-    "Size-XL": {
-      "name": "Size-XL",
-      "color": "0eb7c7"
-    },
-    "Size-XS": {
-      "name": "Size-XS",
-      "color": "0eb7c7"
-    },
-    "Size-XXL": {
-      "name": "Size-XXL",
-      "color": "0eb7c7"
-    },
-    "SupportIssue": {
-      "name": "SupportIssue",
-      "description": "This issue comes from support",
-      "color": "fbca04"
-    },
-    "Urgent :bangbang:": {
-      "name": "Urgent :bangbang:",
-      "color": "ce4727"
-    },
-    "v1.7.1": {
-      "name": "v1.7.1",
-      "description": "Version 1.7.1",
-      "color": "5978d8"
-    },
-    "v1.8.0": {
-      "name": "v1.8.0",
-      "description": "version 1.8.0",
-      "color": "5978d8"
-    },
-    "v-Develop": {
-      "name": "v-Develop",
-      "description": "The Develop Version",
-      "color": "5978d8"
-    },
-    "VersionOne": {
-      "name": "VersionOne",
-      "description": "This comes from version one",
-      "color": "ea02b6"
-    },
-    "WaitingForTest": {
-      "name": "WaitingForTest :clock130:",
-      "color": "289bfb"
-    },
-    "WaitingOnAuthor :zzz:": {
-      "name": "WaitingOnAuthor :zzz:",
-      "color": "1b4623"
-    },
-    "WaitingOnFuture :calendar:": {
-      "name": "WaitingOnFuture :calendar:",
-      "color": "b04e2d"
     }
   },
   "runners":[
