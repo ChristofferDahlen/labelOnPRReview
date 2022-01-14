@@ -12,6 +12,6 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: Videndum/label-mastermind@2.1.3
+      - uses: Resnovas/label-mastermind@2.1.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
