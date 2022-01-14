@@ -1,8 +1,11 @@
-
 on:
-  issues: [opened, edited, closed, reopened]
+  issues:
+    types: [opened, edited, closed, reopened]
   pull_request:
-    types: [opened, edited, closed, reopened, ready_for_review, synchronize]
+    types: [opened, edited, closed, reopened, synchronize]
+  project_card:
+    types: [created, moved, deleted]
+
 name: Labeling
 jobs:
   label:
