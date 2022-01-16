@@ -4,27 +4,23 @@
       "name": "Triage",
       "color": "0e8a16"
     },
-    "Investigation": {
+    "Investigation :mag:": {
       "name": "Investigation :mag:",
-      "description": "This is under investigation",
       "color": "D107F7"
     },
-    "In Progress": {
+    "In Progress :gear:": {
       "name": "In Progress :gear:",
-      "description": "This is being worked on",
       "color": "C5DEF5"
     },
-    "Accepted": {
-      "name": "Accepted  :heavy_check_mark:",
-      "description": "This Has been accepted",
+    "Accepted :heavy_check_mark:": {
+      "name": "Accepted :heavy_check_mark:",
       "color": "072dbc"
     },
-    "Awaiting Review": {
+    "Awaiting Review :eyes:": {
       "name": "Awaiting Review :eyes:",
-      "description": "This PR is awaiting rerview",
       "color": "FBCA04"
     },
-    "Change Requested": {
+    "Changes Requested :diamonds:": {
       "name": "Changes Requested :diamonds:",
       "color": "f4ff1f"
     },
@@ -42,19 +38,19 @@
       "description": "This issue isn't reproducible",
       "color": "D93F0B"
     },
-    "Waiting For Test": {
+    "Waiting For Test :clock130::test_tube:": {
       "name": "Waiting For Test :clock130::test_tube:",
       "color": "289bfb"
     },
-    "Waiting On Author": {
+    "Waiting On Author :zzz:": {
       "name": "Waiting On Author :zzz:",
       "color": "1b4623"
     },
-    "Waiting On Future": {
+    "Waiting On Future :calendar:": {
       "name": "Waiting On Future :calendar:",
       "color": "C5DEF5"
     },
-    "Duplicate": {
+    "Duplicate :grey_exclamation:": {
       "name": "Duplicate :grey_exclamation:",
       "color": "fef2c0"
     },
@@ -67,17 +63,17 @@
       "description": "This issue comes from support",
       "color": "fbca04"
     },
-    "Urgent": {
+    "Urgent :bangbang:": {
       "name": "Urgent :bangbang:",
       "color": "ce4727"
     },
-    "Abandoned": {
+    "Status - Abandoned": {
       "name": "Status - Abandoned",
       "description": "",
       "color": "645460"
     },
-    "On Hold": {
-      "name": "Status - Abandoned",
+    "Status - On Hold": {
+      "name": "Status - On Hold",
       "description": "",
       "color": "645460"
     },
@@ -131,7 +127,7 @@
       "name": "Type - Bug :lady_beetle:",
       "color": "b60205"
     },
-    "Type - Cleanup": {
+    "Type - Cleanup :broom:": {
       "name": "Type - Cleanup :broom:",
       "description": "Somebody needs to clean",
       "color": "bfdadc"
@@ -141,7 +137,7 @@
       "description": "Time to document!",
       "color": "0052cc"
     },
-    "Type - Enhancement": {
+    "Type - Enhancement :sparkler:": {
       "name": "Type - Enhancement :sparkler:",
       "description": "Make something better",
       "color": "9032f7"
@@ -168,33 +164,33 @@
       "name": "Priority - Medium",
       "color": "fef2c0"
     },
-    "Priority - TBD": {
+    "Priority - TBD :question:": {
       "name": "Priority - TBD :question:",
       "color": "fef2c0"
     },
-    "Connecting Prodrisk": {
+    "Product - Connecting Prodrisk": {
       "name": "Product - Connecting Prodrisk",
       "color": "24fcbb"
     },
-    "Connecting Shop": {
+    "Product - Connecting Shop": {
       "name": "Product - Connecting Shop",
       "color": "24fcbb"
     },
-    "Connecting Spotbid": {
+    "Product - Connecting Spotbid": {
       "name": "Product - Connecting Spotbid",
       "color": "24fcbb"
     },
-    "Gateway": {
+    "Product - Gateway": {
       "name": "Product - Gateway",
       "description": "Powel Optimal Gateway",
       "color": "24fcbb"
     },
-    "POM": {
+    "Product - POM": {
       "name": "Product - POM",
       "description": "Powel Optimal Midterm",
       "color": "24fcbb"
     },
-    "POMA": {
+    "Product - POMA": {
       "name": "Product - POMA",
       "color": "5319e7"
     },
@@ -214,17 +210,17 @@
       "name": "Risk - None",
       "color": "006b75"
     },
-    "Severity - Critical": {
+    "Severity - Critical :boom:": {
       "name": "Severity - Critical :boom:",
       "description": "The software does not execute correctly. Severe adverse impact and no workaround.",
       "color": "c6bdf4"
     },
-    "Severity - Major": {
-      "name": "Severity - Major",
+    "Severity - Major :fire:": {
+      "name": "Severity - Major :fire:",
       "description": "Major impairments in functionality. Major adverse impact and no workaround.",
       "color": "abcc53"
     },
-    "Severity - Minor": {
+    "Severity - Minor :construction:": {
       "name": "Severity - Minor :construction:",
       "description": "Minor impairments in functionality.",
       "color": "010fdf"
@@ -253,6 +249,16 @@
       "name": "Size - XXL",
       "color": "0eb7c7"
     },
+    "v1.5.0": {
+      "name": "v1.5.0",
+      "description": "Version 1.5.0",
+      "color": "5978d8"
+    },
+    "v1.6.0": {
+      "name": "v1.6.0",
+      "description": "Version 1.6.0",
+      "color": "5978d8"
+    },
     "v1.7.1": {
       "name": "v1.7.1",
       "description": "Version 1.7.1",
@@ -264,7 +270,7 @@
       "color": "5978d8"
     },
     "Develop": {
-      "name": "Develop",
+      "name": "v - Develop",
       "description": "The Develop Version",
       "color": "5978d8"
     },
@@ -284,288 +290,6 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-          "bug": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^bug(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/(created|new|opened|made)( an| a)? bug/i"
-              }
-            ]
-          },
-          "chore": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^chore(\\(.*\\))?(!)?:/i"
-              }
-            ]
-          },
-          "optimisation": {
-            "requires": 2,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^opt(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^optimisation(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maint(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^type:(,| |Style|Refactoring|Revert|Deprecated|Removal)*optimisation/im"
-              }
-            ]
-          },
-          "style": {
-            "requires": 2,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^style(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maint(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^type:(,| |Refactoring|Optimisation|Revert|Deprecated|Removal)*style/im"
-              }
-            ]
-          },
-          "refactor": {
-            "requires": 2,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^ref(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^refactor(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maint(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^type:(,| |Style|Optimisation|Revert|Deprecated|Removal)*refactoring/im"
-              }
-            ]
-          },
-          "revert": {
-            "requires": 2,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^revert(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maint(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^type:(,| |Style|Refactoring|Optimisation|Deprecated|Removal)*revert/im"
-              }
-            ]
-          },
-          "deprecated": {
-            "requires": 2,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^dep(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^deprecated(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maint(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^type:(,| |Style|Refactoring|Optimisation|Revert|Removal)*deprecated/im"
-              }
-            ]
-          },
-          "removal": {
-            "requires": 2,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^removal(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maint(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^maintenance(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^type:(,| |Style|Refactoring|Optimisation|Revert|Deprecated)*removal/im"
-              }
-            ]
-          },
-          "discussion": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^discussion(\\(.*\\))?(!)?:/i"
-              }
-            ]
-          },
-          "documentation": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^docs(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^documentation(\\(.*\\))?(!)?:/i"
-              }
-            ]
-          },
-          "feature": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^feat(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^enhance(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^feature(\\(.*\\))?(!)?:/i"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^enhancement(\\(.*\\))?(!)?:/i"
-              }
-            ]
-          },
-          "fix": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^fix(\\(.*\\))?(!)?:/i"
-              }
-            ]
-          },
-          "workflow": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "/^.*\\(workflow\\)(!)?:/i"
-              }
-            ]
-          },
-          "releaseMastermind": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- package\\(s\\):.*(@videndum\\/)?release-mastermind.*/im"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^.*\\((@videndum\\/)?release-mastermind\\)(!)?:/i"
-              }
-            ]
-          },
-          "labelMastermind": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- package\\(s\\):.*(@videndum\\/)?label-mastermind.*/im"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^.*\\((@videndum\\/)?label-mastermind\\)(!)?:/i"
-              }
-            ]
-          },
-          "variableMastermind": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- package\\(s\\):.*(@videndum\\/)?variable-mastermind.*/im"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^.*\\((@videndum\\/)?variable-mastermind\\)(!)?:/i"
-              }
-            ]
-          },
-          "installer": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- package\\(s\\):.*(@videndum\\/)?action-masterminds.*/im"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "/^.*\\(installer\\)(!)?:/i"
-              }
-            ]
-          },
-          "priorityCritical": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "titleMatches",
-                "pattern": "!:.*(critical|urgent)?|!?:.*(critical|urgent)"
-              }
-            ]
-          }
         }
       },
       "pr": {
@@ -629,7 +353,7 @@
               }
             ]
           },
-          "Accepted": {
+          "Accepted :heavy_check_mark:": {
             "requires": 6,
             "conditions": [
               {
@@ -639,7 +363,17 @@
               }
             ]
           },
-          "Awaiting Review": {
+          "In Progress :gear:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "pendingReview",
+                "value": false
+              }
+            ]
+
+          },
+          "Awaiting Review :eyes:": {
             "requires": 1,
             "conditions": [
               {
@@ -648,7 +382,7 @@
               }
             ]
           },
-          "Change Requested": {
+          "Changes Requested :diamonds:": {
             "requires": 1,
             "conditions": [
               {
@@ -667,7 +401,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[Customer\\] Enel/im"
+                "pattern": "/^.*Customer: Enel/im"
               }
             ]
           }
