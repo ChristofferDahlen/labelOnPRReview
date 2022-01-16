@@ -12,21 +12,25 @@
     "In Progress": {
       "name": "In Progress :gear:",
       "description": "This is being worked on",
-      "color": "734b91"
+      "color": "C5DEF5"
     },
-    "Accepted :heavy_check_mark:": {
-      "name": "PR-Accepted  :heavy_check_mark:",
+    "Accepted": {
+      "name": "Accepted  :heavy_check_mark:",
       "description": "This Has been accepted",
       "color": "072dbc"
     },
-    "Awaiting Review :eyes:": {
+    "Awaiting Review": {
       "name": "Awaiting Review :eyes:",
       "description": "This PR is awaiting rerview",
-      "color": "9bad4c"
+      "color": "FBCA04"
+    },
+    "Change Requested": {
+      "name": "Changes Requested :diamonds:",
+      "color": "f4ff1f"
     },
     "Blocked :no_entry_sign:": {
       "name": "Blocked :no_entry_sign:",
-      "color": "1b4a25"
+      "color": "F9D0C4"
     },
     "Blocking :exclamation:": {
       "name": "Blocking :exclamation:",
@@ -36,22 +40,22 @@
     "Cannot Reproduce": {
       "name": "Cannot Reproduce",
       "description": "This issue isn't reproducible",
-      "color": "e053fa"
+      "color": "D93F0B"
     },
     "Waiting For Test": {
-      "name": "Waiting For Test :clock130:",
+      "name": "Waiting For Test :clock130::test_tube:",
       "color": "289bfb"
     },
-    "Waiting On Author :zzz:": {
+    "Waiting On Author": {
       "name": "Waiting On Author :zzz:",
       "color": "1b4623"
     },
-    "Waiting On Future :calendar:": {
+    "Waiting On Future": {
       "name": "Waiting On Future :calendar:",
-      "color": "b04e2d"
+      "color": "C5DEF5"
     },
-    "duplicate :grey_exclamation:": {
-      "name": "duplicate :grey_exclamation:",
+    "Duplicate": {
+      "name": "Duplicate :grey_exclamation:",
       "color": "fef2c0"
     },
     "Help Wanted :hand:": {
@@ -169,33 +173,33 @@
       "color": "fef2c0"
     },
     "Connecting Prodrisk": {
-      "name": "Connecting Prodrisk",
+      "name": "Product - Connecting Prodrisk",
       "color": "24fcbb"
     },
     "Connecting Shop": {
-      "name": "Connecting Shop",
+      "name": "Product - Connecting Shop",
       "color": "24fcbb"
     },
     "Connecting Spotbid": {
-      "name": "Connecting Spotbid",
+      "name": "Product - Connecting Spotbid",
       "color": "24fcbb"
     },
     "Gateway": {
-      "name": "Product-Gateway",
+      "name": "Product - Gateway",
       "description": "Powel Optimal Gateway",
       "color": "24fcbb"
     },
     "POM": {
-      "name": "Product-POM",
+      "name": "Product - POM",
       "description": "Powel Optimal Midterm",
       "color": "24fcbb"
     },
     "POMA": {
-      "name": "POMA",
+      "name": "Product - POMA",
       "color": "5319e7"
     },
     "Risk - High": {
-      "name": "Risk-High",
+      "name": "Risk - High",
       "color": "b60205"
     },
     "Risk - Low": {
@@ -203,11 +207,11 @@
       "color": "006b75"
     },
     "Risk - Medium": {
-      "name": "Risk-Medium",
+      "name": "Risk - Medium",
       "color": "1d76db"
     },
     "Risk - None": {
-      "name": "Risk-None",
+      "name": "Risk - None",
       "color": "006b75"
     },
     "Severity - Critical": {
@@ -566,7 +570,7 @@
       },
       "pr": {
         "labels": {
-          "xs": {
+          "Size - XS": {
             "requires": 1,
             "conditions": [
               {
@@ -576,7 +580,7 @@
               }
             ]
           },
-          "s": {
+          "Size - S": {
             "requires": 1,
             "conditions": [
               {
@@ -586,7 +590,7 @@
               }
             ]
           },
-          "m": {
+          "Size - M": {
             "requires": 1,
             "conditions": [
               {
@@ -596,7 +600,7 @@
               }
             ]
           },
-          "l": {
+          "Size - L": {
             "requires": 1,
             "conditions": [
               {
@@ -606,7 +610,7 @@
               }
             ]
           },
-          "xl": {
+          "Size - XL": {
             "requires": 1,
             "conditions": [
               {
@@ -616,7 +620,7 @@
               }
             ]
           },
-          "xxl": {
+          "SIZE - XXL": {
             "requires": 1,
             "conditions": [
               {
@@ -625,36 +629,17 @@
               }
             ]
           },
-          "fixConfirmed": {
+          "Accepted": {
             "requires": 6,
             "conditions": [
               {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] fix Confirmed by ((@.*& .*){4,}|(@.*& )*@(tgtgamer|videndum\\/.*))/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have fixed on a clean installation/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have fixed on a stable build/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have fixed on a development build/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have included logs or screenshots/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have linked any related/im"
+                "type": "isApproved",
+                "value": true,
+                "required": 1
               }
             ]
           },
-          "devOpsReviewing": {
+          "Awaiting Review": {
             "requires": 1,
             "conditions": [
               {
@@ -663,7 +648,7 @@
               }
             ]
           },
-          "devOpsRejected": {
+          "Change Requested": {
             "requires": 1,
             "conditions": [
               {
@@ -677,154 +662,12 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "android": {
+          "Customer - Enel": {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- platform:.*android/im"
-              }
-            ]
-          },
-          "aws": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*aws/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*amazon web service/im"
-              }
-            ]
-          },
-          "google": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*google/im"
-              }
-            ]
-          },
-          "ios": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*ios/im"
-              }
-            ]
-          },
-          "ubuntu": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*ubuntu/im"
-              }
-            ]
-          },
-          "fedora": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*fedora/im"
-              }
-            ]
-          },
-          "debian": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*debian/im"
-              }
-            ]
-          },
-          "macos": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*macos/im"
-              }
-            ]
-          },
-          "windows": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- platform:.*windows/im"
-              }
-            ]
-          },
-          "bugConfirmed": {
-            "requires": 8,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] bug Confirmed by ((@.*& .*){4,}|(@.*& )*@(tgtgamer|videndum\\/.*))/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have reproduced on my application version/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have reproduced on a clean installation/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have reproduced on a development build/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have included logs or screenshots/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have contacted support/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have asked the community/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have linked any related/im"
-              }
-            ]
-          },
-          "fixConfirmed": {
-            "requires": 6,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] fix Confirmed by ((@.*& .*){4,}|(@.*& )*@(tgtgamer|videndum\\/.*))/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have fixed on a clean installation/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have fixed on a stable build/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have fixed on a development build/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have included logs or screenshots/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] have linked any related/im"
+                "pattern": "/^- \\[Customer\\] Enel/im"
               }
             ]
           }
@@ -833,182 +676,43 @@
       "project": {
         "ref": "develop",
         "labels": {
-          "available": {
+          "Investigation": {
             "requires": 1,
             "conditions": [
               {
                 "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Requested"
+                "project": "Optimisation Core",
+                "column": "Investigation"
               }
             ]
           },
-          "pending": {
+          "Triage": {
             "requires": 1,
             "conditions": [
               {
                 "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Accepted"
+                "project": "Optimisation Core",
+                "column": "Triage"
               }
             ]
           },
-          "progress": {
+          "In Progress": {
             "requires": 1,
             "conditions": [
               {
                 "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "In Progress"
-              },
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Testing"
+                "project": "Optimisation Core",
+                "column": "Test/Review"
               }
             ]
           },
-          "review": {
+          "Done": {
             "requires": 1,
             "conditions": [
               {
                 "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Reviewing"
-              }
-            ]
-          },
-          "completed": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Completed"
-              }
-            ]
-          },
-          "doNotDevelop": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Rejected"
-              }
-            ]
-          },
-          "devOpsAccepted": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Accepted"
-              }
-            ]
-          },
-          "devOpsDeveloping": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "In Progress"
-              }
-            ]
-          },
-          "devOpsTesting": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Testing"
-              }
-            ]
-          },
-          "devOpsReviewing": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Reviewing"
-              }
-            ]
-          },
-          "devOpsStaging": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Staging"
-              }
-            ]
-          },
-          "devOpsCompleted": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Completed"
-              }
-            ]
-          },
-          "devOpsRejected": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Developer Operations",
-                "column": "Rejected"
-              }
-            ]
-          },
-          "priorityLow": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Issues",
-                "column": "Low Priority"
-              }
-            ]
-          },
-          "priorityMedium": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Issues",
-                "column": "Medium Priority"
-              }
-            ]
-          },
-          "priorityHigh": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Issues",
-                "column": "High Priority"
-              }
-            ]
-          },
-          "priorityCritical": {
-            "requires": 2,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Issues",
-                "column": "High Priority"
-              },
-              {
-                "type": "titleMatches",
-                "pattern": "!:.*(critical|urgent)?|!?:.*(critical|urgent)"
+                "project": "Optimisation Core",
+                "column": "Done"
               }
             ]
           }
