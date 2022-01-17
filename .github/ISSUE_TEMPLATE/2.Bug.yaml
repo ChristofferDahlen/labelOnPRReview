@@ -90,5 +90,5 @@ body:
         - label: fix has been proposed
         - label: has been fixed for release build
         - label: has been fixed for development build
-        - label: has been restested
+        - label: has been retested
         - label: Has been documented
