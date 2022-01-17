@@ -55,3 +55,14 @@ body:
       placeholder: This is the new feature
     validations:
       required: true
+  - type: checkboxes
+    id: status
+    attributes:
+      label: Status
+      description: Steps to check of for developers
+      options:
+        - label: Has feature been accepted
+        - label: soltuion has been proposed
+        - label: Has been implemented
+        - label: Has been tested
+        - label: Has been documented

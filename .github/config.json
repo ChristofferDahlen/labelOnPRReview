@@ -141,6 +141,11 @@
       "name": "Customer - A2A",
       "color": "c889d7"
     },
+    "Documented :scroll:": {
+      "name": "Documented :scroll:",
+      "description": "Has been documented!",
+      "color": "0052cc"
+    },
     "Type - Bug": {
       "name": "Type - Bug :lady_beetle:",
       "color": "b60205"
@@ -150,8 +155,8 @@
       "description": "Somebody needs to clean",
       "color": "bfdadc"
     },
-    "Type - Documentation :scroll:": {
-      "name": "Type - Documentation :scroll:",
+    "Type - Documentation :black_nib:": {
+      "name": "Type - Documentation :black_nib:",
       "description": "Time to document!",
       "color": "0052cc"
     },
@@ -483,7 +488,7 @@
         "ref": "develop",
         "labels": {
           "Resolution - Fixed": {
-            "requires": 6,
+            "requires": 5,
             "conditions": [
               {
                 "type": "descriptionMatches",
@@ -504,7 +509,12 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has been retested/im"
-              },
+              }
+            ]
+          },
+          "Documented :scroll:": {
+            "requires": 1,
+            "conditions": [
               {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] Has been documented/im"
