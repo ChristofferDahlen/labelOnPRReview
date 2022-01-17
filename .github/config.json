@@ -428,7 +428,7 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "v1\\.8\\.0" : {
+          "v1.8.0" : {
             "type": "descriptionMatches",
             "pattern": "/^.*Version\\W*v?1\\.8\\.0/im"
           },
