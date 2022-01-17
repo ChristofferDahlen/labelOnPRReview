@@ -1,7 +1,7 @@
 name: Documentation
 description: Documenation that has to be done
 title: "[Documentation]: "
-labels: ["Type - Documentation", "Triage"]
+labels: ["Type - Documentation :scroll:", "Triage"]
 body:
   - type: dropdown
     id: Product
