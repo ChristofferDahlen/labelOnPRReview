@@ -483,11 +483,15 @@
         "ref": "develop",
         "labels": {
           "Status - Fix Confirmed": {
-            "requires": 5,
+            "requires": 6,
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been investigated by/im"
+                "pattern": "/^- \\[x\\] has been investigated by @.*/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] fix has been proposed/im"
               },
               {
                 "type": "descriptionMatches",

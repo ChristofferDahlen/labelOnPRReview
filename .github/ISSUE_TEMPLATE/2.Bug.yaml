@@ -83,8 +83,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        - [ ] has been investigated by
+        - [ ] has been investigated by [Replace with @User]
+        - [ ] fix has been proposed
         - [ ] has been fixed for release build
         - [ ] has been fixed for development build
-        - [ ] has been retested
+        - [ ] has been restested
         - [ ] Has been documented
