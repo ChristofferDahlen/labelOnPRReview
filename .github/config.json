@@ -441,6 +441,15 @@
               }
             ]
           },
+          "Product - Gateway": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/Product[^#]*Gateway\\b/im"
+              }
+            ]
+          },
           "Product - POM": {
             "requires": 1,
             "conditions": [
