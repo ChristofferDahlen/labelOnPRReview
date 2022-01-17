@@ -199,7 +199,7 @@
       "color": "b60205"
     },
     "Risk - Low": {
-      "name": "Risk-Low",
+      "name": "Risk - Low",
       "color": "006b75"
     },
     "Risk - Medium": {
@@ -209,6 +209,21 @@
     "Risk - None": {
       "name": "Risk - None",
       "color": "006b75"
+    },
+    "Resolution - Rejected - Wrong Input": {
+      "name": "Resolution - Rejected - Input Data Problem",
+      "description" : "This issue has been rejected due to it being a issue with wrong input",
+      "color": "A9E98F"
+    },
+    "Resolution - Rejected": {
+      "name": "Resolution - Rejected",
+      "description" : "This issue has been rejected",
+      "color": "A9E98F"
+    },
+    "Resolution - Fixed":{
+      "name": "Resolution - Fixed",
+      "description" : "This issue has been fixed",
+      "color": "A9E98F"
     },
     "Severity - Critical :boom:": {
       "name": "Severity - Critical :boom:",
