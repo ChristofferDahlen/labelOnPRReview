@@ -331,7 +331,7 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-          "Status - Abandoned:": {
+          "Status - Abandoned": {
             "requires": 1,
             "conditions": [
               {
@@ -340,7 +340,7 @@
               }
             ]
           },
-          "Status - Stale:": {
+          "Status - Stale": {
             "requires": 1,
             "conditions": [
               {
@@ -482,12 +482,12 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "Status - Fix Confirmed": {
+          "Resolution - Fixed": {
             "requires": 6,
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been investigated by @.*/im"
+                "pattern": "/^- \\[x\\] has been investigated by/im"
               },
               {
                 "type": "descriptionMatches",
