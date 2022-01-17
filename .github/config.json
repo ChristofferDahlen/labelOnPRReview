@@ -82,6 +82,11 @@
       "description": "",
       "color": "645460"
     },
+    "Status - Fix Confirmed": {
+      "name": "Status - Fix Confirmed",
+      "description": "",
+      "color": "0E8A16"
+    },
     "Cost-Large": {
       "name": "Cost - Large",
       "description": "Approximately 4–12 months of work.",
@@ -459,7 +464,7 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^bugfix\\/i"
+                "pattern": "/^bugfix\\/"
               }
             ]
           },
@@ -468,7 +473,7 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^feature\\/i"
+                "pattern": "/^feature\\/"
               }
             ]
           }
@@ -477,6 +482,31 @@
       "issue": {
         "ref": "develop",
         "labels": {
+          "Status - Fix Confirmed": {
+            "requires": 5,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been investigated by/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been fixed for release build/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been fixed for development build/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been retested/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] Has been documented/im"
+              }
+            ]
+          },
           "Product - POMA": {
             "requires": 1,
             "conditions": [

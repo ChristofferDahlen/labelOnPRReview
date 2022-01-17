@@ -80,4 +80,13 @@ body:
       placeholder: Tell us what you see!
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        - [ ] has been investigated by
+        - [ ] fix 
+        - [ ] has been fixed for release build
+        - [ ] has been fixed for development build
+        - [ ] has been restested
+        - [ ] Has been documented
 
