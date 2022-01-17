@@ -202,6 +202,10 @@
       "name": "Product - POMA",
       "color": "5319e7"
     },
+    "Product - POH": {
+      "name": "Product - POH",
+      "color": "5319e7"
+    },
     "Risk - High": {
       "name": "Risk - High",
       "color": "b60205"
@@ -428,12 +432,57 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "v1.8.0" : {
+          "Product - POMA:": {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Version\\W*v?1\\.8\\.0/im"
+                "pattern": "/^.*Product\\W*POMA/im"
+              }
+            ]
+          },
+          "Product - POM:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Product\\W*POM/im"
+              }
+            ]
+          },
+          "Product - POH:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Product\\W*POH/im"
+              }
+            ]
+          },
+          "Product - Connecting Shop:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Product\\W*Connecting Shop/im"
+              }
+            ]
+          },
+          "Product - Connecting Spotbid:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Product\\W*Connecting Spotbid/im"
+              }
+            ]
+          },
+          "Product - Connecting Prodrisk:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Product\\W*Connecting Prodrisk/im"
               }
             ]
           },
@@ -515,6 +564,51 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/^.*Customer\\W*A2A/im"
+              }
+            ]
+          },
+          "v1.5.0" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Version\\W*v?1\\.5\\.0/im"
+              }
+            ]
+          },
+          "v1.6.0" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Version\\W*v?1\\.6\\.0/im"
+              }
+            ]
+          },
+          "v1.7.0" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Version\\W*v?1\\.7\\.0/im"
+              }
+            ]
+          },
+          "v1.8.0" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Version\\W*v?1\\.8\\.0/im"
+              }
+            ]
+          },
+          "v1.9.0" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Version\\W*v?1\\.9\\.0/im"
               }
             ]
           }
