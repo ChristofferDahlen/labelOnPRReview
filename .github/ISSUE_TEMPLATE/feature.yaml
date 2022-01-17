@@ -26,7 +26,6 @@ body:
       label: Risk Estimation
       description: What is the estimated risk of adding this enchancement to previous functionality
       options:
-        - None
         - Low
         - Medium
         - High
