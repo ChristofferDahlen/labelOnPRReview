@@ -429,8 +429,13 @@
         "ref": "develop",
         "labels": {
           "v1.8.0" : {
-            "type": "descriptionMatches",
-            "pattern": "/^.*Version\\W*v?1\\.8\\.0/im"
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Version\\W*1\\.8\\.0/im"
+              }
+            ]
           },
           "Severity - Critical :boom:": {
             "requires": 1,
