@@ -3,6 +3,28 @@ description: Something need to be cleaned or fixed in the project
 title: "[Cleanup]: "
 labels: ["Type - Cleanup", "Triage"]
 body:
+  - type: dropdown
+    id: Product
+    attributes:
+      label: Product
+      description: For which product is this Enchancemnet for?
+      options:
+        - POMA
+        - POM (Wrong Repository)
+        - POH (Wrong Repository)
+        - Gateway
+        - Connecting Shop (Wrong Repository)
+        - Connecting Prodrisk (Wrong Repository)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Which Product version [Other versions should be in Additional info]
+      placeholder: v0.0.0
+    validations:
+      required: true
   - type: textarea
     id: to-Fix
     attributes:
@@ -11,3 +33,11 @@ body:
       placeholder: Tell us what you see!
     validations:
       required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Info
+      description: Any additional info?
+      placeholder: Any details!
+    validations:
+      required: false

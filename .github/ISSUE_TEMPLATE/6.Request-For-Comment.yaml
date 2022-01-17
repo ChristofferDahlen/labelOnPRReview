@@ -6,12 +6,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        A Request for Comment
   - type: dropdown
     id: Product
     attributes:
       label: Product
-      description: Which Product is this apaort of?
+      description: For which product is this Enchancemnet for?
       options:
         - POMA
         - POM (Wrong Repository)
@@ -21,41 +21,14 @@ body:
         - Connecting Prodrisk (Wrong Repository)
     validations:
       required: true
-  - type: dropdown
-    id: severity
+  - type: input
+    id: version
     attributes:
-      label: Severity
-      description: What is the severity of the bug?
-      options:
-        - Critical
-        - Major
-        - Minor
+      label: Version
+      description: Which Product version [Other versions should be added in Additional info]
+      placeholder: v0.0.0
     validations:
       required: true
-  - type: input
-    id: customer
-    attributes:
-      label: Customer
-      description: Which customer is this impacting (Leave empty if none or unknown)
-      placeholder: Customer
-    validations:
-      required: false
-  - type: input
-    id: Enviorment
-    attributes:
-      label: Enviorment
-      description: In what enviorment did this happen in?
-      placeholder: Enviorment
-    validations:
-      required: false
-  - type: input
-    id: Database
-    attributes:
-      label: Database
-      description: In what enviorment did this happen in?
-      placeholder: Database
-    validations:
-      required: false
   - type: textarea
     id: what-happened
     attributes:

@@ -20,6 +20,14 @@ body:
         - Connecting Prodrisk (Wrong Repository)
     validations:
       required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Which Product version [Other versions should be in Additional info]
+      placeholder: v0.0.0
+    validations:
+      required: true
   - type: dropdown
     id: Risk
     attributes:
@@ -39,3 +47,11 @@ body:
       placeholder: This is the new feature
     validations:
       required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Info
+      description: Any additional info?
+      placeholder: Any details!
+    validations:
+      required: false

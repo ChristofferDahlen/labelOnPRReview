@@ -12,7 +12,6 @@ body:
     attributes:
       label: Product
       description: Which Product is this apaort of?
-      multiple: true
       options:
         - POMA
         - POM (Wrong Repository)
@@ -29,7 +28,7 @@ body:
       description: Which Product version [Other versions should be in Additional info]
       placeholder: v0.0.0
     validations:
-      required: false
+      required: true
   - type: dropdown
     id: severity
     attributes:
