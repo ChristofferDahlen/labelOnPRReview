@@ -433,7 +433,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Version\\W*1\\.8\\.0/im"
+                "pattern": "/^.*Version\\W*v?1\\.8\\.0/im"
               }
             ]
           },
