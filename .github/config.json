@@ -123,6 +123,10 @@
       "name": "Customer - Uniper",
       "color": "c889d7"
     },
+    "Customer - Iberdrola": {
+      "name": "Customer - Uniper",
+      "color": "c889d7"
+    },
     "Type - Bug": {
       "name": "Type - Bug :lady_beetle:",
       "color": "b60205"
@@ -411,12 +415,75 @@
       "issue": {
         "ref": "develop",
         "labels": {
+          "Severity - Critical :boom:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Severity\\W*Critical/im"
+              }
+            ]
+          },
+          "Severity - Major :fire:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Severity\\W*Major/im"
+              }
+            ]
+          },
+          "Severity - Minor :construction:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Severity\\W*Minor/im"
+              }
+            ]
+          },
           "Customer - Enel": {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Customer: Enel/im"
+                "pattern": "/^.*Customer\\W*Enel/im"
+              }
+            ]
+          },
+          "Customer - EPC": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Customer\\W*EPC/im"
+              }
+            ]
+          },
+          "Customer - Luminus": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Customer\\W*Luminus/im"
+              }
+            ]
+          },
+          "Customer - Uniper": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Customer\\W*Uniper/im"
+              }
+            ]
+          },
+          "Customer - Iberdrola": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Customer\\W*Iberdrola/im"
               }
             ]
           }
