@@ -21,7 +21,7 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: Product
+    id: Risk
     attributes:
       label: Risk Estimation
       description: What is the estimated risk of adding this enchancement to previous functionality
