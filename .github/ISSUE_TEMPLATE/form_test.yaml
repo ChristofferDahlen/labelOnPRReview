@@ -17,9 +17,9 @@ body:
           required: false
   - type: input
     id: Version
-    description: Which version does it occur for
     attributes:
       label: Version
+      description: On which version did this occur for
       placeholder: v.0.0.0
     validations:
       required: false
