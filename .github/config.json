@@ -437,7 +437,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Product\\W*POMA/im"
+                "pattern": "/Product[^#]*POMA\\b/im"
               }
             ]
           },
@@ -446,7 +446,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Product\\W*POM/im"
+                "pattern": "/Product[^#]*POM\\b/im"
               }
             ]
           },
@@ -455,7 +455,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Product\\W*POH/im"
+                "pattern": "/Product[^#]*POH\\b/im"
               }
             ]
           },
@@ -464,7 +464,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Product\\W*Connecting Shop/im"
+                "pattern": "/Product[^#]*Connecting Shop/im"
               }
             ]
           },
@@ -473,7 +473,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Product\\W*Connecting Spotbid/im"
+                "pattern": "/Product[^#]*Connecting Spotbid/im"
               }
             ]
           },
@@ -482,7 +482,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Product\\W*Connecting Prodrisk/im"
+                "pattern": "/Product[^#]*Connecting Prodrisk/im"
               }
             ]
           },
