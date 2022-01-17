@@ -7,14 +7,6 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: Product
-    attributes:
-      label: Product
-      description: On which version did this occur for
-      placeholder: v.0.0.0
-    validations:
-      required: false
   - type: checkboxes
     id: SupportIssue
     attributes:
@@ -32,8 +24,8 @@ body:
         - POM (wrong repo)
         - POH (wrong repo)
         - Gateway (wrong repo)
-        - Connecting Shop
-        - Connecting Prodrisk
+        - Connecting Shop (wrong repo)
+        - Connecting Prodrisk (wrong repo)
     validations:
       required: true
   - type: input
