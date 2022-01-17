@@ -1,24 +1,48 @@
 name: Feature
 description: File a bug report
-title: "[Feature]: "
-labels: ["Kind - Feature", "Triage"]
+title: "[Bug]: "
+labels: ["Type - Bug :lady_beetle:", "Triage", ""]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    id: 
+    attributes:
+      label: SupportIssue
+      description: Is this a support Issue
+      options:
+        - label: Is this a support Issue
+          required: false
   - type: input
     id: customer
     attributes:
       label: Customer
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      description: Which customer is this impacting (Leave empty if none or unknown)
+      placeholder: Customer
     validations:
       required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: What is the severity of the bug?
+      options:
+        - Crit
+    validations:
+      required: true
   - type: dropdown
     id: version
     attributes:
       label: Version
       description: What version of our software are you running?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
+        - 1.5.0
+        - 1.6.0
+        - 1.7.0
+        - 1.8.0
+        - 1.9.0
     validations:
       required: true
   - type: textarea
