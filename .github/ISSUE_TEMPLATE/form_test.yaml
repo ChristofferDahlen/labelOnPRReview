@@ -54,6 +54,22 @@ body:
       placeholder: Customer
     validations:
       required: false
+  - type: input
+    id: Enviorment
+    attributes:
+      label: Enviorment
+      description: In what enviorment did this happen in?
+      placeholder: Enviorment
+    validations:
+      required: false
+  - type: input
+    id: Enviorment
+    attributes:
+      label: Enviorment
+      description: In what enviorment did this happen in?
+      placeholder: Enviorment
+    validations:
+      required: false
   - type: textarea
     id: what-happened
     attributes:
