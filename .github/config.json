@@ -127,6 +127,10 @@
       "name": "Customer - Uniper",
       "color": "c889d7"
     },
+    "Customer - A2A": {
+      "name": "Customer - A2A",
+      "color": "c889d7"
+    },
     "Type - Bug": {
       "name": "Type - Bug :lady_beetle:",
       "color": "b60205"
@@ -484,6 +488,15 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/^.*Customer\\W*Iberdrola/im"
+              }
+            ]
+          },
+          "Customer - A2A": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^.*Customer\\W*A2A/im"
               }
             ]
           }
