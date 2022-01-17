@@ -1,12 +1,8 @@
-name: Request for Comment (RFC)
-description: This is a request for comment
-title: "[RFC]: "
-labels: ["Type - RFC", "Triage"]
+name: Cleanup
+description: Something need to be cleaned or fixed in the project
+title: "[Documentation]: "
+labels: ["Type - Documentation", "Triage"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        A Request for Comment
   - type: dropdown
     id: Product
     attributes:
@@ -25,15 +21,18 @@ body:
     id: version
     attributes:
       label: Version
-      description: Which Product version [Other versions should be added in Additional info]
+      description: Which Product version [Other versions should be in Additional info]
       placeholder: v0.0.0
     validations:
-      required: false
+      required: true
   - type: textarea
-    id: what-happened
+    id: to-Fix
     attributes:
-      label: Question
-      description: What knowledge do you seek?
-      placeholder: In a dark place we find ourselves, and a little more knowledge lights our way --Yoda
+      label: To be Documented
+      description: What has to be documented
+      value: |
+        - [ ] a
+        - [ ] b
+        - [ ] c
     validations:
       required: true
