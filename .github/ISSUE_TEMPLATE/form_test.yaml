@@ -14,11 +14,11 @@ body:
       description: Which Product is this apaort of?
       options:
         - POMA
-        - POM (wrong repo)
-        - POH (wrong repo)
-        - Gateway (wrong repo)
-        - Connecting Shop (wrong repo)
-        - Connecting Prodrisk (wrong repo)
+        - POM (Wrong Repository)
+        - POH (Wrong Repository)
+        - Gateway
+        - Connecting Shop (Wrong Repository)
+        - Connecting Prodrisk (Wrong Repository)
     validations:
       required: true
   - type: dropdown
