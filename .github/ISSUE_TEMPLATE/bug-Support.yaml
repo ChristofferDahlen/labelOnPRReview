@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to fill out this bug report! If is is urgent add the urgent label to the Issue
   - type: dropdown
     id: Product
     attributes:
@@ -21,6 +21,14 @@ body:
         - Connecting Prodrisk (Wrong Repository)
     validations:
       required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Which Product version [Other versions should be in Additional info]
+      placeholder: v0.0.0
+    validations:
+      required: false
   - type: dropdown
     id: severity
     attributes:
