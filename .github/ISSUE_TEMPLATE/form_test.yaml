@@ -63,11 +63,11 @@ body:
     validations:
       required: false
   - type: input
-    id: Enviorment
+    id: Database
     attributes:
-      label: Enviorment
+      label: Database
       description: In what enviorment did this happen in?
-      placeholder: Enviorment
+      placeholder: Database
     validations:
       required: false
   - type: textarea
