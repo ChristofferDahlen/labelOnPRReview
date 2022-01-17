@@ -12,6 +12,7 @@ body:
     attributes:
       label: Product
       description: Which Product is this apaort of?
+      multiple: true
       options:
         - POMA
         - POM (Wrong Repository)
