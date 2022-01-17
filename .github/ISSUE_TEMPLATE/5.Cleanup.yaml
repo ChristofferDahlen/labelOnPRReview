@@ -26,14 +26,6 @@ body:
     validations:
       required: true
   - type: textarea
-    id: to-Fix
-    attributes:
-      label: What has to be fixed?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-    validations:
-      required: true
-  - type: textarea
     id: additional-info
     attributes:
       label: Additional Info
@@ -41,3 +33,11 @@ body:
       placeholder: Any details!
     validations:
       required: false
+  - type: textarea
+    id: to-Fix
+    attributes:
+      label: What has to be cleaned up?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+    validations:
+      required: true

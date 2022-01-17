@@ -32,19 +32,11 @@ body:
     id: Risk
     attributes:
       label: Risk Estimation
-      description: What is the estimated risk of adding this enchancement to previous functionality
+      description: What is the estimated risk of adding this feature to previous functionality
       options:
         - Low
         - Medium
         - High
-    validations:
-      required: true
-  - type: textarea
-    id: improvement
-    attributes:
-      label: Feature
-      description: What is the suggessted enchacment
-      placeholder: This is the new feature
     validations:
       required: true
   - type: textarea
@@ -55,3 +47,11 @@ body:
       placeholder: Any details!
     validations:
       required: false
+  - type: textarea
+    id: improvement
+    attributes:
+      label: Feature
+      description: What is the suggessted feature
+      placeholder: This is the new feature
+    validations:
+      required: true

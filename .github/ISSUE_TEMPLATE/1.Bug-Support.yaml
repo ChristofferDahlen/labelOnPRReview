@@ -11,7 +11,7 @@ body:
     id: Product
     attributes:
       label: Product
-      description: Which Product is this apaort of?
+      description: Which Product is bug related to? [Any additional products can be added to addional info
       options:
         - POMA
         - POM (Wrong Repository)
@@ -25,7 +25,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: Which Product version [Other versions should be in Additional info]
+      description: What is the Product version [Other versions should be in Additional info]
       placeholder: v0.0.0
     validations:
       required: true
@@ -44,7 +44,7 @@ body:
     id: customer
     attributes:
       label: Customer
-      description: Which customer is this impacting (Leave empty if none or unknown)
+      description: From which customer is this from (Leave empty if internal or unknown)
       placeholder: Customer
     validations:
       required: false
@@ -52,7 +52,7 @@ body:
     id: Enviorment
     attributes:
       label: Enviorment
-      description: In what enviorment did this happen in?
+      description: In which enviorment did this occur in
       placeholder: Enviorment
     validations:
       required: false
@@ -60,8 +60,16 @@ body:
     id: Database
     attributes:
       label: Database
-      description: In what enviorment did this happen in?
+      description: Which database was used
       placeholder: Database
+    validations:
+      required: false
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Info
+      description: Any additional info?
+      placeholder: Any details!
     validations:
       required: false
   - type: textarea
@@ -72,11 +80,4 @@ body:
       placeholder: Tell us what you see!
     validations:
       required: true
-  - type: textarea
-    id: additional-info
-    attributes:
-      label: Additional Info
-      description: Any additional info?
-      placeholder: Any details!
-    validations:
-      required: false
+

@@ -32,16 +32,8 @@ body:
   - type: textarea
     id: what-happened
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
+      label: Question
+      description: What knowledge do you seek?
+      placeholder: In a dark place we find ourselves, and a little more knowledge lights our way --Yoda
     validations:
       required: true
-  - type: textarea
-    id: additional-info
-    attributes:
-      label: Additional Info
-      description: Any additional info?
-      placeholder: Any details!
-    validations:
-      required: false
