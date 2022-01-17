@@ -3,13 +3,14 @@ description: File a bug report
 title: "[Feature]: "
 labels: ["Kind - Feature", "Triage"]
 body:
-  - type: textarea
-    id: what-happened
+  - type: input
+    id: customer
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Customer
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
   - type: dropdown
     id: version
     attributes:
