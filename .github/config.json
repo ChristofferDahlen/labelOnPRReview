@@ -72,6 +72,11 @@
       "description": "",
       "color": "645460"
     },
+    "Status - Stale": {
+      "name": "Status - Stale",
+      "description": "",
+      "color": "645460"
+    },
     "Status - On Hold": {
       "name": "Status - On Hold",
       "description": "",
@@ -153,6 +158,10 @@
     "Type - Feature": {
       "name": "Type - Feature",
       "color": "8feb7b"
+    },
+    "Type - Bugfix": {
+      "name": "Type - Feature",
+      "color": "9E0717"
     },
     "Type - RFC": {
       "name": "Type - RFC",
@@ -317,6 +326,24 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
+          "Status - Abandoned:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "isAbandoned",
+                "stale": 30
+              }
+            ]
+          },
+          "Status - Stale:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "isStale",
+                "stale": 30
+              }
+            ]
+          }
         }
       },
       "pr": {
@@ -424,6 +451,24 @@
               {
                 "type": "requestedChanges",
                 "value": true
+              }
+            ]
+          },
+          "Type - Bugfix" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^bugfix\\/i"
+              }
+            ]
+          },
+          "Type - Feature" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^feature\\/i"
               }
             ]
           }
