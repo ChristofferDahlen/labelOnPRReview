@@ -500,7 +500,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Severity\\W*Critical/im"
+                "pattern": "/Severity[^#]Critical/im"
               }
             ]
           },
@@ -509,7 +509,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Severity\\W*Major/im"
+                "pattern": "/Severity[^#]Major/im"
               }
             ]
           },
@@ -518,7 +518,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Severity\\W*Minor/im"
+                "pattern": "/Severity[^#]Minor/im"
               }
             ]
           },
@@ -527,7 +527,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Customer\\W*Enel/im"
+                "pattern": "/^.*Customer[^#]Enel/im"
               }
             ]
           },
@@ -536,7 +536,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Customer\\W*EPC/im"
+                "pattern": "/^.*Customer[^#]EPC/im"
               }
             ]
           },
@@ -545,7 +545,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Customer\\W*Luminus/im"
+                "pattern": "/^.*Customer[^#]Luminus/im"
               }
             ]
           },
@@ -554,7 +554,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Customer\\W*Uniper/im"
+                "pattern": "/Customer[^#]Uniper/im"
               }
             ]
           },
@@ -563,7 +563,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Customer\\W*Iberdrola/im"
+                "pattern": "/Customer[^#]Iberdrola/im"
               }
             ]
           },
@@ -572,7 +572,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Customer\\W*A2A/im"
+                "pattern": "/Customer[^#]A2A/im"
               }
             ]
           },
@@ -581,7 +581,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Version\\W*v?1\\.5\\.0/im"
+                "pattern": "/^.*Version[^#]v?1\\.5\\.0/im"
               }
             ]
           },
@@ -590,7 +590,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Version\\W*v?1\\.6\\.0/im"
+                "pattern": "/^.*Version[^#]v?1\\.6\\.0/im"
               }
             ]
           },
@@ -599,7 +599,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Version\\W*v?1\\.7\\.0/im"
+                "pattern": "/^.*Version[^#]v?1\\.7\\.0/im"
               }
             ]
           },
@@ -608,7 +608,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Version\\W*v?1\\.8\\.0/im"
+                "pattern": "/^.*Version[^#]v?1\\.8\\.0/im"
               }
             ]
           },
@@ -617,7 +617,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^.*Version\\W*v?1\\.9\\.0/im"
+                "pattern": "/^.*Version[^#]v?1\\.9\\.0/im"
               }
             ]
           }
