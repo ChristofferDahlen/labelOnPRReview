@@ -648,10 +648,30 @@
               }
             ]
           }
-        }
+        },
+        "assignProject": [
+          {
+            "project": "Optimisation Core",
+            "column": "To do",
+            "requires": 1,
+            "conditions": []
+          }
+        ]
       },
       "project": {
         "ref": "develop",
+        "syncRemote": [
+          {
+            "localProject": "Opt Core",
+            "owner": "ChristofferDahlen",
+            "project": "Optimisation Core"
+          },
+          {
+            "localProject": "Shop Board",
+            "owner": "ChristofferDahlen",
+            "project": "Shop Board"
+          }
+        ],
         "labels": {
           "Investigation": {
             "requires": 1,
