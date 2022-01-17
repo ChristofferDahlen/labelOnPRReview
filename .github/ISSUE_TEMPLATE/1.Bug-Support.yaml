@@ -80,13 +80,15 @@ body:
       placeholder: Tell us what you see!
     validations:
       required: true
-  - type: markdown
+  - type: textarea
+    id: status
     attributes:
-      value: |
-        - [ ] has been investigated by [Replace with @User]
+      label: Steps
+      description: Steps to check of for developers (Don't change anything here, Is here due to missing functionality in Github template forms)
+      placeholder: |
+        - [ ] has been investigated by developer [Replace with @User]
         - [ ] fix has been proposed
         - [ ] has been fixed for release build
         - [ ] has been fixed for development build
         - [ ] has been restested
         - [ ] Has been documented
-
