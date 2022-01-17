@@ -5,7 +5,7 @@ labels: ["Kind - Feature", "Triage"]
 body:
   - type: textarea
    id: what-happened
-    attributes:
+   attributes:
       label: What happened?
       description: Also tell us, what did you expect to happen?
       placeholder: Tell us what you see!
