@@ -432,7 +432,7 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "Product - POMA:": {
+          "Product - POMA": {
             "requires": 1,
             "conditions": [
               {
@@ -441,7 +441,7 @@
               }
             ]
           },
-          "Product - POM:": {
+          "Product - POM": {
             "requires": 1,
             "conditions": [
               {
@@ -450,7 +450,7 @@
               }
             ]
           },
-          "Product - POH:": {
+          "Product - POH": {
             "requires": 1,
             "conditions": [
               {
@@ -459,7 +459,7 @@
               }
             ]
           },
-          "Product - Connecting Shop:": {
+          "Product - Connecting Shop": {
             "requires": 1,
             "conditions": [
               {
@@ -468,7 +468,7 @@
               }
             ]
           },
-          "Product - Connecting Spotbid:": {
+          "Product - Connecting Spotbid": {
             "requires": 1,
             "conditions": [
               {
@@ -477,7 +477,7 @@
               }
             ]
           },
-          "Product - Connecting Prodrisk:": {
+          "Product - Connecting Prodrisk": {
             "requires": 1,
             "conditions": [
               {
