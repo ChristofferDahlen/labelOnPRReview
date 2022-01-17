@@ -8,13 +8,20 @@ body:
       value: |
         Thanks for taking the time to fill out this bug report!
   - type: checkboxes
-    id: 
+    id: SupportIssue
     attributes:
       label: SupportIssue
       description: Is this a support Issue
       options:
         - label: Is this a support Issue
           required: false
+  - type: input
+    id: Version
+    attributes:
+      label: Version
+      placeholder: v.0.0.0
+    validations:
+      required: false
   - type: input
     id: customer
     attributes:
@@ -30,20 +37,8 @@ body:
       description: What is the severity of the bug?
       options:
         - Critical
-        - 'Major :fire:'
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.5.0
-        - 1.6.0
-        - 1.7.0
-        - 1.8.0
-        - 1.9.0
+        - Major
+        - Minor
     validations:
       required: true
   - type: textarea
