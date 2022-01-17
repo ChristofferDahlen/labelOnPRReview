@@ -581,7 +581,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/Version[^#]*v?1\\.5\\.0/im"
+                "pattern": "/^.*Version[^#]*v?1\\.5\\.0/im"
               }
             ]
           },
@@ -590,7 +590,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/Version[^#]*v?1\\.6\\.0/im"
+                "pattern": "/^.*Version[^#]*v?1\\.6\\.0/im"
               }
             ]
           },
@@ -599,7 +599,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/Version[^#]*v?1\\.7\\.0/im"
+                "pattern": "/^.*Version[^#]*v?1\\.7\\.0/im"
               }
             ]
           },
@@ -608,7 +608,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/Version[^#]*v?1\\.8\\.0/im"
+                "pattern": "/^.*Version[^#]*v?1\\.8\\.0/im"
               }
             ]
           },
@@ -617,7 +617,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/Version[^#]*v?1\\.9\\.0/im"
+                "pattern": "/^.*Version[^#]*v?1\\.9\\.0/im"
               }
             ]
           }
