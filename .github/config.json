@@ -599,7 +599,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/Version[^#]*v?1\\.7\\.0/im"
+                "pattern": "/Version[^#]*v1\\.7\\.0/im"
               }
             ]
           },
