@@ -1,5 +1,5 @@
-name: Cleanup
-description: Something need to be cleaned or fixed in the project
+name: Documentation
+description: Documenation that has to be done
 title: "[Documentation]: "
 labels: ["Type - Documentation", "Triage"]
 body:
