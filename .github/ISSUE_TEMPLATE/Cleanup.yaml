@@ -1,0 +1,13 @@
+name: Cleanup
+description: Something need to be cleaned or fixed in the project
+title: "[Cleanup]: "
+labels: ["Type - Cleanup", "Triage"]
+body:
+  - type: textarea
+    id: to-Fix
+    attributes:
+      label: What has to be fixed?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
