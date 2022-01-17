@@ -30,7 +30,7 @@ body:
       description: What is the severity of the bug?
       options:
         - Critical
-        - Major :fire:
+        - 'Major :fire:'
     validations:
       required: true
   - type: dropdown
