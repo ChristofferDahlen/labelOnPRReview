@@ -504,7 +504,7 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "Resolution - Fixed": {
+          "Status - Fix Confirmed": {
             "requires": 5,
             "conditions": [
               {
