@@ -349,7 +349,13 @@
       "name": "v1.9.0",
       "description": "Version 1.9.0",
       "color": "5978d8"
+    },
+    "vDevelop": {
+      "name": "v1.9.0",
+      "description": "Version 1.9.0",
+      "color": "5978d8"
     }
+
   },
   "runners": [
     {
@@ -808,7 +814,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation:[^#\\n\\r]*XXS/i"
+                "pattern": "/# Time Estimation:[^#\\n\\r]*\\bXXS/i"
               }
             ]
           },
@@ -817,7 +823,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*XS/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*\\bXS/i"
               }
             ]
           },
@@ -826,7 +832,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*S/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*\\bS/i"
               }
             ]
           },
@@ -835,7 +841,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*M/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*\\bM/i"
               }
             ]
           },
@@ -844,7 +850,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*L/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*\\bL/i"
               }
             ]
           },
@@ -853,7 +859,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*XL/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*\\bXL/i"
               }
             ]
           },
@@ -862,7 +868,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*XXL/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*\\bXXL/i"
               }
             ]
           },
@@ -961,9 +967,22 @@
               }
             ]
           },
+          "vDevelop" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Version[^#\\n\\r]*v?develop/i"
+              }
+            ]
+          },
           "v1.5.0" : {
             "requires": 1,
             "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Version[^#\\n\\r]*v1\\.5[\n,]/i"
+              },
               {
                 "type": "descriptionMatches",
                 "pattern": "/# Version[^#\\n\\r]*v1\\.5\\.0/i"
@@ -973,6 +992,10 @@
           "v1.6.0" : {
             "requires": 1,
             "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Version[^#\\n\\r]*v1\\.6[\n,]/i"
+              },
               {
                 "type": "descriptionMatches",
                 "pattern": "/# Version[^#\\n\\r]*v1\\.6\\.0/i"
