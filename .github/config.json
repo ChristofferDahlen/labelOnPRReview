@@ -745,7 +745,7 @@
               {
                 "type": "hasLabel",
                 "label": "Risk - High",
-                "value": "false"
+                "value": ""
               },{
                 "type": "hasLabel",
                 "label": "Risk - Medium",
