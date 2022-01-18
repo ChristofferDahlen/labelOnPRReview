@@ -743,28 +743,21 @@
                 "pattern": "/# Risk[^#\\n\\r]*/i"
               },
               {
-                "type": "$only",
-                "requires": 0,
-                "pattern": [{
-                  "requires": 1,
-                  "conditions": [{
-                    "type": "hasLabel",
-                    "label": "Risk - High",
-                    "value": "false"
-                  },{
-                    "type": "hasLabel",
-                    "label": "Risk - Medium",
-                    "value": "false"
-                  },{
-                    "type": "hasLabel",
-                    "label": "Risk - Low",
-                    "value": "false"
-                  },{
-                    "type": "hasLabel",
-                    "label": "Risk - None",
-                    "value": "false"
-                  }]}
-               ]
+                "type": "hasLabel",
+                "label": "Risk - High",
+                "value": "false"
+              },{
+                "type": "hasLabel",
+                "label": "Risk - Medium",
+                "value": "false"
+              },{
+                "type": "hasLabel",
+                "label": "Risk - Low",
+                "value": "true"
+              },{
+                "type": "hasLabel",
+                "label": "Risk - None",
+                "value": "false"
               }
             ]
           },
