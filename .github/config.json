@@ -534,7 +534,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] Has been documented/im"
+                "pattern": "/^- \\[x\\] Has been documented/i"
               }
             ]
           },
@@ -543,7 +543,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Product[^#]*POMA\\b/im"
+                "pattern": "/# Product[^#]*POMA\\b/i"
               }
             ]
           },
@@ -552,7 +552,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Product[^#]*Gateway\\b/im"
+                "pattern": "/# Product[^#]*Gateway\\b/i"
               }
             ]
           },
@@ -561,7 +561,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Product[^#]*POM\\b/im"
+                "pattern": "/# Product[^#]*POM\\b/i"
               }
             ]
           },
@@ -570,7 +570,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Product[^#]*POH\\b/im"
+                "pattern": "/# Product[^#]*POH\\b/i"
               }
             ]
           },
@@ -579,7 +579,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Product[^#]*Connecting Shop/im"
+                "pattern": "/# Product[^#]*Connecting Shop/i"
               }
             ]
           },
@@ -588,7 +588,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Product[^#]*Connecting Spotbid/im"
+                "pattern": "/# Product[^#]*Connecting Spotbid/i"
               }
             ]
           },
@@ -597,7 +597,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Product[^#]*Connecting Prodrisk/im"
+                "pattern": "/# Product[^#]*Connecting Prodrisk/i"
               }
             ]
           },
@@ -606,7 +606,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Severity[^#]*Critical/im"
+                "pattern": "/# Severity[^#]*Critical/i"
               }
             ]
           },
@@ -615,7 +615,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Severity[^#]*Major/im"
+                "pattern": "/# Severity[^#]*Major/i"
               }
             ]
           },
@@ -624,7 +624,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Severity[^#]*Minor/im"
+                "pattern": "/# Severity[^#]*Minor/i"
               }
             ]
           },
@@ -633,7 +633,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Customer[^#]*Enel/im"
+                "pattern": "/# Customer[^#]*Enel/i"
               }
             ]
           },
@@ -642,7 +642,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Customer[^#]*EPC/im"
+                "pattern": "/# Customer[^#]*EPC/i"
               }
             ]
           },
@@ -651,7 +651,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Customer[^#]*Luminus/im"
+                "pattern": "/# Customer[^#]*Luminus/i"
               }
             ]
           },
@@ -660,7 +660,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Customer[^#]*Uniper/im"
+                "pattern": "/# Customer[^#]*Uniper/i"
               }
             ]
           },
@@ -669,7 +669,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Customer[^#]*Iberdrola/im"
+                "pattern": "/# Customer[^#]*Iberdrola/i"
               }
             ]
           },
@@ -678,7 +678,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Customer[^#]*A2A/im"
+                "pattern": "/# Customer[^#]*A2A/i"
               }
             ]
           },
@@ -687,7 +687,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Risk[^#]*High/im"
+                "pattern": "/# Risk[^#]*High/i"
               }
             ]
           },
@@ -696,7 +696,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Risk[^#]*Medium/im"
+                "pattern": "/# Risk[^#]*Medium/i"
               }
             ]
           },
@@ -705,7 +705,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Risk[^#]*Low/im"
+                "pattern": "/# Risk[^#]*Low/i"
               }
             ]
           },
@@ -714,7 +714,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#]*v1\\.5\\.0/im"
+                "pattern": "/# Version[^#]*v1\\.5\\.0/i"
               }
             ]
           },
@@ -723,7 +723,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#]*v1\\.6\\.0/im"
+                "pattern": "/# Version[^#]*v1\\.6\\.0/i"
               }
             ]
           },
@@ -732,7 +732,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#]*v1\\.7\\.0/im"
+                "pattern": "/# Version[^#]*v1\\.7\\.0/i"
               }
             ]
           },
@@ -741,7 +741,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#]*v1\\.8\\.0/im"
+                "pattern": "/# Version[^#]*v1\\.8\\.0/i"
               }
             ]
           },
@@ -750,7 +750,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#]*v1\\.9\\.0/im"
+                "pattern": "/# Version[^#]*v1\\.9\\.0/i"
               }
             ]
           }
