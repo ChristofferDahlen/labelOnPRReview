@@ -743,12 +743,11 @@
                 "pattern": "/# Risk[^#\\n\\r]*/i"
               },
               {
-                "type": "$only",
+                "type": "$and",
                 "requires": 0,
                 "pattern": [{
                   "requires": 1,
                   "conditions": [{
-
                     "type": "hasLabel",
                     "label": "Risk - High",
                     "value": "false"
