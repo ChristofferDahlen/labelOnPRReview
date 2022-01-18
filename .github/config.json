@@ -5,7 +5,7 @@
       "description": "Approximately 3 - 5 Months of work.",
       "color": "645460"
     },
-    "Cost-Medium": {
+    "Cost - M": {
       "name": "Cost - M",
       "description": "Approximately 1 - 2 Months of work.",
       "color": "645460"
@@ -33,6 +33,10 @@
     "Cost - XXL": {
       "name": "Cost - XXL",
       "description": "Approximately 12+ months of work.",
+      "color": "645460"
+    },
+    "Cost - TBD :question:": {
+      "name": "Cost - TBD :question:",
       "color": "645460"
     },
     "Customer - A2A": {
@@ -178,6 +182,10 @@
     },
     "Risk - None": {
       "name": "Risk - None",
+      "color": "006b75"
+    },
+    "Risk - TBD :question:": {
+      "name": "Risk - TBD :question:",
       "color": "006b75"
     },
     "Severity - Critical :boom:": {
@@ -538,6 +546,15 @@
               }
             ]
           },
+          "Undocumented :pencil2:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[ \\] Has been documented/i"
+              }
+            ]
+          },
           "Product - POMA": {
             "requires": 1,
             "conditions": [
@@ -706,6 +723,43 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/# Risk[^#\\n\\r]*Low/i"
+              }
+            ]
+          },
+          "Risk - TBD :question:": {
+            "requires": 2,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Risk[^#\\n\\r]*/i"
+              },
+              {
+                "type": "$and",
+                "pattern": [
+                  {
+                    "requires": 1,
+                    "conditions": [{
+                      "type": "hasLabel",
+                      "label": "Risk - High",
+                      "value": "false"
+                    }]
+                  },
+                  {
+                    "requires": 1,
+                    "conditions": [{
+                      "type": "hasLabel",
+                      "label": "Risk - Low",
+                      "value": "false"
+                    }]
+                  },                  {
+                    "requires": 1,
+                    "conditions": [{
+                      "type": "hasLabel",
+                      "label": "Risk - High",
+                      "value": "false"
+                    }]
+                  }
+                ]
               }
             ]
           },
