@@ -69,52 +69,52 @@
       "color": "D107F7"
     },
     "M | Blocked :no_entry_sign:": {
-      "name": "M | Blocked :no_entry_sign:",
+      "name": "[M]  Blocked :no_entry_sign:",
       "color": "F9D0C4"
     },
     "[M] Blocking :exclamation:": {
-      "name": "Blocking :exclamation:",
+      "name": "[M] Blocking :exclamation:",
       "description": "This issue is blocking work",
       "color": "b60205"
     },
     "[M] Cannot Reproduce": {
-      "name": "M | Cannot Reproduce",
+      "name": "[M]  Cannot Reproduce",
       "description": "This issue isn't reproducible",
       "color": "D93F0B"
     },
     "[M] Duplicate :grey_exclamation:": {
-      "name": "Duplicate :grey_exclamation:",
+      "name": "[M] Duplicate :grey_exclamation:",
       "color": "fef2c0"
     },
     "[M] Help Wanted :hand:": {
-      "name": "M | Help Wanted :hand:",
+      "name": "[M] Help Wanted :hand:",
       "color": "0e8a16"
     },
     "[M] Resolution - Fixed": {
-      "name": "M | Resolution - Fixed",
+      "name": "[M] Resolution - Fixed",
       "description": "This issue has been fixed",
       "color": "A9E98F"
     },
     "[M] Resolution - Rejected - Wrong Input": {
-      "name": "M | Resolution - Rejected - Input Data Problem",
+      "name": "[M]  Resolution - Rejected - Input Data Problem",
       "description": "This issue has been rejected due to it being a issue with wrong input",
       "color": "A9E98F"
     },
     "[M] Resolution - Rejected": {
-      "name": "M | Resolution - Rejected",
+      "name": "[M] Resolution - Rejected",
       "description": "This issue has been rejected",
       "color": "A9E98F"
     },
     "[M] Waiting On Author :zzz:": {
-      "name": "Waiting On Author :zzz:",
+      "name": "[M] Waiting On Author :zzz:",
       "color": "1b4623"
     },
     "[M] Waiting On Future :calendar:": {
-      "name": "Waiting On Future :calendar:",
+      "name": "[M] Waiting On Future :calendar:",
       "color": "C5DEF5"
     },
     "[M] Urgent :bangbang:": {
-      "name": "M | Urgent :bangbang:",
+      "name": "[M] Urgent :bangbang:",
       "color": "ce4727"
     },
     "Priority - High": {
