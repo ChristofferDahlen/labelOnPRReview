@@ -72,8 +72,8 @@
       "name": "Investigation :mag:",
       "color": "D107F7"
     },
-    "M | Blocked :no_entry_sign:": {
-      "name": "[M]  Blocked :no_entry_sign:",
+    "[M] Blocked :no_entry_sign:": {
+      "name": "[M] Blocked :no_entry_sign:",
       "color": "F9D0C4"
     },
     "[M] Blocking :exclamation:": {
@@ -120,6 +120,11 @@
     "[M] Urgent :bangbang:": {
       "name": "[M] Urgent :bangbang:",
       "color": "ce4727"
+    },
+    "[M] On Hold": {
+      "name": "On Hold",
+      "description": "",
+      "color": "645460"
     },
     "Priority - High": {
       "name": "Priority - High",
@@ -233,39 +238,34 @@
       "description": "Changes between 1000+ lines",
       "color": "0eb7c7"
     },
-    "Status - Abandoned": {
-      "name": "Status - Abandoned",
+    "Abandoned": {
+      "name": "Abandoned",
       "description": "",
       "color": "645460"
     },
-    "Status - Accepted :heavy_check_mark:": {
+    "Accepted :heavy_check_mark:": {
       "name": "Accepted :heavy_check_mark:",
       "color": "072dbc"
     },
-    "Status - Awaiting Review :eyes:": {
+    "Awaiting Review :eyes:": {
       "name": "Awaiting Review :eyes:",
       "color": "FBCA04"
     },
-    "Status - Changes Requested :diamonds:": {
+    "Changes Requested :diamonds:": {
       "name": "Changes Requested :diamonds:",
       "color": "f4ff1f"
     },
-    "Status - Fix Confirmed": {
-      "name": "Status - Fix Confirmed",
+    "Fix Confirmed": {
+      "name": "Fix Confirmed",
       "description": "",
       "color": "0E8A16"
     },
-    "Status - In Progress :gear:": {
+    "In Progress :gear:": {
       "name": "In Progress :gear:",
       "color": "C5DEF5"
     },
-    "Status - On Hold": {
-      "name": "Status - On Hold",
-      "description": "",
-      "color": "645460"
-    },
-    "Status - Stale": {
-      "name": "Status - Stale",
+    "Stale": {
+      "name": "Stale",
       "description": "",
       "color": "645460"
     },
@@ -361,7 +361,7 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-          "Status - Abandoned": {
+          "Abandoned": {
             "requires": 1,
             "conditions": [
               {
@@ -370,7 +370,7 @@
               }
             ]
           },
-          "Status - Stale": {
+          "Stale": {
             "requires": 1,
             "conditions": [
               {
@@ -442,7 +442,7 @@
               }
             ]
           },
-          "Status - Accepted :heavy_check_mark:": {
+          "Accepted :heavy_check_mark:": {
             "requires": 1,
             "conditions": [
               {
@@ -452,7 +452,7 @@
               }
             ]
           },
-          "Status - In Progress :gear:": {
+          "In Progress :gear:": {
             "requires": 1,
             "conditions": [
               {
@@ -469,9 +469,8 @@
                 "required": 1
               }
             ]
-
           },
-          "Status - Awaiting Review :eyes:": {
+          "Awaiting Review :eyes:": {
             "requires": 1,
             "conditions": [
               {
@@ -480,7 +479,7 @@
               }
             ]
           },
-          "Status - Changes Requested :diamonds:": {
+          "Changes Requested :diamonds:": {
             "requires": 1,
             "conditions": [
               {
@@ -512,7 +511,7 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "Status - Fix Confirmed": {
+          "Fix Confirmed": {
             "requires": 5,
             "conditions": [
 
@@ -535,6 +534,48 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has been retested/im"
+              }
+            ]
+          },
+          "In Progress :gear:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "$and",
+                "pattern": [
+                  {
+                    "requires": 1,
+                    "conditions": [
+                      {
+                        "type": "hasLabel",
+                        "label": "Fix Confirmed",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  {
+                    "requires": 1,
+                    "conditions": [
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] fix has been proposed/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] has been fixed for release build/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] has been fixed for development build/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] has been retested/im"
+                      }
+
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -758,6 +799,116 @@
               },{
                 "type": "hasLabel",
                 "label": "Risk - None",
+                "value": ""
+              }
+            ]
+          },
+          "Cost - XXS" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*XXS/i"
+              }
+            ]
+          },
+          "Cost - XS" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*XS/i"
+              }
+            ]
+          },
+          "Cost - S" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*S/i"
+              }
+            ]
+          },
+          "Cost - M" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*M/i"
+              }
+            ]
+          },
+          "Cost - L" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*L/i"
+              }
+            ]
+          },
+          "Cost - XL" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*XL/i"
+              }
+            ]
+          },
+          "Cost - XXL" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*XXL/i"
+              }
+            ]
+          },
+          "Cost - XXL" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*XXL/i"
+              }
+            ]
+          },
+          "Cost - TBD :question:": {
+            "requires": 8,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Cost[^#\\n\\r]*/i"
+              },
+              {
+                "type": "hasLabel",
+                "label": "Cost - XXS",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "label": "Cost - XS",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "label": "Cost - S",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "label": "Cost - M",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "label": "Cost - L",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "label": "Cost - XL",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "label": "Cost - XXL",
                 "value": ""
               }
             ]
