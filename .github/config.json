@@ -745,8 +745,9 @@
               {
                 "type": "$only",
                 "requires": 0,
-                "pattern": [
-                  {
+                "pattern": [{
+                  "requires": 1,
+                  "conditions": [{
 
                     "type": "hasLabel",
                     "label": "Risk - High",
@@ -763,7 +764,7 @@
                     "type": "hasLabel",
                     "label": "Risk - None",
                     "value": "false"
-                  }
+                  }]}
                ]
               }
             ]
