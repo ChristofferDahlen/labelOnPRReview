@@ -1,33 +1,38 @@
 {
   "labels": {
-    "Cost-Large": {
-      "name": "Cost - Large",
-      "description": "Approximately 4–12 months of work.",
+    "Cost - L": {
+      "name": "Cost - L",
+      "description": "Approximately 3 - 5 Months of work.",
       "color": "645460"
     },
     "Cost-Medium": {
-      "name": "Cost - Medium",
-      "description": "Approximately 1–3 months of work.",
+      "name": "Cost - M",
+      "description": "Approximately 1 - 2 Months of work.",
       "color": "645460"
     },
-    "Cost-Small": {
-      "name": "Cost - Small",
-      "description": "Approximately 10–30 days of work.",
+    "Cost - S": {
+      "name": "Cost - S",
+      "description": "Approximately 11 - 30 days of work.",
       "color": "645460"
     },
-    "Cost-XLarge": {
-      "name": "Cost - XLarge",
-      "description": "Approximately 12–24 months of work.",
+    "Cost - XL": {
+      "name": "Cost - XL",
+      "description": "Approximately 6 - 12 Months of work.",
       "color": "645460"
     },
-    "Cost-XSmall": {
-      "name": "Cost - XSmall",
-      "description": "Approximately 0-10 days of work.",
+    "Cost - XXS": {
+      "name": "Cost - XXS",
+      "description": "Approximately 0 - 5 days of work.",
       "color": "645460"
     },
-    "Cost-XXLarge": {
-      "name": "Cost - XXLarge",
-      "description": "Approximately 24+ months of work.",
+    "Cost - XS": {
+      "name": "Cost - XS",
+      "description": "Approximately 6 - 10 days of work.",
+      "color": "645460"
+    },
+    "Cost - XXL": {
+      "name": "Cost - XXL",
+      "description": "Approximately 12+ months of work.",
       "color": "645460"
     },
     "Customer - A2A": {
@@ -67,52 +72,48 @@
       "name": "M | Blocked :no_entry_sign:",
       "color": "F9D0C4"
     },
-    "M | Blocking :exclamation:": {
+    "[M] Blocking :exclamation:": {
       "name": "Blocking :exclamation:",
       "description": "This issue is blocking work",
       "color": "b60205"
     },
-    "M | Cannot Reproduce": {
+    "[M] Cannot Reproduce": {
       "name": "M | Cannot Reproduce",
       "description": "This issue isn't reproducible",
       "color": "D93F0B"
     },
-    "M | Duplicate :grey_exclamation:": {
+    "[M] Duplicate :grey_exclamation:": {
       "name": "Duplicate :grey_exclamation:",
       "color": "fef2c0"
     },
-    "M | Help Wanted :hand:": {
+    "[M] Help Wanted :hand:": {
       "name": "M | Help Wanted :hand:",
       "color": "0e8a16"
     },
-    "M | Resolution - Fixed": {
+    "[M] Resolution - Fixed": {
       "name": "M | Resolution - Fixed",
       "description": "This issue has been fixed",
       "color": "A9E98F"
     },
-    "M | Resolution - Rejected - Wrong Input": {
+    "[M] Resolution - Rejected - Wrong Input": {
       "name": "M | Resolution - Rejected - Input Data Problem",
       "description": "This issue has been rejected due to it being a issue with wrong input",
       "color": "A9E98F"
     },
-    "M | Resolution - Rejected": {
+    "[M] Resolution - Rejected": {
       "name": "M | Resolution - Rejected",
       "description": "This issue has been rejected",
       "color": "A9E98F"
     },
-    "M | Waiting For Test :clock130::test_tube:": {
-      "name": "M | Waiting For Test :clock130::test_tube:",
-      "color": "289bfb"
-    },
-    "M | Waiting On Author :zzz:": {
+    "[M] Waiting On Author :zzz:": {
       "name": "Waiting On Author :zzz:",
       "color": "1b4623"
     },
-    "M | Waiting On Future :calendar:": {
+    "[M] Waiting On Future :calendar:": {
       "name": "Waiting On Future :calendar:",
       "color": "C5DEF5"
     },
-    "M |Urgent :bangbang:": {
+    "[M] Urgent :bangbang:": {
       "name": "M | Urgent :bangbang:",
       "color": "ce4727"
     },
@@ -196,26 +197,32 @@
     },
     "Size - L": {
       "name": "Size - L",
+      "description": "Changes between 100 - 500 lines",
       "color": "0eb7c7"
     },
     "Size - M": {
       "name": "Size - M",
+      "description": "Changes between 40 - 100 lines",
       "color": "0eb7c7"
     },
     "Size - S": {
       "name": "Size - S",
+      "description": "Changes between 10 - 30 lines",
       "color": "0eb7c7"
     },
     "Size - XL": {
       "name": "Size - XL",
+      "description": "Changes between 500 - 1000 lines",
       "color": "0eb7c7"
     },
     "Size - XS": {
       "name": "Size - XS",
+      "description": "Changes between 0 - 10 lines",
       "color": "0eb7c7"
     },
     "Size - XXL": {
       "name": "Size - XXL",
+      "description": "Changes between 1000+ lines",
       "color": "0eb7c7"
     },
     "Status - Abandoned": {
