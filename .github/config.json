@@ -981,51 +981,59 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.5[\n,]/i"
+                "pattern": "/# Version[^#\\n\\r]*v1\\.5[\\n\\s,]/i"
               },
               {
                 "type": "descriptionMatches",
                 "pattern": "/# Version[^#\\n\\r]*v1\\.5\\.0/i"
               }
-            ]
-          },
+            ]          },
           "v1.6.0" : {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.6[\n,]/i"
+                "pattern": "/# Version[^#\\n\\r]*v1\\.6[\\n\\s,]/i"
               },
               {
                 "type": "descriptionMatches",
                 "pattern": "/# Version[^#\\n\\r]*v1\\.6\\.0/i"
               }
-            ]
-          },
+            ]          },
           "v1.7.0" : {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
+                "pattern": "/# Version[^#\\n\\r]*v1\\.7[\\n\\s,]/i"
+              },
+              {
+                "type": "descriptionMatches",
                 "pattern": "/# Version[^#\\n\\r]*v1\\.7\\.0/i"
               }
-            ]
-          },
+            ]          },
           "v1.8.0" : {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
+                "pattern": "/# Version[^#\\n\\r]*v1\\.8[\\n\\s,]/i"
+              },
+              {
+                "type": "descriptionMatches",
                 "pattern": "/# Version[^#\\n\\r]*v1\\.8\\.0/i"
               }
-            ]
-          },
+            ]          },
           "v1.9.0" : {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version:[^#\\n\\r]*v1\\.9\\.0/i"
+                "pattern": "/# Version[^#\\n\\r]*v1\\.9[\\n\\s,]/i"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Version[^#\\n\\r]*v1\\.9\\.0/i"
               }
             ]
           }
