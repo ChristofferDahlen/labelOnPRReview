@@ -726,6 +726,15 @@
               }
             ]
           },
+          "Risk - None" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# Risk[^#\\n\\r]*None/i"
+              }
+            ]
+          },
           "Risk - TBD :question:": {
             "requires": 2,
             "conditions": [
