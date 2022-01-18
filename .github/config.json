@@ -747,26 +747,26 @@
                 "pattern": [
                   {
                     "requires": 1,
-                    "conditions": [{
+                    "conditions": [
+                      {
                       "type": "hasLabel",
                       "label": "Risk - High",
                       "value": "false"
-                    }]
-                  },
-                  {
-                    "requires": 1,
-                    "conditions": [{
+                      }, {
                       "type": "hasLabel",
-                      "label": "Risk - Low",
+                      "label": "Risk - Medium",
                       "value": "false"
-                    }]
-                  },                  {
-                    "requires": 1,
-                    "conditions": [{
-                      "type": "hasLabel",
-                      "label": "Risk - High",
-                      "value": "false"
-                    }]
+                    },
+                      {
+                        "type": "hasLabel",
+                        "label": "Risk - Low",
+                        "value": "false"
+                      },
+                      {
+                        "type": "hasLabel",
+                        "label": "Risk - None",
+                        "value": "false"
+                      }]
                   }
                 ]
               }
