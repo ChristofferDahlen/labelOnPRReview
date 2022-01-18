@@ -8,64 +8,21 @@
       "name": "Investigation :mag:",
       "color": "D107F7"
     },
-    "In Progress :gear:": {
+    "Status - In Progress :gear:": {
       "name": "In Progress :gear:",
       "color": "C5DEF5"
     },
-    "Accepted :heavy_check_mark:": {
+    "Status - Accepted :heavy_check_mark:": {
       "name": "Accepted :heavy_check_mark:",
       "color": "072dbc"
     },
-    "Awaiting Review :eyes:": {
+    "Status - Awaiting Review :eyes:": {
       "name": "Awaiting Review :eyes:",
       "color": "FBCA04"
     },
-    "Changes Requested :diamonds:": {
+    "Status - Changes Requested :diamonds:": {
       "name": "Changes Requested :diamonds:",
       "color": "f4ff1f"
-    },
-    "Blocked :no_entry_sign:": {
-      "name": "Blocked :no_entry_sign:",
-      "color": "F9D0C4"
-    },
-    "Blocking :exclamation:": {
-      "name": "Blocking :exclamation:",
-      "description": "This issue is blocking work",
-      "color": "b60205"
-    },
-    "Cannot Reproduce": {
-      "name": "Cannot Reproduce",
-      "description": "This issue isn't reproducible",
-      "color": "D93F0B"
-    },
-    "Waiting For Test :clock130::test_tube:": {
-      "name": "Waiting For Test :clock130::test_tube:",
-      "color": "289bfb"
-    },
-    "Waiting On Author :zzz:": {
-      "name": "Waiting On Author :zzz:",
-      "color": "1b4623"
-    },
-    "Waiting On Future :calendar:": {
-      "name": "Waiting On Future :calendar:",
-      "color": "C5DEF5"
-    },
-    "Duplicate :grey_exclamation:": {
-      "name": "Duplicate :grey_exclamation:",
-      "color": "fef2c0"
-    },
-    "Help Wanted :hand:": {
-      "name": "Help Wanted :hand:",
-      "color": "0e8a16"
-    },
-    "Support Issue": {
-      "name": "Support Issue",
-      "description": "This issue comes from support",
-      "color": "fbca04"
-    },
-    "Urgent :bangbang:": {
-      "name": "Urgent :bangbang:",
-      "color": "ce4727"
     },
     "Status - Abandoned": {
       "name": "Status - Abandoned",
@@ -86,6 +43,49 @@
       "name": "Status - Fix Confirmed",
       "description": "",
       "color": "0E8A16"
+    },
+    "M | Blocked :no_entry_sign:": {
+      "name": "M | Blocked :no_entry_sign:",
+      "color": "F9D0C4"
+    },
+    "M | Blocking :exclamation:": {
+      "name": "Blocking :exclamation:",
+      "description": "This issue is blocking work",
+      "color": "b60205"
+    },
+    "M | Cannot Reproduce": {
+      "name": "M | Cannot Reproduce",
+      "description": "This issue isn't reproducible",
+      "color": "D93F0B"
+    },
+    "M | Waiting For Test :clock130::test_tube:": {
+      "name": "M | Waiting For Test :clock130::test_tube:",
+      "color": "289bfb"
+    },
+    "M | Waiting On Author :zzz:": {
+      "name": "Waiting On Author :zzz:",
+      "color": "1b4623"
+    },
+    "M | Waiting On Future :calendar:": {
+      "name": "Waiting On Future :calendar:",
+      "color": "C5DEF5"
+    },
+    "M | Duplicate :grey_exclamation:": {
+      "name": "Duplicate :grey_exclamation:",
+      "color": "fef2c0"
+    },
+    "M | Help Wanted :hand:": {
+      "name": "M | Help Wanted :hand:",
+      "color": "0e8a16"
+    },
+    "Support Issue": {
+      "name": "Support Issue",
+      "description": "This issue comes from support",
+      "color": "fbca04"
+    },
+    "M |Urgent :bangbang:": {
+      "name": "M | Urgent :bangbang:",
+      "color": "ce4727"
     },
     "Cost-Large": {
       "name": "Cost - Large",
@@ -141,6 +141,11 @@
       "name": "Customer - A2A",
       "color": "c889d7"
     },
+    "Undocumented :pencil2:": {
+      "name": "Undocumented :pencil2:",
+      "description": "This needs to be documented!",
+      "color": "0052cc"
+    },
     "Documented :scroll:": {
       "name": "Documented :scroll:",
       "description": "Has been documented!",
@@ -176,6 +181,11 @@
     "Type - RFC": {
       "name": "Type - RFC",
       "description": "Request For Comment",
+      "color": "ecb39f"
+    },
+    "Type - Other": {
+      "name": "Type - Other",
+      "description": "A miscellaneous issue",
       "color": "ecb39f"
     },
     "Priority - High": {
@@ -241,18 +251,18 @@
       "name": "Risk - None",
       "color": "006b75"
     },
-    "Resolution - Rejected - Wrong Input": {
-      "name": "Resolution - Rejected - Input Data Problem",
+    "M | Resolution - Rejected - Wrong Input": {
+      "name": "M | Resolution - Rejected - Input Data Problem",
       "description" : "This issue has been rejected due to it being a issue with wrong input",
       "color": "A9E98F"
     },
-    "Resolution - Rejected": {
-      "name": "Resolution - Rejected",
+    "M | Resolution - Rejected": {
+      "name": "M | Resolution - Rejected",
       "description" : "This issue has been rejected",
       "color": "A9E98F"
     },
-    "Resolution - Fixed":{
-      "name": "Resolution - Fixed",
+    "M | Resolution - Fixed":{
+      "name": "M | Resolution - Fixed",
       "description" : "This issue has been fixed",
       "color": "A9E98F"
     },
