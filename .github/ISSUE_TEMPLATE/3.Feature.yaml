@@ -1,4 +1,4 @@
-name: Feature
+name: Feature [Form]
 description: A new feature to be added to a product
 title: "[Feature]: "
 labels: ["Type - Feature", "Triage"]
