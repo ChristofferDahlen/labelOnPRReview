@@ -751,21 +751,21 @@
                       {
                       "type": "hasLabel",
                       "label": "Risk - High",
-                      "value": "false"
+                      "value": "true"
                       }, {
                       "type": "hasLabel",
                       "label": "Risk - Medium",
-                      "value": "false"
+                      "value": "true"
                     },
                       {
                         "type": "hasLabel",
                         "label": "Risk - Low",
-                        "value": "false"
+                        "value": "true"
                       },
                       {
                         "type": "hasLabel",
                         "label": "Risk - None",
-                        "value": "false"
+                        "value": "true"
                       }]
                   }
                 ]
