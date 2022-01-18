@@ -947,7 +947,7 @@
             ]
           },
           "Priority - TBD :question:": {
-            "requires": 5,
+            "requires": 4,
             "conditions": [
               {
                 "type": "descriptionMatches",
