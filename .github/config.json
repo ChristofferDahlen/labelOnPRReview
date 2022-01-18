@@ -808,7 +808,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*XXS/i"
+                "pattern": "/# Time Estimation:[^#\\n\\r]*XXS/i"
               }
             ]
           },
@@ -817,7 +817,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*XS/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*XS/i"
               }
             ]
           },
@@ -826,7 +826,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*S/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*S/i"
               }
             ]
           },
@@ -835,7 +835,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*M/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*M/i"
               }
             ]
           },
@@ -844,7 +844,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*L/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*L/i"
               }
             ]
           },
@@ -853,7 +853,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*XL/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*XL/i"
               }
             ]
           },
@@ -862,7 +862,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*XXL/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*XXL/i"
               }
             ]
           },
@@ -871,7 +871,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*XXL/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*XXL/i"
               }
             ]
           },
@@ -880,7 +880,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Cost[^#\\n\\r]*/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]*/i"
               },
               {
                 "type": "hasLabel",
