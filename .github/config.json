@@ -1,92 +1,5 @@
 {
   "labels": {
-    "Triage": {
-      "name": "Triage",
-      "color": "0e8a16"
-    },
-    "Investigation :mag:": {
-      "name": "Investigation :mag:",
-      "color": "D107F7"
-    },
-    "Status - In Progress :gear:": {
-      "name": "In Progress :gear:",
-      "color": "C5DEF5"
-    },
-    "Status - Accepted :heavy_check_mark:": {
-      "name": "Accepted :heavy_check_mark:",
-      "color": "072dbc"
-    },
-    "Status - Awaiting Review :eyes:": {
-      "name": "Awaiting Review :eyes:",
-      "color": "FBCA04"
-    },
-    "Status - Changes Requested :diamonds:": {
-      "name": "Changes Requested :diamonds:",
-      "color": "f4ff1f"
-    },
-    "Status - Abandoned": {
-      "name": "Status - Abandoned",
-      "description": "",
-      "color": "645460"
-    },
-    "Status - Stale": {
-      "name": "Status - Stale",
-      "description": "",
-      "color": "645460"
-    },
-    "Status - On Hold": {
-      "name": "Status - On Hold",
-      "description": "",
-      "color": "645460"
-    },
-    "Status - Fix Confirmed": {
-      "name": "Status - Fix Confirmed",
-      "description": "",
-      "color": "0E8A16"
-    },
-    "M | Blocked :no_entry_sign:": {
-      "name": "M | Blocked :no_entry_sign:",
-      "color": "F9D0C4"
-    },
-    "M | Blocking :exclamation:": {
-      "name": "Blocking :exclamation:",
-      "description": "This issue is blocking work",
-      "color": "b60205"
-    },
-    "M | Cannot Reproduce": {
-      "name": "M | Cannot Reproduce",
-      "description": "This issue isn't reproducible",
-      "color": "D93F0B"
-    },
-    "M | Waiting For Test :clock130::test_tube:": {
-      "name": "M | Waiting For Test :clock130::test_tube:",
-      "color": "289bfb"
-    },
-    "M | Waiting On Author :zzz:": {
-      "name": "Waiting On Author :zzz:",
-      "color": "1b4623"
-    },
-    "M | Waiting On Future :calendar:": {
-      "name": "Waiting On Future :calendar:",
-      "color": "C5DEF5"
-    },
-    "M | Duplicate :grey_exclamation:": {
-      "name": "Duplicate :grey_exclamation:",
-      "color": "fef2c0"
-    },
-    "M | Help Wanted :hand:": {
-      "name": "M | Help Wanted :hand:",
-      "color": "0e8a16"
-    },
-    "Support Issue": {
-      "name": "Support Issue",
-      "description": "This issue comes from support",
-      "color": "fbca04"
-    },
-    "M |Urgent :bangbang:": {
-      "name": "M | Urgent :bangbang:",
-      "color": "ce4727"
-    },
     "Cost-Large": {
       "name": "Cost - Large",
       "description": "Approximately 4–12 months of work.",
@@ -117,12 +30,20 @@
       "description": "Approximately 24+ months of work.",
       "color": "645460"
     },
-    "Customer - Enel": {
-      "name": "Customer - Enel",
+    "Customer - A2A": {
+      "name": "Customer - A2A",
       "color": "c889d7"
     },
     "Customer - EPC": {
       "name": "Customer - EPC",
+      "color": "c889d7"
+    },
+    "Customer - Enel": {
+      "name": "Customer - Enel",
+      "color": "c889d7"
+    },
+    "Customer - Iberdrola": {
+      "name": "Customer - Iberdrola",
       "color": "c889d7"
     },
     "Customer - Luminus": {
@@ -133,60 +54,67 @@
       "name": "Customer - Uniper",
       "color": "c889d7"
     },
-    "Customer - Iberdrola": {
-      "name": "Customer - Iberdrola",
-      "color": "c889d7"
-    },
-    "Customer - A2A": {
-      "name": "Customer - A2A",
-      "color": "c889d7"
-    },
-    "Undocumented :pencil2:": {
-      "name": "Undocumented :pencil2:",
-      "description": "This needs to be documented!",
-      "color": "0052cc"
-    },
     "Documented :scroll:": {
       "name": "Documented :scroll:",
       "description": "Has been documented!",
       "color": "0052cc"
     },
-    "Type - Bug": {
-      "name": "Type - Bug :lady_beetle:",
+    "Investigation :mag:": {
+      "name": "Investigation :mag:",
+      "color": "D107F7"
+    },
+    "M | Blocked :no_entry_sign:": {
+      "name": "M | Blocked :no_entry_sign:",
+      "color": "F9D0C4"
+    },
+    "M | Blocking :exclamation:": {
+      "name": "Blocking :exclamation:",
+      "description": "This issue is blocking work",
       "color": "b60205"
     },
-    "Type - Cleanup :broom:": {
-      "name": "Type - Cleanup :broom:",
-      "description": "Somebody needs to clean",
-      "color": "bfdadc"
+    "M | Cannot Reproduce": {
+      "name": "M | Cannot Reproduce",
+      "description": "This issue isn't reproducible",
+      "color": "D93F0B"
     },
-    "Type - Documentation :black_nib:": {
-      "name": "Type - Documentation :black_nib:",
-      "description": "Time to document!",
-      "color": "0052cc"
+    "M | Duplicate :grey_exclamation:": {
+      "name": "Duplicate :grey_exclamation:",
+      "color": "fef2c0"
     },
-    "Type - Enhancement :sparkler:": {
-      "name": "Type - Enhancement :sparkler:",
-      "description": "Make something better",
-      "color": "9032f7"
+    "M | Help Wanted :hand:": {
+      "name": "M | Help Wanted :hand:",
+      "color": "0e8a16"
     },
-    "Type - Feature": {
-      "name": "Type - Feature",
-      "color": "8feb7b"
+    "M | Resolution - Fixed": {
+      "name": "M | Resolution - Fixed",
+      "description": "This issue has been fixed",
+      "color": "A9E98F"
     },
-    "Type - Bugfix": {
-      "name": "Type - Bugfix",
-      "color": "9E0717"
+    "M | Resolution - Rejected - Wrong Input": {
+      "name": "M | Resolution - Rejected - Input Data Problem",
+      "description": "This issue has been rejected due to it being a issue with wrong input",
+      "color": "A9E98F"
     },
-    "Type - RFC": {
-      "name": "Type - RFC",
-      "description": "Request For Comment",
-      "color": "ecb39f"
+    "M | Resolution - Rejected": {
+      "name": "M | Resolution - Rejected",
+      "description": "This issue has been rejected",
+      "color": "A9E98F"
     },
-    "Type - Other": {
-      "name": "Type - Other",
-      "description": "A miscellaneous issue",
-      "color": "ecb39f"
+    "M | Waiting For Test :clock130::test_tube:": {
+      "name": "M | Waiting For Test :clock130::test_tube:",
+      "color": "289bfb"
+    },
+    "M | Waiting On Author :zzz:": {
+      "name": "Waiting On Author :zzz:",
+      "color": "1b4623"
+    },
+    "M | Waiting On Future :calendar:": {
+      "name": "Waiting On Future :calendar:",
+      "color": "C5DEF5"
+    },
+    "M |Urgent :bangbang:": {
+      "name": "M | Urgent :bangbang:",
+      "color": "ce4727"
     },
     "Priority - High": {
       "name": "Priority - High",
@@ -222,6 +150,10 @@
       "description": "Powel Optimal Gateway",
       "color": "5319e7"
     },
+    "Product - POH": {
+      "name": "Product - POH",
+      "color": "5319e7"
+    },
     "Product - POM": {
       "name": "Product - POM",
       "description": "Powel Optimal Midterm",
@@ -229,10 +161,6 @@
     },
     "Product - POMA": {
       "name": "Product - POMA",
-      "color": "5319e7"
-    },
-    "Product - POH": {
-      "name": "Product - POH",
       "color": "5319e7"
     },
     "Risk - High": {
@@ -250,21 +178,6 @@
     "Risk - None": {
       "name": "Risk - None",
       "color": "006b75"
-    },
-    "M | Resolution - Rejected - Wrong Input": {
-      "name": "M | Resolution - Rejected - Input Data Problem",
-      "description" : "This issue has been rejected due to it being a issue with wrong input",
-      "color": "A9E98F"
-    },
-    "M | Resolution - Rejected": {
-      "name": "M | Resolution - Rejected",
-      "description" : "This issue has been rejected",
-      "color": "A9E98F"
-    },
-    "M | Resolution - Fixed":{
-      "name": "M | Resolution - Fixed",
-      "description" : "This issue has been fixed",
-      "color": "A9E98F"
     },
     "Severity - Critical :boom:": {
       "name": "Severity - Critical :boom:",
@@ -305,6 +218,98 @@
       "name": "Size - XXL",
       "color": "0eb7c7"
     },
+    "Status - Abandoned": {
+      "name": "Status - Abandoned",
+      "description": "",
+      "color": "645460"
+    },
+    "Status - Accepted :heavy_check_mark:": {
+      "name": "Accepted :heavy_check_mark:",
+      "color": "072dbc"
+    },
+    "Status - Awaiting Review :eyes:": {
+      "name": "Awaiting Review :eyes:",
+      "color": "FBCA04"
+    },
+    "Status - Changes Requested :diamonds:": {
+      "name": "Changes Requested :diamonds:",
+      "color": "f4ff1f"
+    },
+    "Status - Fix Confirmed": {
+      "name": "Status - Fix Confirmed",
+      "description": "",
+      "color": "0E8A16"
+    },
+    "Status - In Progress :gear:": {
+      "name": "In Progress :gear:",
+      "color": "C5DEF5"
+    },
+    "Status - On Hold": {
+      "name": "Status - On Hold",
+      "description": "",
+      "color": "645460"
+    },
+    "Status - Stale": {
+      "name": "Status - Stale",
+      "description": "",
+      "color": "645460"
+    },
+    "Support Issue": {
+      "name": "Support Issue",
+      "description": "This issue comes from support",
+      "color": "fbca04"
+    },
+    "Triage": {
+      "name": "Triage",
+      "color": "0e8a16"
+    },
+    "Type - Bug": {
+      "name": "Type - Bug :lady_beetle:",
+      "color": "b60205"
+    },
+    "Type - Bugfix": {
+      "name": "Type - Bugfix",
+      "color": "9E0717"
+    },
+    "Type - Cleanup :broom:": {
+      "name": "Type - Cleanup :broom:",
+      "description": "Somebody needs to clean",
+      "color": "bfdadc"
+    },
+    "Type - Documentation :black_nib:": {
+      "name": "Type - Documentation :black_nib:",
+      "description": "Time to document!",
+      "color": "0052cc"
+    },
+    "Type - Enhancement :sparkler:": {
+      "name": "Type - Enhancement :sparkler:",
+      "description": "Make something better",
+      "color": "9032f7"
+    },
+    "Type - Feature": {
+      "name": "Type - Feature",
+      "color": "8feb7b"
+    },
+    "Type - Other": {
+      "name": "Type - Other",
+      "description": "A miscellaneous issue",
+      "color": "ecb39f"
+    },
+    "Type - RFC": {
+      "name": "Type - RFC",
+      "description": "Request For Comment",
+      "color": "ecb39f"
+    },
+    "Undocumented :pencil2:": {
+      "name": "Undocumented :pencil2:",
+      "description": "This needs to be documented!",
+      "color": "0052cc"
+    },
+    "VersionOne": {
+      "name": "VersionOne",
+      "description": "This comes from version one",
+      "color": "ea02b6"
+    },
     "v1.5.0": {
       "name": "v1.5.0",
       "description": "Version 1.5.0",
@@ -329,11 +334,6 @@
       "name": "v1.9.0",
       "description": "Version 1.9.0",
       "color": "5978d8"
-    },
-    "VersionOne": {
-      "name": "VersionOne",
-      "description": "This comes from version one",
-      "color": "ea02b6"
     }
   },
   "runners": [
