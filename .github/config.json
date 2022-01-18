@@ -743,7 +743,7 @@
                 "pattern": "/# Risk[^#\\n\\r]*/i"
               },
               {
-                "type": "$and",
+                "type": "$only",
                 "requires": 0,
                 "pattern": [{
                   "requires": 1,
