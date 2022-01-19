@@ -264,6 +264,16 @@
       "description": "",
       "color": "0E8A16"
     },
+    "Enhancement Complete": {
+      "name": "Feature Complete",
+      "description": "",
+      "color": "0E8A16"
+    },
+    "Feature Complete": {
+      "name": "Feature Complete",
+      "description": "",
+      "color": "0E8A16"
+    },
     "In Progress :gear:": {
       "name": "In Progress :gear:",
       "color": "C5DEF5"
@@ -282,7 +292,7 @@
       "name": "Triage",
       "color": "0e8a16"
     },
-    "Type - Bug": {
+    "Type - Bug :lady_beetle:": {
       "name": "Type - Bug :lady_beetle:",
       "color": "b60205"
     },
@@ -514,16 +524,134 @@
                 "pattern": "/^feature\\//im"
               }
             ]
+          },
+          "Type - Enhancement :sparkler:" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^Enhanc\\//im"
+              },
+              {
+                "type": "branchMatches",
+                "pattern": "/^Enhancement\\//im"
+              }
+            ]
+          },
+          "Type - Cleanup :broom:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^Cleanup\\//im"
+              }
+            ]
+          },
+          "Type - Documentation :black_nib:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^Doc\\//im"
+              },
+              {
+                "type": "branchMatches",
+                "pattern": "/^Documentation\\//im"
+              }
+            ]
+          },
+          "Type - Other": {
+            "requires": 5,
+            "conditions": [
+              {
+                "type": "hasLabel",
+                "pattern": "Type - Bugfix",
+                "value": ""
+              },
+              {
+                "type": "hasLabel",
+                "pattern": "Type - Feature",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "pattern": "Type - Enhancement :sparkler:",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "pattern": "Type - Cleanup :broom:",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "pattern": "Type - Documentation :black_nib:",
+                "value": ""
+              }
+            ]
           }
         }
       },
       "issue": {
         "ref": "develop",
         "labels": {
-          "Fix Confirmed": {
+          "Enhancement Complete": {
             "requires": 5,
             "conditions": [
-
+              {
+                "type": "hasLabel",
+                "pattern": "Type - Feature",
+                "value": "true"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has enchantment been accepted by/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] solution has been proposed/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been implemented/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been tested/im"
+              }
+            ]
+          },
+          "Feature Complete": {
+            "requires": 5,
+            "conditions": [
+              {
+                "type": "hasLabel",
+                "pattern": "Type - Feature",
+                "value": "true"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has feature been accepted by/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] solution has been proposed/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been implemented/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] has been tested/im"
+              }
+            ]
+          },
+          "Fix Confirmed": {
+            "requires": 6,
+            "conditions": [
+              {
+                "type": "hasLabel",
+                "pattern": "Type - Bug :lady_beetle:",
+                "value": "true"
+              },
               {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has been investigated by/im"
@@ -553,12 +681,17 @@
                 "type": "$and",
                 "pattern": [
                   {
-                    "requires": 1,
+                    "requires": 2,
                     "conditions": [
                       {
                         "type": "hasLabel",
                         "label": "Fix Confirmed",
                         "value": ""
+                      },
+                      {
+                        "type": "hasLabel",
+                        "label": "Type - Bug :lady_beetle:",
+                        "value": "true"
                       }
                     ]
                   },
@@ -580,6 +713,88 @@
                       {
                         "type": "descriptionMatches",
                         "pattern": "/^- \\[x\\] has been retested/im"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "$and",
+                "pattern": [
+                  {
+                    "requires": 2,
+                    "conditions": [
+                      {
+                        "type": "hasLabel",
+                        "label": "Enhancement Complete",
+                        "value": ""
+                      },
+                      {
+                        "type": "hasLabel",
+                        "label": "Type - Enhancement",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "requires": 1,
+                    "conditions": [
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] has enchantment been accepted/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] Solution has been proposed/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] has been implemented/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] has been tested/im"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "$and",
+                "pattern": [
+                  {
+                    "requires": 2,
+                    "conditions": [
+                      {
+                        "type": "hasLabel",
+                        "label": "Feature Complete",
+                        "value": ""
+                      },
+                      {
+                        "type": "hasLabel",
+                        "label": "Type - Feature",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "requires": 1,
+                    "conditions": [
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] Has feature been accepted/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] Solution has been proposed/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] Has been implemented/im"
+                      },
+                      {
+                        "type": "descriptionMatches",
+                        "pattern": "/^- \\[x\\] Has been tested/im"
                       }
 
                     ]
