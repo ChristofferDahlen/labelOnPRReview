@@ -577,7 +577,7 @@
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/# \\[x\\] has enhancement been accepted/im"
+                "pattern": "/^- \\[x\\] has enhancement been accepted/im"
               },
               {
                 "type": "descriptionMatches",
