@@ -1,4 +1,4 @@
-name: Cleanup
+name: Cleanup [Form]
 description: Something need to be cleaned or fixed in the project
 title: "[Cleanup]: "
 labels: ["Type - Cleanup", "Triage"]

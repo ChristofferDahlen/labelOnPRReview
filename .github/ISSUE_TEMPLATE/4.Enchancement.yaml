@@ -1,4 +1,4 @@
-name: Enhancment
+name: Enhancment [Form]
 description: A suggested improvement that makes something simpler but doesn't add to existing functionality
 title: "[Enhancement]: "
 labels: ["Type - Enhancement :sparkler:", "Triage"]
@@ -55,3 +55,13 @@ body:
       placeholder: Any details!
     validations:
       required: false
+  - type: checkboxes
+    id: status
+    attributes:
+      label: Status
+      description: Steps to check of for developers
+      options:
+        - label: Has enhancement been accepted
+        - label: soltuion has been proposed
+        - label: Has been implemented
+        - label: Has been tested

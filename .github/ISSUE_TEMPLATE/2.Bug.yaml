@@ -1,4 +1,4 @@
-name: Bug Report
+name: Bug Report [Form]
 description: This is a bug report
 title: "[Bug]: "
 labels: ["Type - Bug :lady_beetle:", "Triage"]
@@ -80,3 +80,15 @@ body:
       placeholder: Tell us what you see!
     validations:
       required: true
+  - type: checkboxes
+    id: status
+    attributes:
+      label: Status
+      description: Steps to check of for developers
+      options:
+        - label: has been investigated by developer [Replace with @User]
+        - label: fix has been proposed
+        - label: has been fixed for release build
+        - label: has been fixed for development build
+        - label: has been retested
+        - label: Has been documented

@@ -1,7 +1,7 @@
-name: Documentation
+name: Documentation [Form]
 description: Documenation that has to be done
 title: "[Documentation]: "
-labels: ["Type - Documentation :scroll:", "Triage"]
+labels: ["Documentation :black_nib:", "Triage"]
 body:
   - type: dropdown
     id: Product
