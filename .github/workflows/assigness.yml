@@ -1,16 +1,15 @@
 name: AssignReviewers
 on:
   pull_request:
-    types: [assigned, unassigned]
+    types: [review_requested,review_request_removed,assigned,unassigned]
 
 jobs:
   assignee_to_reviewer:
     runs-on: ubuntu-latest
     name: Assignee to Reviewer
     steps:
-      - uses: pullreminders/assignee-to-reviewer-action@v1.0.7
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Auto sync Reviewers with Assignees
+        uses: rubeus90/auto-sync-reviewer-assignee@v1.1
       - uses: actions/checkout@v2
         name: Checkout
       - uses: Resnovas/label-mastermind@2.1.3
