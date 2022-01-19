@@ -575,7 +575,7 @@
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has enchantment been accepted by/im"
+                "pattern": "/^- \\[x\\] has enhancement been accepted by/im"
               },
               {
                 "type": "descriptionMatches",
