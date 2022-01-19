@@ -561,11 +561,29 @@
             ]
           },
           "Type - Other": {
-            "requires": 1,
+            "requires": 5,
             "conditions": [
               {
+                "type": "hasLabel",
+                "pattern": "Type - Bugfix",
+                "value": ""
               },
               {
+                "type": "hasLabel",
+                "pattern": "Type - Feature",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "pattern": "Type - Enhancement :sparkler:",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "pattern": "Type - Cleanup :broom:",
+                "value": ""
+              },{
+                "type": "hasLabel",
+                "pattern": "Type - Documentation :black_nib:",
+                "value": ""
               }
             ]
           }
