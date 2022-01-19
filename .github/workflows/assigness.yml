@@ -10,9 +10,9 @@ jobs:
     steps:
       - name: Auto sync Reviewers with Assignees
         uses: rubeus90/auto-sync-reviewer-assignee@v1.1
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
       - uses: actions/checkout@v2
         name: Checkout
       - uses: Resnovas/label-mastermind@2.1.3
         name: Labeling
-        with:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
