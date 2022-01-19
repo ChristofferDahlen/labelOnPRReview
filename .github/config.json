@@ -570,7 +570,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/### Process\\s*-\\s*Enchantment/im"
+                "pattern": "/### Process\\s*-\\s*Enhancement/im"
               },
               {
                 "type": "descriptionMatches",
