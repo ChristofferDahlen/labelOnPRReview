@@ -648,135 +648,6 @@
               }
             ]
           },
-          "In Progress :gear:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "$and",
-                "pattern": [
-                  {
-                    "requires": 2,
-                    "conditions": [
-                      {
-                        "type": "hasLabel",
-                        "label": "Fix Confirmed",
-                        "value": ""
-                      },
-                      {
-                        "type": "hasLabel",
-                        "label": "Type - Bug :lady_beetle:",
-                        "value": "true"
-                      }
-                    ]
-                  },
-                  {
-                    "requires": 1,
-                    "conditions": [
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] fix has been proposed/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] has been fixed for release build/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] has been fixed for development build/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] has been retested/im"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "$and",
-                "pattern": [
-                  {
-                    "requires": 2,
-                    "conditions": [
-                      {
-                        "type": "hasLabel",
-                        "label": "Enhancement Complete",
-                        "value": ""
-                      },
-                      {
-                        "type": "hasLabel",
-                        "label": "Type - Enhancement",
-                        "value": "true"
-                      }
-                    ]
-                  },
-                  {
-                    "requires": 1,
-                    "conditions": [
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] has enchantment been accepted/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] Solution has been proposed/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] has been implemented/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] has been tested/im"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "$and",
-                "pattern": [
-                  {
-                    "requires": 2,
-                    "conditions": [
-                      {
-                        "type": "hasLabel",
-                        "label": "Feature Complete",
-                        "value": ""
-                      },
-                      {
-                        "type": "hasLabel",
-                        "label": "Type - Feature",
-                        "value": "true"
-                      }
-                    ]
-                  },
-                  {
-                    "requires": 1,
-                    "conditions": [
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] Has feature been accepted/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] Solution has been proposed/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] Has been implemented/im"
-                      },
-                      {
-                        "type": "descriptionMatches",
-                        "pattern": "/^- \\[x\\] Has been tested/im"
-                      }
-
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           "Documented :scroll:": {
             "requires": 1,
             "conditions": [
@@ -1069,7 +940,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*/i"
+                "pattern": "/# Time Estimation[^#\\n\\r]TBD/i"
               },
               {
                 "type": "hasLabel",
@@ -1134,7 +1005,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Priority[^#\\n\\r]*/i"
+                "pattern": "/# Priority[^#\\n\\r]TBD/i"
               },{
                 "type": "hasLabel",
                 "label": "Priority - High",
