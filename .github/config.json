@@ -10,32 +10,32 @@
       "description": "Approximately 1 - 2 Months of work.",
       "color": "645460"
     },
-    "Cost - S": {
+    "[M] Cost - S": {
       "name": "Cost - S",
       "description": "Approximately 11 - 30 days of work.",
       "color": "645460"
     },
-    "Cost - XL": {
+    "[M] Cost - XL": {
       "name": "Cost - XL",
       "description": "Approximately 6 - 12 Months of work.",
       "color": "645460"
     },
-    "Cost - XXS": {
+    "[M] Cost - XXS": {
       "name": "Cost - XXS",
       "description": "Approximately 0 - 5 days of work.",
       "color": "645460"
     },
-    "Cost - XS": {
+    "[M] Cost - XS": {
       "name": "Cost - XS",
       "description": "Approximately 6 - 10 days of work.",
       "color": "645460"
     },
-    "Cost - XXL": {
+    "[M] Cost - XXL": {
       "name": "Cost - XXL",
       "description": "Approximately 12+ months of work.",
       "color": "645460"
     },
-    "Cost - TBD :question:": {
+    "[M] Cost - TBD :question:": {
       "name": "Cost - TBD :question:",
       "color": "645460"
     },
@@ -130,21 +130,20 @@
       "description": "",
       "color": "645460"
     },
-    "Priority - High": {
-      "name": "Priority - High",
-      "description": "This Issue/PR has high priority",
+    "[M] Priority - High": {
+      "name": "[M] Priority - High",
       "color": "fef2c0"
     },
-    "Priority - Low": {
-      "name": "Priority - Low",
+    "[M] Priority - Low": {
+      "name": "[M] Priority - Low",
       "color": "fef2c0"
     },
-    "Priority - Medium": {
-      "name": "Priority - Medium",
+    "[M] Priority - Medium": {
+      "name": "[M] Priority - Medium",
       "color": "fef2c0"
     },
-    "Priority - TBD :question:": {
-      "name": "Priority - TBD :question:",
+    "[M] Priority - TBD :question:": {
+      "name": "[M] Priority - TBD :question:",
       "color": "fef2c0"
     },
     "Product - Connecting Prodrisk": {
@@ -177,24 +176,28 @@
       "name": "Product - POMA",
       "color": "5319e7"
     },
-    "Risk - High": {
-      "name": "Risk - High",
+    "[M] Risk - High": {
+      "name": "[M] Risk - High",
+      "description": "This change will likely break previous functionality",
       "color": "b60205"
     },
-    "Risk - Low": {
-      "name": "Risk - Low",
+    "[M] Risk - Low": {
+      "name": "[M] Risk - Low",
+      "description": "This change will probably not break previous functionality",
       "color": "006b75"
     },
-    "Risk - Medium": {
-      "name": "Risk - Medium",
+    "[M] Risk - Medium": {
+      "name": "[M] Risk - Medium",
+      "description": "This change could break previous functionality",
       "color": "1d76db"
     },
-    "Risk - None": {
-      "name": "Risk - None",
+    "[M] Risk - None": {
+      "name": "[M] Risk - None",
+      "description": "This change will not break previous functionality",
       "color": "006b75"
     },
-    "Risk - TBD :question:": {
-      "name": "Risk - TBD :question:",
+    "[M] Risk - TBD :question:": {
+      "name": "[M] Risk - TBD :question:",
       "color": "006b75"
     },
     "Severity - Critical :boom:": {
@@ -214,32 +217,32 @@
     },
     "Size - L": {
       "name": "Size - L",
-      "description": "Changes between 100 - 500 lines",
+      "description": "PR: Changes between 100 - 500 lines",
       "color": "0eb7c7"
     },
     "Size - M": {
       "name": "Size - M",
-      "description": "Changes between 40 - 100 lines",
+      "description": "PR: Changes between 40 - 100 lines",
       "color": "0eb7c7"
     },
     "Size - S": {
       "name": "Size - S",
-      "description": "Changes between 10 - 30 lines",
+      "description": "PR: Changes between 10 - 30 lines",
       "color": "0eb7c7"
     },
     "Size - XL": {
       "name": "Size - XL",
-      "description": "Changes between 500 - 1000 lines",
+      "description": "PR: Changes between 500 - 1000 lines",
       "color": "0eb7c7"
     },
     "Size - XS": {
       "name": "Size - XS",
-      "description": "Changes between 0 - 10 lines",
+      "description": "PR: Changes between 0 - 10 lines",
       "color": "0eb7c7"
     },
     "Size - XXL": {
       "name": "Size - XXL",
-      "description": "Changes between 1000+ lines",
+      "description": "PR: Changes between 1000+ lines",
       "color": "0eb7c7"
     },
     "Abandoned": {
@@ -807,217 +810,6 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/# Customer[^#\\n\\r]*A2A/i"
-              }
-            ]
-          },
-          "Risk - High" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Risk[^#\\n\\r]*High/i"
-              }
-            ]
-          },
-          "Risk - Medium" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Risk[^#\\n\\r]*Medium/i"
-              }
-            ]
-          },
-          "Risk - Low" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Risk[^#\\n\\r]*Low/i"
-              }
-            ]
-          },
-          "Risk - None" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Risk[^#\\n\\r]*None/i"
-              }
-            ]
-          },
-          "Risk - TBD :question:": {
-            "requires": 5,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Risk[^#\\n\\r]TBD/i"
-              },
-              {
-                "type": "hasLabel",
-                "label": "Risk - High",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Risk - Medium",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Risk - Low",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Risk - None",
-                "value": ""
-              }
-            ]
-          },
-          "Cost - XXS" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation:[^#\\n\\r]*\\bXXS/i"
-              }
-            ]
-          },
-          "Cost - XS" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*\\bXS/i"
-              }
-            ]
-          },
-          "Cost - S" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*\\bS/i"
-              }
-            ]
-          },
-          "Cost - M" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*\\bM/i"
-              }
-            ]
-          },
-          "Cost - L" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*\\bL/i"
-              }
-            ]
-          },
-          "Cost - XL" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*\\bXL/i"
-              }
-            ]
-          },
-          "Cost - XXL" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*\\bXXL/i"
-              }
-            ]
-          },
-          "Cost - TBD :question:": {
-            "requires": 8,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]TBD/i"
-              },
-              {
-                "type": "hasLabel",
-                "label": "Cost - XXS",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Cost - XS",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Cost - S",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Cost - M",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Cost - L",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Cost - XL",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Cost - XXL",
-                "value": ""
-              }
-            ]
-          },
-          "Priority - High": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Priority[^#\\n\\r]*High/i"
-              }
-            ]
-          },
-          "Priority - Low": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Priority[^#\\n\\r]*Low/i"
-              }
-            ]
-          },
-          "Priority - Medium": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Priority[^#\\n\\r]*Medium/i"
-              }
-            ]
-          },
-          "Priority - TBD :question:": {
-            "requires": 4,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Priority[^#\\n\\r]TBD/i"
-              },{
-                "type": "hasLabel",
-                "label": "Priority - High",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Priority - Low",
-                "value": ""
-              },{
-                "type": "hasLabel",
-                "label": "Priority - Medium",
-                "value": ""
               }
             ]
           },
