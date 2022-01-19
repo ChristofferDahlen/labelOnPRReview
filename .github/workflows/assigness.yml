@@ -1,0 +1,19 @@
+name: Assign reviewers based on assignees
+on:
+  pull_request:
+    types: [assigned, unassigned]
+
+jobs:
+  assignee_to_reviewer:
+    runs-on: ubuntu-latest
+    name: Assignee to Reviewer
+    steps:
+      - uses: pullreminders/assignee-to-reviewer-action@v1.0.7
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: actions/checkout@v2
+        name: Checkout
+      - uses: Resnovas/label-mastermind@2.1.3
+        name: Labeling
+        with:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
