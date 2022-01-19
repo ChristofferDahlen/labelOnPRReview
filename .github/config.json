@@ -823,11 +823,11 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.5[\\n\\s,]/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.5[\\n\\s,]/i"
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.5\\.0/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.5\\.0/i"
               }
             ]          },
           "v1.6.0" : {
@@ -835,11 +835,11 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.6[\\n\\s,]/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.6[\\n\\s,]/i"
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.6\\.0/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.6\\.0/i"
               }
             ]          },
           "v1.7.0" : {
@@ -847,11 +847,11 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.7[\\n\\s,]/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.7[\\n\\s,]/i"
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.7\\.0/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.7\\.0/i"
               }
             ]          },
           "v1.8.0" : {
@@ -859,11 +859,11 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.8[\\n\\s,]/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.8[\\n\\s,]/i"
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.8\\.0/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.8\\.0/i"
               }
             ]          },
           "v1.9.0" : {
@@ -871,11 +871,11 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.9[\\n\\s,]/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.9[\\n\\s,]/i"
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v1\\.9\\.0/i"
+                "pattern": "/# Version[^#\\n\\r]*v?1\\.9\\.0/i"
               }
             ]
           }

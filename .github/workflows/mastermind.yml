@@ -4,8 +4,10 @@ on:
     types: [opened, edited, closed, reopened]
   pull_request:
     types: [opened, edited, closed, reopened, synchronize]
-  project_card:
-    types: [created, moved, deleted]
+  workflow_run:
+    workflows: ["AssignReviewers"]
+    types:
+      - completed
 
 name: mastermind-Labeling
 jobs:

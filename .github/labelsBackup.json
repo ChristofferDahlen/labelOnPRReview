@@ -1,264 +1,374 @@
-"Awaiting Review :eyes:": {
-"name": "Awaiting Review :eyes:",
-"description": "This PR is awaiting rerview",
-"color": "9bad4c"
-},
-"Blocked :no_entry_sign:": {
-"name": "Blocked :no_entry_sign:",
-"color": "1b4a25"
-},
-"Blocking :exclamation:": {
-"name": "Blocking :exclamation:",
-"description": "This issue is blocking work",
-"color": "b60205"
-},
-"Cannot-Reproduce": {
-"name": "Cannot-Reproduce",
-"description": "This issue isn't reproducible",
-"color": "e053fa"
-},
-"Cost-Large": {
-"name": "Cost-Large",
-"description": "Approximately 4–12 months of work.",
-"color": "645460"
-},
-"Cost-Medium": {
-"name": "Cost-Medium",
-"description": "Approximately 1–3 months of work.",
-"color": "645460"
-},
-"Cost-Small": {
-"name": "Cost-Small",
-"description": "Approximately 10–30 days of work.",
-"color": "645460"
-},
-"Cost-XLarge": {
-"name": "Cost-XLarge",
-"description": "Approximately 12–24 months of work.",
-"color": "645460"
-},
-"Cost-XSmall": {
-"name": "Cost-XSmall",
-"description": "Approximately 0-10 days of work.",
-"color": "645460"
-},
-"Cost-XXLarge": {
-"name": "Cost-XXLarge",
-"description": "Approximately 24+ months of work.",
-"color": "645460"
-},
-"Customer-Enel": {
-"name": "Customer-Enel",
-"color": "c889d7"
-},
-"Customer-EPC": {
-"name": "Customer-EPC",
-"color": "c889d7"
-},
-"Customer-Luminus": {
-"name": "Customer-Luminus",
-"color": "c889d7"
-},
-"Customer-Uniper": {
-"name": "Customer-Uniper",
-"color": "c889d7"
-},
-"Dev-Tools": {
-"name": "Dev-Tools",
-"color": "327692"
-},
-"duplicate :grey_exclamation:": {
-"name": "duplicate :grey_exclamation:",
-"color": "fef2c0"
-},
-"Help Wanted :hand:": {
-"name": "Help Wanted :hand:",
-"color": "0e8a16"
-},
-"In Progress :gear:": {
-"name": "In Progress :gear:",
-"description": "This PR is being worked on",
-"color": "734b91"
-},
-"Kind-Bug :lady_beetle:": {
-"name": "Kind-Bug :lady_beetle:",
-"color": "b60205"
-},
-"Kind-Cleanup :broom:": {
-"name": "Kind-Cleanup :broom:",
-"description": "Somebody need to clean",
-"color": "bfdadc"
-},
-"Kind-Documentation :scroll:": {
-"name": "Kind-Documentation :scroll:",
-"description": "Time to document!",
-"color": "0052cc"
-},
-"Kind-Enhancement :sparkler:": {
-"name": "Kind-Enhancement :sparkler:",
-"description": "Make something better",
-"color": "9032f7"
-},
-"Kind-Feature": {
-"name": "Kind-Feature",
-"color": "8feb7b"
-},
-"Kind-RFC": {
-"name": "Kind-RFC",
-"description": "Request For Comment",
-"color": "ecb39f"
-},
-"Needs-Triage": {
-"name": "Needs-Triage",
-"color": "0e8a16"
-},
-"PR-Accepted :heavy_check_mark:": {
-"name": "PR-Accepted  :heavy_check_mark:",
-"description": "This PR Has been accepted",
-"color": "072dbc"
-},
-"PR-PackageUpdate :package:": {
-"name": "PR-PackageUpdate :package:",
-"description": "This PR leads to a package update",
-"color": "5319e7"
-},
-"Priority-High": {
-"name": "Priority-High",
-"description": "This Issue/PR has high priority",
-"color": "fef2c0"
-},
-"Priority-Low": {
-"name": "Priority-Low",
-"color": "fef2c0"
-},
-"Priority-Medium": {
-"name": "Priority-Medium",
-"color": "fef2c0"
-},
-"Priority :question:": {
-"name": "Priority :question:",
-"color": "fef2c0"
-},
-"Product-ConnectingProdrisk": {
-"name": "Product-ConnectingProdrisk",
-"color": "24fcbb"
-},
-"Product-ConnectingShop": {
-"name": "Product-ConnectingShop",
-"color": "24fcbb"
-},
-"Product-ConnectingSpotbid": {
-"name": "Product-ConnectingSpotbid",
-"color": "24fcbb"
-},
-"Product-Gateway": {
-"name": "Product-Gateway",
-"description": "Powel Optimal Gateway",
-"color": "24fcbb"
-},
-"Product-POM": {
-"name": "Product-POM",
-"description": "Powel Optimal Midterm",
-"color": "24fcbb"
-},
-"Product-POMA": {
-"name": "Product-POMA",
-"color": "5319e7"
-},
-"Risk-High": {
-"name": "Risk-High",
-"color": "b60205"
-},
-"Risk-Low": {
-"name": "Risk-Low",
-"color": "006b75"
-},
-"Risk-Medium": {
-"name": "Risk-Medium",
-"description": null,
-"color": "1d76db"
-},
-"Risk-None": {
-"name": "Risk-None",
-"color": "006b75"
-},
-"Severity-Critical :boom:": {
-"name": "Severity-Critical :boom:",
-"description": "The software does not execute correctly. Severe adverse impact and no workaround.",
-"color": "c6bdf4"
-},
-"Severity-Major :warning:": {
-"name": "Severity-Major :warning:",
-"description": "Major impairments in functionality. Major adverse impact and no workaround.",
-"color": "abcc53"
-},
-"Severity-Minor :construction:": {
-"name": "Severity-Minor :construction:",
-"description": "Minor impairments in functionality.",
-"color": "010fdf"
-},
-"Size-L": {
-"name": "Size-L",
-"color": "0eb7c7"
-},
-"Size-M": {
-"name": "Size-M",
-"color": "0eb7c7"
-},
-"Size-S": {
-"name": "Size-S",
-"color": "0eb7c7"
-},
-"Size-XL": {
-"name": "Size-XL",
-"color": "0eb7c7"
-},
-"Size-XS": {
-"name": "Size-XS",
-"color": "0eb7c7"
-},
-"Size-XXL": {
-"name": "Size-XXL",
-"color": "0eb7c7"
-},
-"SupportIssue": {
-"name": "SupportIssue",
-"description": "This issue comes from support",
-"color": "fbca04"
-},
-"Urgent :bangbang:": {
-"name": "Urgent :bangbang:",
-"color": "ce4727"
-},
-"v1.7.1": {
-"name": "v1.7.1",
-"description": "Version 1.7.1",
-"color": "5978d8"
-},
-"v1.8.0": {
-"name": "v1.8.0",
-"description": "version 1.8.0",
-"color": "5978d8"
-},
-"v-Develop": {
-"name": "v-Develop",
-"description": "The Develop Version",
-"color": "5978d8"
-},
-"VersionOne": {
-"name": "VersionOne",
-"description": "This comes from version one",
-"color": "ea02b6"
-},
-"WaitingForTest": {
-"name": "WaitingForTest :clock130:",
-"color": "289bfb"
-},
-"WaitingOnAuthor :zzz:": {
-"name": "WaitingOnAuthor :zzz:",
-"color": "1b4623"
-},
-"WaitingOnFuture :calendar:": {
-"name": "WaitingOnFuture :calendar:",
-"color": "b04e2d"
-}
+ "labels": {
+    "[M] Cost - L": {
+      "name": "[M] Cost - L",
+      "description": "Approximately 3 - 5 Months of work.",
+      "color": "645460"
+    },
+    "[M] Cost - M": {
+      "name": "[M] Cost - M",
+      "description": "Approximately 1 - 2 Months of work.",
+      "color": "645460"
+    },
+    "[M] Cost - S": {
+      "name": "[M] Cost - S",
+      "description": "Approximately 11 - 30 days of work.",
+      "color": "645460"
+    },
+    "[M] Cost - XL": {
+      "name": "[M] Cost - XL",
+      "description": "Approximately 6 - 12 Months of work.",
+      "color": "645460"
+    },
+    "[M] Cost - XXS": {
+      "name": "[M] Cost - XXS",
+      "description": "Approximately 0 - 5 days of work.",
+      "color": "645460"
+    },
+    "[M] Cost - XS": {
+      "name": "[M] Cost - XS",
+      "description": "Approximately 6 - 10 days of work.",
+      "color": "645460"
+    },
+    "[M] Cost - XXL": {
+      "name": "[M] Cost - XXL",
+      "description": "Approximately 12+ months of work.",
+      "color": "645460"
+    },
+    "[M] Cost - TBD :question:": {
+      "name": "Cost - TBD :question:",
+      "color": "645460"
+    },
+    "Customer - A2A": {
+      "name": "Customer - A2A",
+      "color": "c889d7"
+    },
+    "Customer - EPC": {
+      "name": "Customer - EPC",
+      "color": "c889d7"
+    },
+    "Customer - Enel": {
+      "name": "Customer - Enel",
+      "color": "c889d7"
+    },
+    "Customer - Iberdrola": {
+      "name": "Customer - Iberdrola",
+      "color": "c889d7"
+    },
+    "Customer - Luminus": {
+      "name": "Customer - Luminus",
+      "color": "c889d7"
+    },
+    "Customer - Uniper": {
+      "name": "Customer - Uniper",
+      "color": "c889d7"
+    },
+    "Documented :scroll:": {
+      "name": "Documented :scroll:",
+      "description": "Has been documented!",
+      "color": "0052cc"
+    },
+    "Investigation :mag:": {
+      "name": "Investigation :mag:",
+      "color": "D107F7"
+    },
+    "[M] Blocked :no_entry_sign:": {
+      "name": "[M] Blocked :no_entry_sign:",
+      "color": "F9D0C4"
+    },
+    "[M] Blocking :exclamation:": {
+      "name": "[M] Blocking :exclamation:",
+      "description": "This issue is blocking work",
+      "color": "b60205"
+    },
+    "[M] Cannot Reproduce": {
+      "name": "[M]  Cannot Reproduce",
+      "description": "This issue isn't reproducible",
+      "color": "D93F0B"
+    },
+    "[M] Duplicate :grey_exclamation:": {
+      "name": "[M] Duplicate :grey_exclamation:",
+      "color": "fef2c0"
+    },
+    "[M] Help Wanted :hand:": {
+      "name": "[M] Help Wanted :hand:",
+      "color": "0e8a16"
+    },
+    "[M] Resolution - Fixed": {
+      "name": "[M] Resolution - Fixed",
+      "description": "This issue has been fixed",
+      "color": "A9E98F"
+    },
+    "[M] Resolution - Rejected - Wrong Input": {
+      "name": "[M]  Resolution - Rejected - Input Data Problem",
+      "description": "This issue has been rejected due to it being a issue with wrong input",
+      "color": "A9E98F"
+    },
+    "[M] Resolution - Rejected": {
+      "name": "[M] Resolution - Rejected",
+      "description": "This issue has been rejected",
+      "color": "A9E98F"
+    },
+    "[M] Mesh Model Update Needed": {
+      "name": "[M] Mesh Model Update Needed",
+      "color": "A5F5A0"
+    },
+    "[M] Waiting On Author :zzz:": {
+      "name": "[M] Waiting On Author :zzz:",
+      "color": "1b4623"
+    },
+    "[M] Waiting On Future :calendar:": {
+      "name": "[M] Waiting On Future :calendar:",
+      "color": "C5DEF5"
+    },
+    "[M] Urgent :bangbang:": {
+      "name": "[M] Urgent :bangbang:",
+      "color": "ce4727"
+    },
+    "[M] On Hold": {
+      "name": "On Hold",
+      "description": "",
+      "color": "645460"
+    },
+    "[M] Priority - High": {
+      "name": "[M] Priority - High",
+      "color": "fef2c0"
+    },
+    "[M] Priority - Low": {
+      "name": "[M] Priority - Low",
+      "color": "fef2c0"
+    },
+    "[M] Priority - Medium": {
+      "name": "[M] Priority - Medium",
+      "color": "fef2c0"
+    },
+    "[M] Priority - TBD :question:": {
+      "name": "[M] Priority - TBD :question:",
+      "color": "fef2c0"
+    },
+    "Product - Connecting Prodrisk": {
+      "name": "Product - Connecting Prodrisk",
+      "color": "5319e7"
+    },
+    "Product - Connecting Shop": {
+      "name": "Product - Connecting Shop",
+      "color": "5319e7"
+    },
+    "Product - Connecting Spotbid": {
+      "name": "Product - Connecting Spotbid",
+      "color": "5319e7"
+    },
+    "Product - Gateway": {
+      "name": "Product - Gateway",
+      "description": "Powel Optimal Gateway",
+      "color": "5319e7"
+    },
+    "Product - POH": {
+      "name": "Product - POH",
+      "color": "5319e7"
+    },
+    "Product - POM": {
+      "name": "Product - POM",
+      "description": "Powel Optimal Midterm",
+      "color": "5319e7"
+    },
+    "Product - POMA": {
+      "name": "Product - POMA",
+      "color": "5319e7"
+    },
+    "[M] Risk - High": {
+      "name": "[M] Risk - High",
+      "description": "This change will likely break previous functionality",
+      "color": "b60205"
+    },
+    "[M] Risk - Low": {
+      "name": "[M] Risk - Low",
+      "description": "This change will probably not break previous functionality",
+      "color": "006b75"
+    },
+    "[M] Risk - Medium": {
+      "name": "[M] Risk - Medium",
+      "description": "This change could break previous functionality",
+      "color": "1d76db"
+    },
+    "[M] Risk - None": {
+      "name": "[M] Risk - None",
+      "description": "This change will not break previous functionality",
+      "color": "006b75"
+    },
+    "[M] Risk - TBD :question:": {
+      "name": "[M] Risk - TBD :question:",
+      "color": "006b75"
+    },
+    "Severity - Critical :boom:": {
+      "name": "Severity - Critical :boom:",
+      "description": "The software does not execute correctly. Severe adverse impact and no workaround.",
+      "color": "c6bdf4"
+    },
+    "Severity - Major :fire:": {
+      "name": "Severity - Major :fire:",
+      "description": "Major impairments in functionality. Major adverse impact and no workaround.",
+      "color": "abcc53"
+    },
+    "Severity - Minor :construction:": {
+      "name": "Severity - Minor :construction:",
+      "description": "Minor impairments in functionality.",
+      "color": "010fdf"
+    },
+    "Size - L": {
+      "name": "Size - L",
+      "description": "PR: Changes between 100 - 500 lines",
+      "color": "0eb7c7"
+    },
+    "Size - M": {
+      "name": "Size - M",
+      "description": "PR: Changes between 40 - 100 lines",
+      "color": "0eb7c7"
+    },
+    "Size - S": {
+      "name": "Size - S",
+      "description": "PR: Changes between 10 - 30 lines",
+      "color": "0eb7c7"
+    },
+    "Size - XL": {
+      "name": "Size - XL",
+      "description": "PR: Changes between 500 - 1000 lines",
+      "color": "0eb7c7"
+    },
+    "Size - XS": {
+      "name": "Size - XS",
+      "description": "PR: Changes between 0 - 10 lines",
+      "color": "0eb7c7"
+    },
+    "Size - XXL": {
+      "name": "Size - XXL",
+      "description": "PR: Changes between 1000+ lines",
+      "color": "0eb7c7"
+    },
+    "Abandoned": {
+      "name": "Abandoned",
+      "description": "",
+      "color": "645460"
+    },
+    "Accepted :heavy_check_mark:": {
+      "name": "Accepted :heavy_check_mark:",
+      "color": "072dbc"
+    },
+    "Awaiting Review :eyes:": {
+      "name": "Awaiting Review :eyes:",
+      "color": "FBCA04"
+    },
+    "Changes Requested :diamonds:": {
+      "name": "Changes Requested :diamonds:",
+      "color": "f4ff1f"
+    },
+    "Fix Confirmed": {
+      "name": "Fix Confirmed",
+      "description": "",
+      "color": "0E8A16"
+    },
+    "Enhancement Complete": {
+      "name": "Enhancement Complete",
+      "description": "",
+      "color": "0E8A16"
+    },
+    "Feature Complete": {
+      "name": "Feature Complete",
+      "description": "",
+      "color": "0E8A16"
+    },
+    "In Progress :gear:": {
+      "name": "In Progress :gear:",
+      "color": "C5DEF5"
+    },
+    "Stale": {
+      "name": "Stale",
+      "description": "",
+      "color": "645460"
+    },
+    "Support Issue": {
+      "name": "Support Issue",
+      "description": "This issue comes from support",
+      "color": "fbca04"
+    },
+    "Triage": {
+      "name": "Triage",
+      "color": "0e8a16"
+    },
+    "Type - Bug :lady_beetle:": {
+      "name": "Type - Bug :lady_beetle:",
+      "color": "b60205"
+    },
+    "Type - Bugfix": {
+      "name": "Type - Bugfix",
+      "color": "9E0717"
+    },
+    "Type - Cleanup :broom:": {
+      "name": "Type - Cleanup :broom:",
+      "description": "Somebody needs to clean",
+      "color": "bfdadc"
+    },
+    "Type - Documentation :black_nib:": {
+      "name": "Type - Documentation :black_nib:",
+      "description": "Time to document!",
+      "color": "0052cc"
+    },
+    "Type - Enhancement :sparkler:": {
+      "name": "Type - Enhancement :sparkler:",
+      "description": "Make something better",
+      "color": "9032f7"
+    },
+    "Type - Feature": {
+      "name": "Type - Feature",
+      "color": "8feb7b"
+    },
+    "Type - Other": {
+      "name": "Type - Other",
+      "description": "A miscellaneous issue",
+      "color": "ecb39f"
+    },
+    "Type - RFC": {
+      "name": "Type - RFC",
+      "description": "Request For Comment",
+      "color": "ecb39f"
+    },
+    "Undocumented :pencil2:": {
+      "name": "Undocumented :pencil2:",
+      "description": "This needs to be documented!",
+      "color": "0052cc"
+    },
+    "VersionOne": {
+      "name": "VersionOne",
+      "description": "This comes from version one",
+      "color": "ea02b6"
+    },
+    "v - Develop": {
+      "name": "v - Develop",
+      "description": "Current development",
+      "color": "5978d8"
+    },
+    "v1.5.0": {
+      "name": "v1.5.0",
+      "description": "Version 1.5.0",
+      "color": "5978d8"
+    },
+    "v1.6.0": {
+      "name": "v1.6.0",
+      "description": "Version 1.6.0",
+      "color": "5978d8"
+    },
+    "v1.7.0": {
+      "name": "v1.7.0",
+      "description": "Version 1.7.0",
+      "color": "5978d8"
+    },
+    "v1.8.0": {
+      "name": "v1.8.0",
+      "description": "Version 1.8.0",
+      "color": "5978d8"
+    },
+    "v1.9.0": {
+      "name": "v1.9.0",
+      "description": "Version 1.9.0",
+      "color": "5978d8"
+    }
+  }
