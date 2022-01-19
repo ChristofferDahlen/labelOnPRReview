@@ -590,11 +590,6 @@
             "requires": 5,
             "conditions": [
               {
-                "type": "hasLabel",
-                "pattern": "Type - Feature",
-                "value": "true"
-              },
-              {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has feature been accepted by/im"
               },
@@ -609,6 +604,11 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has been tested/im"
+              },
+              {
+                "type": "hasLabel",
+                "pattern": "Type - Feature",
+                "value": "true"
               }
             ]
           },
