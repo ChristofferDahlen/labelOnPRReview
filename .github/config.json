@@ -1,37 +1,37 @@
 {
   "labels": {
-    "Cost - L": {
-      "name": "Cost - L",
+    "[M] Cost - L": {
+      "name": "[M] Cost - L",
       "description": "Approximately 3 - 5 Months of work.",
       "color": "645460"
     },
-    "Cost - M": {
-      "name": "Cost - M",
+    "[M] Cost - M": {
+      "name": "[M] Cost - M",
       "description": "Approximately 1 - 2 Months of work.",
       "color": "645460"
     },
     "[M] Cost - S": {
-      "name": "Cost - S",
+      "name": "[M] Cost - S",
       "description": "Approximately 11 - 30 days of work.",
       "color": "645460"
     },
     "[M] Cost - XL": {
-      "name": "Cost - XL",
+      "name": "[M] Cost - XL",
       "description": "Approximately 6 - 12 Months of work.",
       "color": "645460"
     },
     "[M] Cost - XXS": {
-      "name": "Cost - XXS",
+      "name": "[M] Cost - XXS",
       "description": "Approximately 0 - 5 days of work.",
       "color": "645460"
     },
     "[M] Cost - XS": {
-      "name": "Cost - XS",
+      "name": "[M] Cost - XS",
       "description": "Approximately 6 - 10 days of work.",
       "color": "645460"
     },
     "[M] Cost - XXL": {
-      "name": "Cost - XXL",
+      "name": "[M] Cost - XXL",
       "description": "Approximately 12+ months of work.",
       "color": "645460"
     },
@@ -577,11 +577,7 @@
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/# \\[x\\] has enhancement been accepted by/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has enhancement been accepted by/im"
+                "pattern": "/# \\[x\\] has enhancement been accepted/im"
               },
               {
                 "type": "descriptionMatches",
@@ -606,7 +602,7 @@
               },
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has feature been accepted by/im"
+                "pattern": "/^- \\[x\\] has feature been accepted/im"
               },
               {
                 "type": "descriptionMatches",
