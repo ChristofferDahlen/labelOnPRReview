@@ -570,7 +570,7 @@
             "conditions": [
               {
                 "type": "hasLabel",
-                "pattern": "Type - Feature",
+                "pattern": "Type - Enhancement :sparkler:",
                 "value": "true"
               },
               {
