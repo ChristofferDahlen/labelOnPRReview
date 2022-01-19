@@ -570,6 +570,14 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
+                "pattern": "/### Process\\s*-\\s*Enchantment/im"
+              },
+              {
+                "type": "descriptionMatches",
+                "pattern": "/# \\[x\\] has enhancement been accepted by/im"
+              },
+              {
+                "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has enhancement been accepted by/im"
               },
               {
@@ -591,6 +599,10 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
+                "pattern": "/# Process\\s*-\\s*Feature/im"
+              },
+              {
+                "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has feature been accepted by/im"
               },
               {
@@ -604,11 +616,6 @@
               {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has been tested/im"
-              },
-              {
-                "type": "hasLabel",
-                "pattern": "Type - Feature",
-                "value": "true"
               }
             ]
           },
