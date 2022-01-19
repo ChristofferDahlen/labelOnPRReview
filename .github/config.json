@@ -851,7 +851,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/# Risk[^#\\n\\r]*/i"
+                "pattern": "/# Risk[^#\\n\\r]TBD/i"
               },
               {
                 "type": "hasLabel",
