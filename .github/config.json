@@ -109,6 +109,10 @@
       "description": "This issue has been rejected",
       "color": "A9E98F"
     },
+    "[M] Mesh Model Update Needed": {
+      "name": "[M] Mesh Model Update Needed",
+      "color": ""
+    },
     "[M] Waiting On Author :zzz:": {
       "name": "[M] Waiting On Author :zzz:",
       "color": "1b4623"
@@ -498,7 +502,7 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^bugfix\\/"
+                "pattern": "/^bugfix\\//im"
               }
             ]
           },
@@ -507,7 +511,7 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^feature\\/"
+                "pattern": "/^feature\\//im"
               }
             ]
           }
@@ -871,15 +875,6 @@
               }
             ]
           },
-          "Cost - XXL" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Time Estimation[^#\\n\\r]*XXL/i"
-              }
-            ]
-          },
           "Cost - TBD :question:": {
             "requires": 8,
             "conditions": [
@@ -1036,72 +1031,10 @@
               }
             ]
           }
-        },
-        "assignProject": [
-          {
-            "project": "Optimisation Core",
-            "column": "To do",
-            "requires": 1,
-            "conditions": []
-          }
-        ]
+        }
       },
       "project": {
-        "ref": "develop",
-        "syncRemote": [
-          {
-            "localProject": "Optimisation Core",
-            "owner": "ChristofferDahlen",
-            "project": "Optimisation Core"
-          },
-          {
-            "localProject": "Shop Board",
-            "owner": "ChristofferDahlen",
-            "project": "Shop Board"
-          }
-        ],
-        "labels": {
-          "Investigation": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Optimisation Core",
-                "column": "Investigation"
-              }
-            ]
-          },
-          "Triage": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Optimisation Core",
-                "column": "Triage"
-              }
-            ]
-          },
-          "In Progress": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Optimisation Core",
-                "column": "Test/Review"
-              }
-            ]
-          },
-          "Done": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "onColumn",
-                "project": "Optimisation Core",
-                "column": "Done"
-              }
-            ]
-          }
-        }
+
       }
     }
   ]
