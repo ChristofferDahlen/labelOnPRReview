@@ -569,11 +569,6 @@
             "requires": 5,
             "conditions": [
               {
-                "type": "hasLabel",
-                "pattern": "Type - Enhancement :sparkler:",
-                "value": "true"
-              },
-              {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[x\\] has enhancement been accepted by/im"
               },
