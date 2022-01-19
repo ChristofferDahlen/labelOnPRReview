@@ -623,9 +623,8 @@
             "requires": 6,
             "conditions": [
               {
-                "type": "hasLabel",
-                "pattern": "Type - Bug :lady_beetle:",
-                "value": "true"
+                "type": "descriptionMatches",
+                "pattern": "/# Process\\s*-\\s*Bugfix/im"
               },
               {
                 "type": "descriptionMatches",
