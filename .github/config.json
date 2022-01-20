@@ -1,49 +1,49 @@
 {
   "labels": {
-    "Documented": {
+    "[X] Documented :scroll:": {
       "name": "[X] Documented :scroll:",
       "description": "Has been documented!",
       "color": "0052cc"
     },
-    "Investigation": {
+    "[X] Investigation :mag:": {
       "name": "[X] Investigation :mag:",
       "color": "D107F7"
     },
-    "Size - L": {
+    "[X] Size - L": {
       "name": "[X] Size - L",
       "description": "PR: Changes between 100 - 500 lines",
       "color": "0eb7c7"
     },
-    "Size - M": {
+    "[X] Size - M": {
       "name": "[X] Size - M",
       "description": "PR: Changes between 40 - 100 lines",
       "color": "0eb7c7"
     },
-    "Size - S": {
+    "[X] Size - S": {
       "name": "[X] Size - S",
       "description": "PR: Changes between 10 - 30 lines",
       "color": "0eb7c7"
     },
-    "Size - XL": {
+    "[X] Size - XL": {
       "name": "[X] Size - XL",
       "description": "PR: Changes between 500 - 1000 lines",
       "color": "0eb7c7"
     },
-    "Size - XS": {
+    "[X] Size - XS": {
       "name": "[X] Size - XS",
       "description": "PR: Changes between 0 - 10 lines",
       "color": "0eb7c7"
     },
-    "Size - XXL": {
+    "[X] Size - XXL": {
       "name": "[X] Size - XXL",
       "description": "PR: Changes between 1000+ lines",
       "color": "0eb7c7"
     },
-    "Accepted": {
+    "[X] Accepted :heavy_check_mark:": {
       "name": "[X] Accepted :heavy_check_mark:",
       "color": "072dbc"
     },
-    "Awaiting Review": {
+    "[X] Awaiting Review :eyes:": {
       "name": "[X] Awaiting Review :eyes:",
       "color": "FBCA04"
     },
@@ -55,7 +55,7 @@
       "name": "[X] In Progress :gear:",
       "color": "C5DEF5"
     },
-    "Needs documentation": {
+    "[X] Needs documentation :pencil2:": {
       "name": "[X] Needs documentation :pencil2:",
       "description": "This needs to be documented!",
       "color": "0052cc"
@@ -259,7 +259,7 @@
       "issues": {
         "ref": "develop",
         "labels": {
-          "Documented": {
+          "[X] Documented :scroll:": {
             "requires": 1,
             "conditions": [
               {
@@ -268,7 +268,7 @@
               }
             ]
           },
-          "Needs documentation": {
+          "[X] Needs documentation :pencil2:": {
             "requires": 1,
             "conditions": [
               {
@@ -280,9 +280,6 @@
         }
       },
 			"project": {
-				"ref": "develop",
-				"labels": {
-        }
       }
     }
   ]
