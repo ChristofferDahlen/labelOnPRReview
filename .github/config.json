@@ -259,25 +259,23 @@
       "issues": {
         "ref": "develop",
         "labels": {
-          "labels": {
-            "Documented": {
-              "requires": 1,
-              "conditions": [
-                {
-                  "type": "descriptionMatches",
-                  "pattern": "/^- \\[x\\] Has been documented/im"
-                }
-              ]
-            },
-            "Needs documentation": {
-              "requires": 1,
-              "conditions": [
-                {
-                  "type": "descriptionMatches",
-                  "pattern": "/^- \\[ \\] Has been documented/im"
-                }
-              ]
-            }
+          "Documented": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] Has been documented/im"
+              }
+            ]
+          },
+          "Needs documentation": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[ \\] Has been documented/im"
+              }
+            ]
           }
         }
       },
