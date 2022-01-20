@@ -94,7 +94,7 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-          "[X] Documented :scroll:": {
+          "Documented": {
             "requires": 1,
             "conditions": [
               {
@@ -103,7 +103,7 @@
               }
             ]
           },
-          "[X] Needs documentation :pencil2:": {
+          "Needs documentation": {
             "requires": 1,
             "conditions": [
               {
