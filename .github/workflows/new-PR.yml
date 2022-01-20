@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          PROD =$(echo "${{ github.event.issue.body }}" | egrep -i 'Product[^#]*')
+          PROD=$(echo "${{ github.event.issue.body }}" | egrep -i 'Product[^#]*')
           echo "product=$PROD" >> $GITHUB_ENV
       - run: |
           echo "This is product ${{ env.product }}"
