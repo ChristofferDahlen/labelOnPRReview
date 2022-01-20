@@ -71,8 +71,25 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-        }
-      },
+          "[X] Documented :scroll:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] Has been documented/im"
+              }
+            ]
+          },
+          "[X] Needs documented :pencil2:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[ \\] Has been documented/im"
+              }
+            ]
+          }
+        }      },
       "pr": {
         "labels": {
           "[X] Size - XS": {
@@ -85,7 +102,7 @@
               }
             ]
           },
-          "[X] Size - S": {
+          "Size - S": {
             "requires": 1,
             "conditions": [
               {
@@ -95,7 +112,7 @@
               }
             ]
           },
-          "[X] Size - M": {
+          "Size - M": {
             "requires": 1,
             "conditions": [
               {
@@ -105,7 +122,7 @@
               }
             ]
           },
-          "[X] Size - L": {
+          "Size - L": {
             "requires": 1,
             "conditions": [
               {
@@ -115,7 +132,7 @@
               }
             ]
           },
-          "[X] Size - XL": {
+          "Size - XL": {
             "requires": 1,
             "conditions": [
               {
@@ -125,7 +142,7 @@
               }
             ]
           },
-          "[X] Size - XXL": {
+          "Size - XXL": {
             "requires": 1,
             "conditions": [
               {
@@ -134,7 +151,7 @@
               }
             ]
           },
-          "[X] Accepted :heavy_check_mark:": {
+          "Accepted :heavy_check_mark:": {
             "requires": 1,
             "conditions": [
               {
@@ -144,7 +161,7 @@
               }
             ]
           },
-          "[X] In Progress :gear:": {
+          "In Progress :gear:": {
             "requires": 1,
             "conditions": [
               {
@@ -162,7 +179,7 @@
               }
             ]
           },
-          "[X] Awaiting Review :eyes:": {
+          "Awaiting Review :eyes:": {
             "requires": 1,
             "conditions": [
               {
@@ -171,7 +188,7 @@
               }
             ]
           },
-          "[X] Changes Requested :diamonds:": {
+          "Changes Requested :diamonds:": {
             "requires": 1,
             "conditions": [
               {
@@ -230,29 +247,6 @@
               {
                 "type": "branchMatches",
                 "pattern": "/^Documentation\\//im"
-              }
-            ]
-          }
-        }
-      },
-      "issue": {
-        "ref": "develop",
-        "labels": {
-          "[X] Documented :scroll:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] Has been documented/im"
-              }
-            ]
-          },
-          "[X] Needs documented :pencil2:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[ \\] Has been documented/im"
               }
             ]
           }
