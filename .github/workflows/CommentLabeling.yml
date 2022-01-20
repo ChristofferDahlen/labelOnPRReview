@@ -1,0 +1,17 @@
+
+name: "Add label depending on comment"
+
+on:
+  issues_comment:
+    types: 
+       created
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Amwam/issue-comment-action@v1.3.1
+        with:
+          keywords: '["ready for test"]'
+          labels: '["Test Ready"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"

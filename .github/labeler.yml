@@ -1,4 +1,3 @@
-# labeler "full" schema
 
 # enable labeler on issues, prs, or both.
 enable:
@@ -13,59 +12,59 @@ comments:
 
     Please review the labels and make any necessary changes.
 
+
+## Labels
+
 labels:
-  'v1.8.0':
+## Product Labels
+  Product - POMA:
     include:
-      - \bv?1.8\b
-      - \bv?1.8.0\b
-  'Product - POMA':
+      - '(?i)Product[^\w\r\n]*POMA'
+  Product - Gateway:
     include:
-      - '(?i)Product:?[\s]*POMA'
-  'Product - Gateway':
+      - '(?i)Product[^\w\r\n]*Gateway'
+  Product - POM:
     include:
-      - '(?i)Product:?[\s]*Gateway'
-  'Product - POM':
+      - '(?i)Product[^\w\r\n]*POM'
+  Product - POH:
     include:
-      - '(?i)Product:?[\s]*POM'
-  'Product - POH':
-    include:
-      - '(?i)Product:?[\s]*POH'
+      - '(?i)Product[^\w\r\n]*POH'
   Product - Spotbid:
     include:
-      - '(?i)Product:?[\s]*Spotbid'
+      - '(?i)Product[^\w\r\n]*Spotbid'
   Product - Connecting Shop:
     include:
-      - '(?i)Product:?[\s]*(Connecting\s+)?Shop'
+      - '(?i)Product[^\w\r\n]*(Connecting\s+)?Shop'
   Product - Connecting Prodrisk:
     include:
-      - '(?i)Product:?[\s]*(Connecting\s+)?Prodrisk'
+      - '(?i)Product[^\w\r\n]*(Connecting[^\w\r\n]+)?Prodrisk'
   'Severity - Critical :boom:':
     include:
-      - '(?i)Severity:?[\s]*Critical'
+      - '(?i)Severity[^\w\r\n]*Critical'
   'Severity - Major :boom:':
     include:
-      - '(?i)Severity:?[\s]*Major'
+      - '(?i)Severity[^\w\r\n]*Major'
   'Severity - Average :broken_heart:':
     include:
-      - '(?i)Severity:?[\s]*Average'
+      - '(?i)Severity[^\w\r\n]*Average'
   'Severity - Minor :construction:':
     include:
-      - '(?i)Severity:?[\s]*Minor'
+      - '(?i)Severity[^\w\r\n]*Minor'
   'Customer - Enel':
     include:
-      - '(?i)Customer:?[\s]*Enel'
+      - '(?i)Customer[^\w\r\n]*Enel'
   'Customer - EPC':
     include:
-      - '(?i)Customer:?[\s]*EPC'
+      - '(?i)Customer[^\w\r\n]*EPC'
   'Customer - Luminus':
     include:
-      - '(?i)Customer:?[\s]*Luminus'
+      - '(?i)Customer[^\w\r\n]*Luminus'
   'Customer - Uniper':
     include:
-      - '(?i)Customer:?[\s]*Uniper'
+      - '(?i)Customer[^\w\r\n]*Uniper'
   'Customer - Iberdrola':
     include:
-      - '(?i)Customer:?[\s]*Iberdrola'
+      - '(?i)Customer[^\w\r\n]*Iberdrola'
   'Customer - A2A':
     include:
-      - '(?i)Customer:?[\s]*A2A'
+      - '(?i)Customer[^\w\r\n]*A2A'
