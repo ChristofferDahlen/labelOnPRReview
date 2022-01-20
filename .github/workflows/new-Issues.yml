@@ -5,6 +5,14 @@ on:
     types: [opened]
 
 jobs:
+  Add_Other_Labels:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add_Other_Labels
+      id: labeler
+      uses: jimschubert/labeler-action@v1
+      with:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   Add_Synced_Labels:
     runs-on: ubuntu-latest
     name: Add Synced Labels
@@ -15,17 +23,11 @@ jobs:
         name: Labeling
         with:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
-  Add_Other_Labels:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Add_Other_Labels
-      id: labeler
-      uses: jimschubert/labeler-action@v1
-      with:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   Add_To_Project:
+    needs: 
+      - Add_Other_Labels
+      - Add_Synced_Labels
     runs-on: ubuntu-latest
     steps:
       - uses: alex-page/github-project-automation-plus@v0.8.1

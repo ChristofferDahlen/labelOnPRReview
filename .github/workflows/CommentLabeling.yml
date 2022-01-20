@@ -14,3 +14,33 @@ jobs:
           keywords: '["ready for test"]'
           labels: '["Test Ready"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Amwam/issue-comment-action@v1.3.1
+        with:
+          keywords: '["help"]'
+          labels: '["Help Wanted :hand:"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Amwam/issue-comment-action@v1.3.1
+        with:
+          keywords: '["blocking"]'
+          labels: '["Blocking :exclamation:"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Amwam/issue-comment-action@v1.3.1
+        with:
+          keywords: '["blocked"]'
+          labels: '["Blocked :no_entry_sign:"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Amwam/issue-comment-action@v1.3.1
+        with:
+          keywords: '["Cannot Reproduce"]'
+          labels: '["Cannot Reproduce"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Amwam/issue-comment-action@v1.3.1
+        with:
+          keywords: '["Duplicate"]'
+          labels: '["Duplicate :grey_exclamation:"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: Amwam/issue-comment-action@v1.3.1
+        with:
+          keywords: '["Urgent"]'
+          labels: '["Urgent :bangbang:"]'
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
