@@ -88,4 +88,4 @@ labels:
     - '(?i)v?\s*1.8.0'
   'develop':
     include:
-    - '(?i)v?\s*develop'
+    - '(?i)Version:[^\n\r]*v?\s*develop'
