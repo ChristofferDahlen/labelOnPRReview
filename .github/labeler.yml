@@ -38,6 +38,8 @@ labels:
   Product - Connecting Prodrisk:
     include:
       - '(?i)Product[^\w\r\n]*(Connecting[^\w\r\n]+)?Prodrisk'
+
+## Severity Labels
   'Severity - Critical :boom:':
     include:
       - '(?i)Severity[^\w\r\n]*Critical'
@@ -50,6 +52,8 @@ labels:
   'Severity - Minor :construction:':
     include:
       - '(?i)Severity[^\w\r\n]*Minor'
+
+## Customer Labels
   'Customer - Enel':
     include:
       - '(?i)Customer[^\w\r\n]*Enel'
@@ -68,3 +72,20 @@ labels:
   'Customer - A2A':
     include:
       - '(?i)Customer[^\w\r\n]*A2A'
+
+## Version Labels
+  'v1.5.0':
+    include:
+    - 'v?\s*1.5(.0|\s|$)'
+  'v1.6.0':
+    include:
+    - 'v?\s*1.6(.0|\s|$)'
+  'v1.7.0':
+    include:
+    - 'v?\s*1.7(.0|\s|$)'
+  'v1.8.0':
+    include:
+    - 'v?\s*1.8.0'
+  'develop':
+    include:
+    - 'v?\s*develop'

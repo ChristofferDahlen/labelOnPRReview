@@ -172,7 +172,7 @@
 ##################
 ### Versions #####
 ##################
- - name: "v - Develop"
+ - name: "develop"
    description: "Current development"
    color: "5978d8"
  - name: "v1.5.0"
