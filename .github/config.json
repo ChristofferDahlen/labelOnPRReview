@@ -281,8 +281,10 @@
         "labels": {
         }
       },
-      "project": {
-
+			"project": {
+				"ref": "develop",
+				"labels": {
+        }
       }
     }
   ]
