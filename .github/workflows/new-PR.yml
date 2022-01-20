@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: Find the product name
         run: |
-          if [[ ${{github.event.issue.body}} =~ ]]
+          if [[ ${{github.event.issue.body}} =~ Product[^\w]*([^\r\n]*)]]
             echo "::set-output name=Product::${BASH_REMATCH[1]}"
           else
             echo "::set-output name=Product::Other"
