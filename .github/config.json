@@ -39,27 +39,50 @@
       "description": "PR: Changes between 1000+ lines",
       "color": "0eb7c7"
     },
-    "Accepted :heavy_check_mark:": {
+    "Accepted": {
       "name": "[X] Accepted :heavy_check_mark:",
       "color": "072dbc"
     },
-    "Awaiting Review :eyes:": {
+    "Awaiting Review": {
       "name": "[X] Awaiting Review :eyes:",
       "color": "FBCA04"
     },
-    "Changes Requested :diamonds:": {
+    "Changes Requested": {
       "name": "[X] Changes Requested :diamonds:",
       "color": "f4ff1f"
     },
-    "In Progress :gear:": {
+    "In Progress": {
       "name": "[X] In Progress :gear:",
       "color": "C5DEF5"
     },
-    "Needs documentation :pencil2:": {
+    "Needs documentation": {
       "name": "[X] Needs documentation :pencil2:",
       "description": "This needs to be documented!",
       "color": "0052cc"
-    }
+    },
+    "Type - Bugfix" : {
+      "name": "Type - Bugfix",
+      "color": "9E0717"
+    },
+    "Type - Feature" : {
+      "name": "Type - Feature",
+      "color": "8feb7b"
+    },
+    "Type - Enhancement" : {
+      "name": "Type - Enhancement :sparkler:",
+      "description": "Make something better",
+      "color": "9032f7"
+    },
+    "Type - Cleanup": {
+      "name": "Type - Cleanup :broom:",
+      "description": "Somebody needs to clean",
+      "color": "bfdadc"
+    },
+    "Type - Documentation": {
+      "name": "Type - Documentation :black_nib:",
+      "description": "Time to document!",
+      "color": "0052cc"
+    } 
   },
   "runners": [
     {
@@ -71,7 +94,7 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-          "Documented": {
+          "[X] Documented :scroll:": {
             "requires": 1,
             "conditions": [
               {
@@ -80,7 +103,7 @@
               }
             ]
           },
-          "[X] Needs documented :pencil2:": {
+          "[X] Needs documentation :pencil2:": {
             "requires": 1,
             "conditions": [
               {
@@ -93,7 +116,7 @@
       },
       "pr": {
         "labels": {
-          "[X] Size - XS": {
+          "Size - XS": {
             "requires": 1,
             "conditions": [
               {
@@ -152,7 +175,7 @@
               }
             ]
           },
-          "Accepted :heavy_check_mark:": {
+          "Accepted": {
             "requires": 1,
             "conditions": [
               {
@@ -162,7 +185,7 @@
               }
             ]
           },
-          "In Progress :gear:": {
+          "In Progress": {
             "requires": 1,
             "conditions": [
               {
@@ -180,7 +203,7 @@
               }
             ]
           },
-          "Awaiting Review :eyes:": {
+          "Awaiting Review": {
             "requires": 1,
             "conditions": [
               {
@@ -189,7 +212,7 @@
               }
             ]
           },
-          "Changes Requested :diamonds:": {
+          "Changes Requested": {
             "requires": 1,
             "conditions": [
               {
@@ -216,7 +239,7 @@
               }
             ]
           },
-          "Type - Enhancement :sparkler:" : {
+          "Type - Enhancement" : {
             "requires": 1,
             "conditions": [
               {
@@ -229,7 +252,7 @@
               }
             ]
           },
-          "Type - Cleanup :broom:": {
+          "Type - Cleanup": {
             "requires": 1,
             "conditions": [
               {
@@ -238,7 +261,7 @@
               }
             ]
           },
-          "Type - Documentation :black_nib:": {
+          "Type - Documentation": {
             "requires": 1,
             "conditions": [
               {
