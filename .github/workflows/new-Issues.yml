@@ -28,12 +28,7 @@ jobs:
     steps:
       - name: Find the product name
         run: |
-          if [[ ${{github.event.issue.body}} =~ Product[^\w]*([^\r\n]*) ]]
-          then
-            echo "::set-output name=Product::${BASH_REMATCH[1]}"
-          else
-            echo "::set-output name=Product::Other"
-          fi
+          echo "::set-output name=Product::$(echo ${{ github.event.issue.body }} | grep -oe 'Product: .*)"
         id: find-product
       - run: |
           echo "This is product ${{ steps.find-product.outputs.Product }}"
