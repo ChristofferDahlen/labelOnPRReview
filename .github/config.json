@@ -71,7 +71,7 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-          "[X] Documented :scroll:": {
+          "Documented": {
             "requires": 1,
             "conditions": [
               {
