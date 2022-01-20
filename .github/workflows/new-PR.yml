@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: Find the lowercase branch name
         run: |
-          echo "::set-output name=Branch::$(echo ${{ github.event.pull_request.title }} | tr '[:upper:]' '[:lower:]')"
+          echo "::set-output name=Branch::$(echo '${{ github.event.pull_request.title }}' | tr '[:upper:]' '[:lower:]')"
         id: lowercase
       - run: |
           echo "This is product ${{ steps.lowercase.outputs.Branch }}"

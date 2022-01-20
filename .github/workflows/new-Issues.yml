@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Find the branch Name
         run: |
-          echo "::set-output name=Product::$(echo ${{ github.event.issue.body }} | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
+          echo "::set-output name=Product::$(echo '${{ github.event.issue.body }}' | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
         id: find-product
       - run: |
           echo "This is product ${{ steps.find-product.outputs.Product }}"
