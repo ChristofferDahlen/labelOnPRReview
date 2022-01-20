@@ -28,7 +28,7 @@ jobs:
   Add_To_Project:
     runs-on: ubuntu-latest
     steps:
-      - name:Find the product name
+      - name: Find the product name
         run: |
           if [[ ${{github.event.issue.body}} =~ ]]
             echo "::set-output name=Product::${BASH_REMATCH[1]}"
