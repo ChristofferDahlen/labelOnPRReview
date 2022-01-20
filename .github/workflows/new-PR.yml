@@ -28,16 +28,22 @@ jobs:
   Add_To_Project:
     runs-on: ubuntu-latest
     steps:
-      - name: Find the product name
+      - name: Find the lowercase branch name
         run: |
-          echo "::set-output name=Product::$(echo ${{ github.event.issue.body }} | grep -oe 'Product: .*)"
-        id: find-product
+          echo "::set-output name=Branch::$(echo ${{ github.event.pull_request.title }} | tr '[:upper:]' '[:lower:]')"
+        id: lowercase
       - run: |
-          echo "This is product ${{ steps.find-product.outputs.Product }}"
+          echo "This is product ${{ steps.lowercase.outputs.Branch }}"
       - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ contains(steps.find-product.outputs.Product, 'Shop' ) }}
+        if: ${{ contains(steps.lowercase.outputs.Branch, 'shop' ) }}
         with:
-          project: vvvvv
+          project: SHOP
           column: Triage
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        if: ${{ !contains(steps.lowercase.outputs.Branch, 'shop' ) }}
+        with:
+          project: MUTLIASSET
+          column: Triage
+          repo-token: '${{ secrets.OPT_GH_TOKEN }}'

@@ -26,16 +26,22 @@ jobs:
   Add_To_Project:
     runs-on: ubuntu-latest
     steps:
-      - name: Find the product name
+      - name: Find the branch Name
         run: |
-          echo "::set-output name=Product::$(echo ${{ github.event.issue.body }} | grep -oe 'Product: .*)"
+          echo "::set-output name=Product::$(echo ${{ github.event.pull_request. }} | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
         id: find-product
       - run: |
           echo "This is product ${{ steps.find-product.outputs.Product }}"
       - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ contains(env.product, 'Shop' ) }}
+        if: ${{ contains(steps.find-product.outputs.Product, 'shop' ) }}
         with:
-          project: vvvvv
+          project: SHOP
           column: Triage
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        if: ${{ !contains(steps.find-product.outputs.Product, 'shop' ) }}
+        with:
+          project: MULTIASSET
+          column: Triage
+          repo-token: '${{ secrets.OPT_GH_TOKEN }}'
