@@ -18,4 +18,5 @@ jobs:
       - uses: Resnovas/label-mastermind@2.1.3
         name: Labeling
         with:
+          skipDelete: true
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
