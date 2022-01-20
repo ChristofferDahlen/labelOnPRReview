@@ -166,7 +166,7 @@
             ]
           },
           "[X] In Progress :gear:": {
-            "requires": 1,
+            "requires": 3,
             "conditions": [
               {
                 "type": "pendingReview",
