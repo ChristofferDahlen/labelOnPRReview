@@ -47,11 +47,11 @@
       "name": "[X] Awaiting Review :eyes:",
       "color": "FBCA04"
     },
-    "Changes Requested": {
+    "[X] Changes Requested :diamonds:": {
       "name": "[X] Changes Requested :diamonds:",
       "color": "f4ff1f"
     },
-    "In Progress": {
+    "[X] In Progress :gear:": {
       "name": "[X] In Progress :gear:",
       "color": "C5DEF5"
     },
@@ -68,17 +68,17 @@
       "name": "Type - Feature",
       "color": "8feb7b"
     },
-    "Type - Enhancement" : {
+    "Type - Enhancement :sparkler:" : {
       "name": "Type - Enhancement :sparkler:",
       "description": "Make something better",
       "color": "9032f7"
     },
-    "Type - Cleanup": {
+    "Type - Cleanup :broom:": {
       "name": "Type - Cleanup :broom:",
       "description": "Somebody needs to clean",
       "color": "bfdadc"
     },
-    "Type - Documentation": {
+    "Type - Documentation :black_nib:": {
       "name": "Type - Documentation :black_nib:",
       "description": "Time to document!",
       "color": "0052cc"
@@ -96,7 +96,7 @@
       },
       "pr": {
         "labels": {
-          "Size - XS": {
+          "[X] Size - XS": {
             "requires": 1,
             "conditions": [
               {
@@ -106,7 +106,7 @@
               }
             ]
           },
-          "Size - S": {
+          "[X] Size - S": {
             "requires": 1,
             "conditions": [
               {
@@ -116,7 +116,7 @@
               }
             ]
           },
-          "Size - M": {
+          "[X] Size - M": {
             "requires": 1,
             "conditions": [
               {
@@ -126,7 +126,7 @@
               }
             ]
           },
-          "Size - L": {
+          "[X] Size - L": {
             "requires": 1,
             "conditions": [
               {
@@ -136,7 +136,7 @@
               }
             ]
           },
-          "Size - XL": {
+          "[X] Size - XL": {
             "requires": 1,
             "conditions": [
               {
@@ -146,7 +146,7 @@
               }
             ]
           },
-          "Size - XXL": {
+          "[X] Size - XXL": {
             "requires": 1,
             "conditions": [
               {
@@ -155,7 +155,7 @@
               }
             ]
           },
-          "Accepted": {
+          "[X] Accepted :heavy_check_mark:": {
             "requires": 1,
             "conditions": [
               {
@@ -165,7 +165,7 @@
               }
             ]
           },
-          "In Progress": {
+          "[X] In Progress :gear:": {
             "requires": 1,
             "conditions": [
               {
@@ -183,7 +183,7 @@
               }
             ]
           },
-          "Awaiting Review": {
+          "[X] Awaiting Review :eyes:": {
             "requires": 1,
             "conditions": [
               {
@@ -192,7 +192,7 @@
               }
             ]
           },
-          "Changes Requested": {
+          "[X] Changes Requested :diamonds:": {
             "requires": 1,
             "conditions": [
               {
@@ -219,7 +219,7 @@
               }
             ]
           },
-          "Type - Enhancement" : {
+          "Type - Enhancement :sparkler:" : {
             "requires": 1,
             "conditions": [
               {
@@ -232,7 +232,7 @@
               }
             ]
           },
-          "Type - Cleanup": {
+          "Type - Cleanup :broom:": {
             "requires": 1,
             "conditions": [
               {
@@ -241,7 +241,7 @@
               }
             ]
           },
-          "Type - Documentation": {
+          "Type - Documentation :black_nib:": {
             "requires": 1,
             "conditions": [
               {
