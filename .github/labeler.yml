@@ -76,16 +76,16 @@ labels:
 ## Version Labels
   'v1.5.0':
     include:
-    - 'v?\s*1.5(.0|\s|$)'
+    - '(?i)v?\s*1.5(.0|\s|$)'
   'v1.6.0':
     include:
-    - 'v?\s*1.6(.0|\s|$)'
+    - '(?i)v?\s*1.6(.0|\s|$)'
   'v1.7.0':
     include:
-    - 'v?\s*1.7(.0|\s|$)'
+    - '(?i)v?\s*1.7(.0|\s|$)'
   'v1.8.0':
     include:
-    - 'v?\s*1.8.0'
+    - '(?i)v?\s*1.8.0'
   'develop':
     include:
-    - 'v?\s*develop'
+    - '(?i)v?\s*develop'
