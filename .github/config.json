@@ -259,24 +259,7 @@
       "issues": {
         "ref": "develop",
         "labels": {
-          "[X] Documented :scroll:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] Has been documented/im"
-              }
-            ]
-          },
-          "[X] Needs documentation :pencil2:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[ \\] Has been documented/im"
-              }
-            ]
-          }
+
         }
       },
 			"project": {
