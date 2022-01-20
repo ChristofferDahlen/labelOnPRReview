@@ -27,13 +27,16 @@ jobs:
 
   Add_To_Project:
     runs-on: ubuntu-latest
-    needs: 
-      - Add_Other_Labels
-      - Add_Synced_Labels
     steps:
+      - run: |
+          PROD =$(echo "${{ github.event.issue.body }}" | egrep -i 'Product[^#]*')
+          echo "product=$PROD" >> $GITHUB_ENV
+      - run: |
+          echo "This is product ${{ env.product }}"
       - uses: alex-page/github-project-automation-plus@v0.8.1
+        if: ${{ contains(env.product, 'Shop' ) }}
         with:
-          project: VVVVVVVVVVVV
-          column: 'Pull Requests'
+          project: vvvvv
+          column: Triage
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 

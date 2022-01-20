@@ -24,14 +24,17 @@ jobs:
         with:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
   Add_To_Project:
-    needs: 
-      - Add_Other_Labels
-      - Add_Synced_Labels
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          PROD =$(echo "${{ github.event.issue.body }}" | egrep -i 'Product[^#]*')
+          echo "product=$PROD" >> $GITHUB_ENV
+      - run: |
+          echo "This is product ${{ env.product }}"
       - uses: alex-page/github-project-automation-plus@v0.8.1
+        if: ${{ contains(env.product, 'Shop' ) }}
         with:
-          project: VVVVVVVVVVV
+          project: vvvvv
           column: Triage
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
