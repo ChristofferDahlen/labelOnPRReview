@@ -1,376 +1,64 @@
 {
   "labels": {
-    "[M] Cost - L": {
-      "name": "[M] Cost - L",
-      "description": "Approximately 3 - 5 Months of work.",
-      "color": "645460"
-    },
-    "[M] Cost - M": {
-      "name": "[M] Cost - M",
-      "description": "Approximately 1 - 2 Months of work.",
-      "color": "645460"
-    },
-    "[M] Cost - S": {
-      "name": "[M] Cost - S",
-      "description": "Approximately 11 - 30 days of work.",
-      "color": "645460"
-    },
-    "[M] Cost - XL": {
-      "name": "[M] Cost - XL",
-      "description": "Approximately 6 - 12 Months of work.",
-      "color": "645460"
-    },
-    "[M] Cost - XXS": {
-      "name": "[M] Cost - XXS",
-      "description": "Approximately 0 - 5 days of work.",
-      "color": "645460"
-    },
-    "[M] Cost - XS": {
-      "name": "[M] Cost - XS",
-      "description": "Approximately 6 - 10 days of work.",
-      "color": "645460"
-    },
-    "[M] Cost - XXL": {
-      "name": "[M] Cost - XXL",
-      "description": "Approximately 12+ months of work.",
-      "color": "645460"
-    },
-    "[M] Cost - TBD :question:": {
-      "name": "Cost - TBD :question:",
-      "color": "645460"
-    },
-    "Customer - A2A": {
-      "name": "Customer - A2A",
-      "color": "c889d7"
-    },
-    "Customer - EPC": {
-      "name": "Customer - EPC",
-      "color": "c889d7"
-    },
-    "Customer - Enel": {
-      "name": "Customer - Enel",
-      "color": "c889d7"
-    },
-    "Customer - Iberdrola": {
-      "name": "Customer - Iberdrola",
-      "color": "c889d7"
-    },
-    "Customer - Luminus": {
-      "name": "Customer - Luminus",
-      "color": "c889d7"
-    },
-    "Customer - Uniper": {
-      "name": "Customer - Uniper",
-      "color": "c889d7"
-    },
-    "Documented :scroll:": {
-      "name": "Documented :scroll:",
+    "Documented": {
+      "name": "[X] Documented :scroll:",
       "description": "Has been documented!",
       "color": "0052cc"
     },
-    "Investigation :mag:": {
-      "name": "Investigation :mag:",
+    "Investigation": {
+      "name": "[X] Investigation :mag:",
       "color": "D107F7"
     },
-    "[M] Blocked :no_entry_sign:": {
-      "name": "[M] Blocked :no_entry_sign:",
-      "color": "F9D0C4"
-    },
-    "[M] Blocking :exclamation:": {
-      "name": "[M] Blocking :exclamation:",
-      "description": "This issue is blocking work",
-      "color": "b60205"
-    },
-    "[M] Cannot Reproduce": {
-      "name": "[M]  Cannot Reproduce",
-      "description": "This issue isn't reproducible",
-      "color": "D93F0B"
-    },
-    "[M] Duplicate :grey_exclamation:": {
-      "name": "[M] Duplicate :grey_exclamation:",
-      "color": "fef2c0"
-    },
-    "[M] Help Wanted :hand:": {
-      "name": "[M] Help Wanted :hand:",
-      "color": "0e8a16"
-    },
-    "[M] Resolution - Fixed": {
-      "name": "[M] Resolution - Fixed",
-      "description": "This issue has been fixed",
-      "color": "A9E98F"
-    },
-    "[M] Resolution - Rejected - Wrong Input": {
-      "name": "[M]  Resolution - Rejected - Input Data Problem",
-      "description": "This issue has been rejected due to it being a issue with wrong input",
-      "color": "A9E98F"
-    },
-    "[M] Resolution - Rejected": {
-      "name": "[M] Resolution - Rejected",
-      "description": "This issue has been rejected",
-      "color": "A9E98F"
-    },
-    "[M] Mesh Model Update Needed": {
-      "name": "[M] Mesh Model Update Needed",
-      "color": "A5F5A0"
-    },
-    "[M] Waiting On Author :zzz:": {
-      "name": "[M] Waiting On Author :zzz:",
-      "color": "1b4623"
-    },
-    "[M] Waiting On Future :calendar:": {
-      "name": "[M] Waiting On Future :calendar:",
-      "color": "C5DEF5"
-    },
-    "[M] Urgent :bangbang:": {
-      "name": "[M] Urgent :bangbang:",
-      "color": "ce4727"
-    },
-    "[M] On Hold": {
-      "name": "On Hold",
-      "description": "",
-      "color": "645460"
-    },
-    "[M] Priority - High": {
-      "name": "[M] Priority - High",
-      "color": "fef2c0"
-    },
-    "[M] Priority - Low": {
-      "name": "[M] Priority - Low",
-      "color": "fef2c0"
-    },
-    "[M] Priority - Medium": {
-      "name": "[M] Priority - Medium",
-      "color": "fef2c0"
-    },
-    "[M] Priority - TBD :question:": {
-      "name": "[M] Priority - TBD :question:",
-      "color": "fef2c0"
-    },
-    "Product - Connecting Prodrisk": {
-      "name": "Product - Connecting Prodrisk",
-      "color": "5319e7"
-    },
-    "Product - Connecting Shop": {
-      "name": "Product - Connecting Shop",
-      "color": "5319e7"
-    },
-    "Product - Connecting Spotbid": {
-      "name": "Product - Connecting Spotbid",
-      "color": "5319e7"
-    },
-    "Product - Gateway": {
-      "name": "Product - Gateway",
-      "description": "Powel Optimal Gateway",
-      "color": "5319e7"
-    },
-    "Product - POH": {
-      "name": "Product - POH",
-      "color": "5319e7"
-    },
-    "Product - POM": {
-      "name": "Product - POM",
-      "description": "Powel Optimal Midterm",
-      "color": "5319e7"
-    },
-    "Product - POMA": {
-      "name": "Product - POMA",
-      "color": "5319e7"
-    },
-    "[M] Risk - High": {
-      "name": "[M] Risk - High",
-      "description": "This change will likely break previous functionality",
-      "color": "b60205"
-    },
-    "[M] Risk - Low": {
-      "name": "[M] Risk - Low",
-      "description": "This change will probably not break previous functionality",
-      "color": "006b75"
-    },
-    "[M] Risk - Medium": {
-      "name": "[M] Risk - Medium",
-      "description": "This change could break previous functionality",
-      "color": "1d76db"
-    },
-    "[M] Risk - None": {
-      "name": "[M] Risk - None",
-      "description": "This change will not break previous functionality",
-      "color": "006b75"
-    },
-    "[M] Risk - TBD :question:": {
-      "name": "[M] Risk - TBD :question:",
-      "color": "006b75"
-    },
-    "Severity - Critical :boom:": {
-      "name": "Severity - Critical :boom:",
-      "description": "The software does not execute correctly. Severe adverse impact and no workaround.",
-      "color": "c6bdf4"
-    },
-    "Severity - Major :fire:": {
-      "name": "Severity - Major :fire:",
-      "description": "Major impairments in functionality. Major adverse impact and no workaround.",
-      "color": "abcc53"
-    },
-    "Severity - Minor :construction:": {
-      "name": "Severity - Minor :construction:",
-      "description": "Minor impairments in functionality.",
-      "color": "010fdf"
-    },
     "Size - L": {
-      "name": "Size - L",
+      "name": "[X] Size - L",
       "description": "PR: Changes between 100 - 500 lines",
       "color": "0eb7c7"
     },
     "Size - M": {
-      "name": "Size - M",
+      "name": "[X] Size - M",
       "description": "PR: Changes between 40 - 100 lines",
       "color": "0eb7c7"
     },
     "Size - S": {
-      "name": "Size - S",
+      "name": "[X] Size - S",
       "description": "PR: Changes between 10 - 30 lines",
       "color": "0eb7c7"
     },
     "Size - XL": {
-      "name": "Size - XL",
+      "name": "[X] Size - XL",
       "description": "PR: Changes between 500 - 1000 lines",
       "color": "0eb7c7"
     },
     "Size - XS": {
-      "name": "Size - XS",
+      "name": "[X] Size - XS",
       "description": "PR: Changes between 0 - 10 lines",
       "color": "0eb7c7"
     },
     "Size - XXL": {
-      "name": "Size - XXL",
+      "name": "[X] Size - XXL",
       "description": "PR: Changes between 1000+ lines",
       "color": "0eb7c7"
     },
-    "Abandoned": {
-      "name": "Abandoned",
-      "description": "",
-      "color": "645460"
-    },
     "Accepted :heavy_check_mark:": {
-      "name": "Accepted :heavy_check_mark:",
+      "name": "[X] Accepted :heavy_check_mark:",
       "color": "072dbc"
     },
     "Awaiting Review :eyes:": {
-      "name": "Awaiting Review :eyes:",
+      "name": "[X] Awaiting Review :eyes:",
       "color": "FBCA04"
     },
     "Changes Requested :diamonds:": {
-      "name": "Changes Requested :diamonds:",
+      "name": "[X] Changes Requested :diamonds:",
       "color": "f4ff1f"
     },
-    "Fix Confirmed": {
-      "name": "Fix Confirmed",
-      "description": "",
-      "color": "0E8A16"
-    },
-    "Enhancement Complete": {
-      "name": "Enhancement Complete",
-      "description": "",
-      "color": "0E8A16"
-    },
-    "Feature Complete": {
-      "name": "Feature Complete",
-      "description": "",
-      "color": "0E8A16"
-    },
     "In Progress :gear:": {
-      "name": "In Progress :gear:",
+      "name": "[X] In Progress :gear:",
       "color": "C5DEF5"
     },
-    "Stale": {
-      "name": "Stale",
-      "description": "",
-      "color": "645460"
-    },
-    "Support Issue": {
-      "name": "Support Issue",
-      "description": "This issue comes from support",
-      "color": "fbca04"
-    },
-    "Triage": {
-      "name": "Triage",
-      "color": "0e8a16"
-    },
-    "Type - Bug :lady_beetle:": {
-      "name": "Type - Bug :lady_beetle:",
-      "color": "b60205"
-    },
-    "Type - Bugfix": {
-      "name": "Type - Bugfix",
-      "color": "9E0717"
-    },
-    "Type - Cleanup :broom:": {
-      "name": "Type - Cleanup :broom:",
-      "description": "Somebody needs to clean",
-      "color": "bfdadc"
-    },
-    "Type - Documentation :black_nib:": {
-      "name": "Type - Documentation :black_nib:",
-      "description": "Time to document!",
-      "color": "0052cc"
-    },
-    "Type - Enhancement :sparkler:": {
-      "name": "Type - Enhancement :sparkler:",
-      "description": "Make something better",
-      "color": "9032f7"
-    },
-    "Type - Feature": {
-      "name": "Type - Feature",
-      "color": "8feb7b"
-    },
-    "Type - Other": {
-      "name": "Type - Other",
-      "description": "A miscellaneous issue",
-      "color": "ecb39f"
-    },
-    "Type - RFC": {
-      "name": "Type - RFC",
-      "description": "Request For Comment",
-      "color": "ecb39f"
-    },
-    "Undocumented :pencil2:": {
-      "name": "Undocumented :pencil2:",
+    "Needs documentation :pencil2:": {
+      "name": "[X] Needs documentation :pencil2:",
       "description": "This needs to be documented!",
       "color": "0052cc"
-    },
-    "VersionOne": {
-      "name": "VersionOne",
-      "description": "This comes from version one",
-      "color": "ea02b6"
-    },
-    "v - Develop": {
-      "name": "v - Develop",
-      "description": "Current development",
-      "color": "5978d8"
-    },
-    "v1.5.0": {
-      "name": "v1.5.0",
-      "description": "Version 1.5.0",
-      "color": "5978d8"
-    },
-    "v1.6.0": {
-      "name": "v1.6.0",
-      "description": "Version 1.6.0",
-      "color": "5978d8"
-    },
-    "v1.7.0": {
-      "name": "v1.7.0",
-      "description": "Version 1.7.0",
-      "color": "5978d8"
-    },
-    "v1.8.0": {
-      "name": "v1.8.0",
-      "description": "Version 1.8.0",
-      "color": "5978d8"
-    },
-    "v1.9.0": {
-      "name": "v1.9.0",
-      "description": "Version 1.9.0",
-      "color": "5978d8"
     }
   },
   "runners": [
@@ -383,29 +71,11 @@
       "prereleaseName": "alpha",
       "sharedConfig": {
         "labels": {
-          "Abandoned": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "isAbandoned",
-                "stale": 30
-              }
-            ]
-          },
-          "Stale": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "isStale",
-                "stale": 30
-              }
-            ]
-          }
         }
       },
       "pr": {
         "labels": {
-          "Size - XS": {
+          "[X] Size - XS": {
             "requires": 1,
             "conditions": [
               {
@@ -415,7 +85,7 @@
               }
             ]
           },
-          "Size - S": {
+          "[X] Size - S": {
             "requires": 1,
             "conditions": [
               {
@@ -425,7 +95,7 @@
               }
             ]
           },
-          "Size - M": {
+          "[X] Size - M": {
             "requires": 1,
             "conditions": [
               {
@@ -435,7 +105,7 @@
               }
             ]
           },
-          "Size - L": {
+          "[X] Size - L": {
             "requires": 1,
             "conditions": [
               {
@@ -445,7 +115,7 @@
               }
             ]
           },
-          "Size - XL": {
+          "[X] Size - XL": {
             "requires": 1,
             "conditions": [
               {
@@ -455,7 +125,7 @@
               }
             ]
           },
-          "Size - XXL": {
+          "[X] Size - XXL": {
             "requires": 1,
             "conditions": [
               {
@@ -464,7 +134,7 @@
               }
             ]
           },
-          "Accepted :heavy_check_mark:": {
+          "[X] Accepted :heavy_check_mark:": {
             "requires": 1,
             "conditions": [
               {
@@ -474,7 +144,7 @@
               }
             ]
           },
-          "In Progress :gear:": {
+          "[X] In Progress :gear:": {
             "requires": 1,
             "conditions": [
               {
@@ -483,7 +153,7 @@
               },
               {
                 "type": "requestedChanges",
-                "value": true
+                "value": false
               },
               {
                 "type": "isApproved",
@@ -492,7 +162,7 @@
               }
             ]
           },
-          "Awaiting Review :eyes:": {
+          "[X] Awaiting Review :eyes:": {
             "requires": 1,
             "conditions": [
               {
@@ -501,7 +171,7 @@
               }
             ]
           },
-          "Changes Requested :diamonds:": {
+          "[X] Changes Requested :diamonds:": {
             "requires": 1,
             "conditions": [
               {
@@ -568,86 +238,7 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "Enhancement Complete": {
-            "requires": 5,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/### Process\\s*-\\s*Enhancement/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has enhancement been accepted/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] solution has been proposed/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been implemented/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been tested/im"
-              }
-            ]
-          },
-          "Feature Complete": {
-            "requires": 5,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Process\\s*-\\s*Feature/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has feature been accepted/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] solution has been proposed/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been implemented/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been tested/im"
-              }
-            ]
-          },
-          "Fix Confirmed": {
-            "requires": 6,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Process\\s*-\\s*Bugfix/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been investigated by/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] fix has been proposed/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been fixed for release build/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been fixed for development build/im"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] has been retested/im"
-              }
-            ]
-          },
-          "Documented :scroll:": {
+          "[X] Documented :scroll:": {
             "requires": 1,
             "conditions": [
               {
@@ -656,226 +247,12 @@
               }
             ]
           },
-          "Undocumented :pencil2:": {
+          "[X] Needs documented :pencil2:": {
             "requires": 1,
             "conditions": [
               {
                 "type": "descriptionMatches",
                 "pattern": "/^- \\[ \\] Has been documented/im"
-              }
-            ]
-          },
-          "Product - POMA": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Product[^#\\n\\r]*POMA\\b/i"
-              }
-            ]
-          },
-          "Product - Gateway": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Product[^#\\n\\r]*Gateway\\b/i"
-              }
-            ]
-          },
-          "Product - POM": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Product[^#\\n\\r]*POM\\b/i"
-              }
-            ]
-          },
-          "Product - POH": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Product[^#\\n\\r]*POH\\b/i"
-              }
-            ]
-          },
-          "Product - Connecting Shop": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Product[^#\\n\\r]*Connecting Shop/i"
-              }
-            ]
-          },
-          "Product - Connecting Spotbid": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Product[^#\\n\\r]*Connecting Spotbid/i"
-              }
-            ]
-          },
-          "Product - Connecting Prodrisk": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Product[^#\\n\\r]*Connecting Prodrisk/i"
-              }
-            ]
-          },
-          "Severity - Critical :boom:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Severity[^#\\n\\r]*Critical/i"
-              }
-            ]
-          },
-          "Severity - Major :fire:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Severity[^#\\n\\r]*Major/i"
-              }
-            ]
-          },
-          "Severity - Minor :construction:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Severity[^#\\n\\r]*Minor/i"
-              }
-            ]
-          },
-          "Customer - Enel": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Customer[^#\\n\\r]*Enel/i"
-              }
-            ]
-          },
-          "Customer - EPC": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Customer[^#\\n\\r]*EPC/i"
-              }
-            ]
-          },
-          "Customer - Luminus": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Customer[^#\\n\\r]*Luminus/i"
-              }
-            ]
-          },
-          "Customer - Uniper": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Customer[^#\\n\\r]*Uniper/i"
-              }
-            ]
-          },
-          "Customer - Iberdrola": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Customer[^#\\n\\r]*Iberdrola/i"
-              }
-            ]
-          },
-          "Customer - A2A": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Customer[^#\\n\\r]*A2A/i"
-              }
-            ]
-          },
-          "v - Develop" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*develop/i"
-              }
-            ]
-          },
-          "v1.5.0" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.5[\\n\\s,]/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.5\\.0/i"
-              }
-            ]          },
-          "v1.6.0" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.6[\\n\\s,]/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.6\\.0/i"
-              }
-            ]          },
-          "v1.7.0" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.7[\\n\\s,]/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.7\\.0/i"
-              }
-            ]          },
-          "v1.8.0" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.8[\\n\\s,]/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.8\\.0/i"
-              }
-            ]          },
-          "v1.9.0" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.9[\\n\\s,]/i"
-              },
-              {
-                "type": "descriptionMatches",
-                "pattern": "/# Version[^#\\n\\r]*v?1\\.9\\.0/i"
               }
             ]
           }

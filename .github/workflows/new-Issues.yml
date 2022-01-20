@@ -1,0 +1,36 @@
+name: Setup new Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  Add_Synced_Labels:
+    runs-on: ubuntu-latest
+    name: Add Synced Labels
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+      - uses: Resnovas/label-mastermind@2.1.3
+        name: Labeling
+        with:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
+  Add_Other_Labels:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Add_Other_Labels
+      id: labeler
+      uses: jimschubert/labeler-action@v1
+      with:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  Add_To_Project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: VVVVVVVVVVV
+          column: Triage
+          repo-token: '${{ secrets.OPT_GH_TOKEN }}'
+

@@ -1,0 +1,63 @@
+comments:
+  issues: |
+    Thanks for opening this issue!
+    I have applied any labels matching special text in your description.
+
+    Please review the labels and make any necessary changes.
+
+labels:
+  'v1.8.0':
+    include:
+      - \bv?1.8\b
+      - \bv?1.8.0\b
+  'Product - POMA':
+    include:
+      - '(?i)Product:?[\s]*POMA'
+  'Product - Gateway':
+    include:
+      - '(?i)Product:?[\s]*Gateway'
+  'Product - POM':
+    include:
+      - '(?i)Product:?[\s]*POM'
+  'Product - POH':
+    include:
+      - '(?i)Product:?[\s]*POH'
+  Product - Spotbid:
+    include:
+      - '(?i)Product:?[\s]*Spotbid'
+  Product - Connecting Shop:
+    include:
+      - '(?i)Product:?[\s]*(Connecting\s+)?Shop'
+  Product - Connecting Prodrisk:
+    include:
+      - '(?i)Product:?[\s]*(Connecting\s+)?Prodrisk'
+  'Severity - Critical :boom:':
+    include:
+      - '(?i)Severity:?[\s]*Critical'
+  'Severity - Major :boom:':
+    include:
+      - '(?i)Severity:?[\s]*Major'
+  'Severity - Average :broken_heart:':
+    include:
+      - '(?i)Severity:?[\s]*Average'
+  'Severity - Minor :construction:':
+    include:
+      - '(?i)Severity:?[\s]*Minor'
+  'Customer - Enel':
+    include:
+      - '(?i)Customer:?[\s]*Enel'
+  'Customer - EPC':
+    include:
+      - '(?i)Customer:?[\s]*EPC'
+  'Customer - Luminus':
+    include:
+      - '(?i)Customer:?[\s]*Luminus'
+  'Customer - Uniper':
+    include:
+      - '(?i)Customer:?[\s]*Uniper'
+  'Customer - Iberdrola':
+    include:
+      - '(?i)Customer:?[\s]*Iberdrola'
+  'Customer - A2A':
+    include:
+      - '(?i)Customer:?[\s]*A2A'

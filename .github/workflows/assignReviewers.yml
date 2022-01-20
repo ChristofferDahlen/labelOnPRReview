@@ -1,0 +1,14 @@
+name: AssignReviewers
+on:
+  pull_request:
+    types: [review_requested]
+
+jobs:
+  Add_Assignee:
+    runs-on: ubuntu-latest
+    name: Reviewer to Assignee
+    steps:
+      - name: Add Reviewers to Assignees
+        uses: rubeus90/auto-sync-reviewer-assignee@v1.1
+        with:
+          token: '${{ secrets.GITHUB_TOKEN  }}'

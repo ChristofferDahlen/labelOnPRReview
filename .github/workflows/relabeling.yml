@@ -1,0 +1,21 @@
+name: Relabeling
+
+on:
+  issues:
+    types: [edited, closed, reopened]
+  pull_request:
+    types: [edited, closed, reopened, synchronize, ready_for_review, review_requested, review_request_removed]
+  pull_request_review:
+    tpyes: [submitted]
+
+jobs:
+  Relabeling:
+    runs-on: ubuntu-latest
+    name: Label issues and pull requests
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+      - uses: Resnovas/label-mastermind@2.1.3
+        name: Labeling
+        with:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
