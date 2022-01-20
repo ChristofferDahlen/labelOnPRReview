@@ -256,7 +256,7 @@
           }
         }
       },
-      "issues": {
+      "issue": {
         "ref": "develop",
         "labels": {
           "[X] Documented :scroll:": {
@@ -264,7 +264,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[x\\] Has been documented/im"
+                "pattern": "/^\\s*- \\[x\\] Has been documented/im"
               }
             ]
           },
@@ -273,7 +273,7 @@
             "conditions": [
               {
                 "type": "descriptionMatches",
-                "pattern": "/^- \\[ \\] Has been documented/im"
+                "pattern": "/^\\s*- \\[ \\] Has been documented/im"
               }
             ]
           }
