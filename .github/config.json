@@ -206,7 +206,7 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^bugfix\\//im"
+                "pattern": "/bugfix\\//im"
               }
             ]
           },
@@ -215,7 +215,7 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^feature\\//im"
+                "pattern": "/feature\\//im"
               }
             ]
           },
@@ -224,11 +224,11 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^Enhanc\\//im"
+                "pattern": "/Enhanc\\//im"
               },
               {
                 "type": "branchMatches",
-                "pattern": "/^Enhancement\\//im"
+                "pattern": "/Enhancement\\//im"
               }
             ]
           },
@@ -237,7 +237,7 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^Cleanup\\//im"
+                "pattern": "/Cleanup\\//im"
               }
             ]
           },
@@ -246,11 +246,11 @@
             "conditions": [
               {
                 "type": "branchMatches",
-                "pattern": "/^Doc\\//im"
+                "pattern": "/Doc\\//im"
               },
               {
                 "type": "branchMatches",
-                "pattern": "/^Documentation\\//im"
+                "pattern": "/Documentation\\//im"
               }
             ]
           }
