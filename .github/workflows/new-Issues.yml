@@ -26,11 +26,16 @@ jobs:
   Add_To_Project:
     runs-on: ubuntu-latest
     steps:
+      - name:Find the product name
+        run: |
+          if [[ ${{github.event.issue.body}} =~ ]]
+            echo "::set-output name=Product::${BASH_REMATCH[1]}"
+          else
+            echo "::set-output name=Product::Other"
+          fi
+        id: find-product
       - run: |
-          PROD=$(echo "${{ github.event.issue.body }}" | egrep -i 'Product[^#]*')
-          echo "::set-output name=Product::$PROD"
-      - run: |
-          echo "This is product ${{ env.product }}"
+          echo "This is product ${{ steps.find-product.outputs.Product }}"
       - uses: alex-page/github-project-automation-plus@v0.8.1
         if: ${{ contains(env.product, 'Shop' ) }}
         with:
