@@ -30,7 +30,7 @@ jobs:
     steps:
       - run: |
           PROD=$(echo "${{ github.event.issue.body }}" | egrep -i 'Product[^#]*')
-          echo "product=$PROD" >> $GITHUB_ENV
+          echo "::set-output name=Product::$PROD"
       - run: |
           echo "This is product ${{ env.product }}"
       - uses: alex-page/github-project-automation-plus@v0.8.1
