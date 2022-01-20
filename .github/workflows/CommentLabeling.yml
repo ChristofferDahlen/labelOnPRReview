@@ -4,6 +4,8 @@ name: "Add label depending on comment"
 on:
   issue_comment:
     types: [ created]
+    # This is for both PR and Issues
+
 
 jobs:
   test:
