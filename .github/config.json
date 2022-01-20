@@ -96,15 +96,188 @@
       },
       "pr": {
         "labels": {
+          "[X] Size - XS": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "changesSize",
+                "min": 0,
+                "max": 10
+              }
+            ]
+          },
+          "[X] Size - S": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "changesSize",
+                "min": 10,
+                "max": 30
+              }
+            ]
+          },
+          "[X] Size - M": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "changesSize",
+                "min": 40,
+                "max": 100
+              }
+            ]
+          },
+          "[X] Size - L": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "changesSize",
+                "min": 100,
+                "max": 500
+              }
+            ]
+          },
+          "[X] Size - XL": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "changesSize",
+                "min": 500,
+                "max": 1000
+              }
+            ]
+          },
+          "[X] Size - XXL": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "changesSize",
+                "min": 1000
+              }
+            ]
+          },
+          "[X] Accepted :heavy_check_mark:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "isApproved",
+                "value": true,
+                "required": 1
+              }
+            ]
+          },
+          "[X] In Progress :gear:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "pendingReview",
+                "value": false
+              },
+              {
+                "type": "requestedChanges",
+                "value": false
+              },
+              {
+                "type": "isApproved",
+                "value": false,
+                "required": 1
+              }
+            ]
+          },
+          "[X] Awaiting Review :eyes:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "pendingReview",
+                "value": true
+              }
+            ]
+          },
+          "[X] Changes Requested :diamonds:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "requestedChanges",
+                "value": true
+              }
+            ]
+          },
+          "Type - Bugfix" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^bugfix\\//im"
+              }
+            ]
+          },
+          "Type - Feature" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^feature\\//im"
+              }
+            ]
+          },
+          "Type - Enhancement :sparkler:" : {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^Enhanc\\//im"
+              },
+              {
+                "type": "branchMatches",
+                "pattern": "/^Enhancement\\//im"
+              }
+            ]
+          },
+          "Type - Cleanup :broom:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^Cleanup\\//im"
+              }
+            ]
+          },
+          "Type - Documentation :black_nib:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "branchMatches",
+                "pattern": "/^Doc\\//im"
+              },
+              {
+                "type": "branchMatches",
+                "pattern": "/^Documentation\\//im"
+              }
+            ]
+          }
         }
       },
       "issues": {
         "ref": "develop",
         "labels": {
-
+          "[X] Documented :scroll:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[x\\] Has been documented/im"
+              }
+            ]
+          },
+          "[X] Needs documentation :pencil2:": {
+            "requires": 1,
+            "conditions": [
+              {
+                "type": "descriptionMatches",
+                "pattern": "/^- \\[ \\] Has been documented/im"
+              }
+            ]
+          }
         }
-      },
-			"project": {
       }
     }
   ]
