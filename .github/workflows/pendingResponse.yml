@@ -5,7 +5,7 @@
 
   jobs:
     issue_commented:
-      if: ${{ !github.event.issue.pull_request  && contains(github.event.issue.labels.*.name, '[X] :mailbox:') }}
+      if: ${{ !github.event.issue.pull_request }}
       runs-on: ubuntu-latest
       steps:
         - uses: siegerts/pending-response@v1
