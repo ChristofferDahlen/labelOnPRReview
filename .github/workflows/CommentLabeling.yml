@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  test:
+  labeling-on-comment:
     runs-on: ubuntu-latest
     steps:
       - uses: Amwam/issue-comment-action@v1.3.1
@@ -46,3 +46,19 @@ jobs:
           keywords: '["Urgent"]'
           labels: '["Urgent :bangbang:"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+  
+  AuthorTeamResponseLabeling:
+    if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: siegerts/pending-author-response@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pending-response-label: "[X] :mailbox:"
+          actionable-label: "[X] :basketball:"
+      - uses: siegerts/pending-response@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          member-associations: "OWNER, MEMBER"
+          pending-response-label: "[X] :mailbox:"
+          actionable-label: "[X] :basketball:"
