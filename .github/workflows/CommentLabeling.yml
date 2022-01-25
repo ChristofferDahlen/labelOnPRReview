@@ -62,16 +62,24 @@ jobs:
           echo "::set-output name=lc::$(echo "@${{ github.event.issue.user.login }}" | tr '[:upper:]' '[:lower:]')"
         id: AtAuthor
 
-      - name: Add developer reply label
-        uses: siegerts/pending-author-response@v1
+      - name: Add author repose
+      - uses: siegerts/pending-author-response@v1
         if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pending-response-label: "[X] :mailbox:"
-          actionable-label: "[X] :basketball:"
+          pending-response-label: "[X] :basketball:"
+          actionable-label: "[X] :mailbox:"
 
-      - name: Add author reply label
-        uses: siegerts/pending-response@v1
+      - name: Add author repose if waiting
+      - uses: siegerts/pending-author-response@v1
+        if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pending-response-label: "Waiting For Author"
+          actionable-label: "[X] :mailbox:"
+
+      - name: Add developer response
+      - uses: siegerts/pending-response@v1
         if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
