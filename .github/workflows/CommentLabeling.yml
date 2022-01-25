@@ -64,7 +64,7 @@ jobs:
 
       - name: Add author repose
         uses: siegerts/pending-author-response@v1
-        if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pending-response-label: "[X] :basketball:"
@@ -72,7 +72,7 @@ jobs:
 
       - name: Add author repose if waiting
         uses: siegerts/pending-author-response@v1
-        if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pending-response-label: "Waiting For Author"
@@ -80,7 +80,7 @@ jobs:
 
       - name: Add developer response
         uses: siegerts/pending-response@v1
-        if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           member-associations: "OWNER, MEMBER"
@@ -89,14 +89,14 @@ jobs:
 
       - name: Add Waiting for Author
         uses: actions-ecosystem/action-add-labels@v1.1.0
-        if: ${{ contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: "Waiting On Author"
 
       - name: Add Waiting for Author
         uses: actions-ecosystem/action-remove-labels@v1.1.0
-        if: ${{ contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: |
