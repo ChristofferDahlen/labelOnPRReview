@@ -46,24 +46,50 @@ jobs:
           keywords: '["Urgent"]'
           labels: '["Urgent :bangbang:"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '[ "@${{ github.event.issue.user.login }}" ]'
-          labels: '["Waiting On Author" ]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
   
   AuthorTeamResponseLabeling:
     if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - uses: siegerts/pending-author-response@v1
+
+      - name: Get lowercase body
+        run: |
+          echo "::set-output name=lc::$(echo "${{ github.event.comment.body }}" | tr '[:upper:]' '[:lower:]')"
+        id: lowercaseComment
+
+      - name: Get lowercase author
+        run: |
+          echo "::set-output name=lc::$(echo "@${{ github.event.issue.user.login }}" | tr '[:upper:]' '[:lower:]')"
+        id: AtAuthor
+
+      - name: Add developer reply label
+        uses: siegerts/pending-author-response@v1
+        if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pending-response-label: "[X] :mailbox:"
           actionable-label: "[X] :basketball:"
-      - uses: siegerts/pending-response@v1
+
+      - name: Add author reply label
+        uses: siegerts/pending-response@v1
+        if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           member-associations: "OWNER, MEMBER"
           pending-response-label: "[X] :mailbox:"
           actionable-label: "[X] :basketball:"
+
+      - name: Add Waiting for Author
+        uses: actions-ecosystem/action-add-labels@v1.3
+        if: ${{ contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        with:
+          labels: "Waiting On Author"
+
+      - name: Add Waiting for Author
+        uses: actions-ecosystem/action-remove-labels@v1.3
+        if: ${{ contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
+        with:
+          labels: |
+            [X] :mailbox:
+            [X] :basketball:
+      
