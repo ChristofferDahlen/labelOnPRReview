@@ -25,7 +25,7 @@ labels:
       - '(?i)Product[^\w\r\n]*Gateway'
   Product - POM:
     include:
-      - '(?i)Product[^\w\r\n]*POM'
+      - '(?i)Product[^\w\r\n]*POM\b'
   Product - POH:
     include:
       - '(?i)Product[^\w\r\n]*POH'
