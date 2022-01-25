@@ -75,7 +75,7 @@ jobs:
         if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pending-response-label: "Waiting For Author"
+          pending-response-label: "Waiting On Author"
           actionable-label: "[X] :mailbox:"
 
       - name: Add developer response
