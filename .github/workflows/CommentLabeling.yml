@@ -91,12 +91,14 @@ jobs:
         uses: actions-ecosystem/action-add-labels@v1.1.0
         if: ${{ contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           labels: "Waiting On Author"
 
       - name: Add Waiting for Author
         uses: actions-ecosystem/action-remove-labels@v1.1.0
         if: ${{ contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           labels: |
             [X] :mailbox:
             [X] :basketball:
