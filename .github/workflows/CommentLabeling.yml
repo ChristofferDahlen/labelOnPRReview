@@ -48,7 +48,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
   
   AuthorTeamResponseLabeling:
-    if: ${{ !github.event.issue.pull_request }}
+    #if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
 
@@ -75,7 +75,7 @@ jobs:
         if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          pending-response-label: "Waiting On Author"
+          pending-response-label: "[X] Waiting On Author"
           actionable-label: "[X] :mailbox:"
 
       - name: Add developer response
@@ -92,7 +92,7 @@ jobs:
         if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: "Waiting On Author"
+          labels: "[X] Waiting On Author"
 
       - name: Add Waiting for Author
         uses: actions-ecosystem/action-remove-labels@v1.1.0

@@ -17,8 +17,6 @@
    color: "A5F5A0"
  - name: "Waiting On Future :calendar:"
    color: "C5DEF5"
- - name: "Waiting On Author"
-   color: 0052CC
  - name: "Urgent :bangbang:"
    color: "ce4727"
  - name: "On Hold"
@@ -240,4 +238,5 @@
  - name: "[X] :basketball:"
    description: "The ball is in DevOps court"
    color: "D93F0B"
-   
+ - name: "[X] Waiting On Author"
+   color: 0052CC
