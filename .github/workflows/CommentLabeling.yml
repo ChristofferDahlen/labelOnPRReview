@@ -48,8 +48,8 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Amwam/issue-comment-action@v1.3.1
         with:
-          keywords: '["@${{ github.event.issue.user.login }}"]'
-          labels: '["Waiting On Author]'
+          keywords: '[ "@${{ github.event.issue.user.login }}" ]'
+          labels: '["Waiting On Author" ]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
   
   AuthorTeamResponseLabeling:
