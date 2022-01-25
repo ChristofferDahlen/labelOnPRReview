@@ -63,7 +63,7 @@ jobs:
         id: AtAuthor
 
       - name: Add author repose
-      - uses: siegerts/pending-author-response@v1
+        uses: siegerts/pending-author-response@v1
         if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -71,7 +71,7 @@ jobs:
           actionable-label: "[X] :mailbox:"
 
       - name: Add author repose if waiting
-      - uses: siegerts/pending-author-response@v1
+        uses: siegerts/pending-author-response@v1
         if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -79,7 +79,7 @@ jobs:
           actionable-label: "[X] :mailbox:"
 
       - name: Add developer response
-      - uses: siegerts/pending-response@v1
+        uses: siegerts/pending-response@v1
         if: ${{ !contains(steps.lowercaseComment.lc, steps.AtAuthor.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
