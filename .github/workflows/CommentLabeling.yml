@@ -83,7 +83,7 @@ jobs:
         if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          member-associations: "OWNER, MEMBER"
+          member-associations: "OWNER, COLLABORATOR"
           pending-response-label: "[X] :mailbox:"
           actionable-label: "[X] :basketball:"
 
