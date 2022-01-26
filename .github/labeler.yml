@@ -15,7 +15,15 @@ comments:
 
 ## Labels
 
+
+
 labels:
+
+  CR:
+    include:
+      - 'CR'
+      - '(?i)Change Request'
+
 ## Product Labels
   Product - POMA:
     include:
@@ -72,7 +80,6 @@ labels:
   'Customer - A2A':
     include:
       - '(?i)Customer[^\w\r\n]*A2A'
-
 ## Version Labels
   'v1.5.0':
     include:
