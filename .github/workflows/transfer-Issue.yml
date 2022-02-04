@@ -19,14 +19,5 @@ jobs:
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
         router: ${{ matrix.router }}
-    - name: Update Transferred Issue
-      uses: actions/github-script@v5
-      if: steps.transfer-issue.outputs.new_issue_number != ''
-      with:
-        script: |
-          await github.rest.issues.createComment({
-            issue_number: `${{ steps.transfer-issue.outputs.new_issue_number}}`,
-            owner: context.repo.owner,
-            repo: `${{ steps.transfer-issue.outputs.destinatiom_repo }}`,
-            body: `@${ context.payload.issue.user.login } your issue is over here now!`
-          });
+        debug: true
+        create_stub: true
