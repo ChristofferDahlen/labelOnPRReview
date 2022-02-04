@@ -84,7 +84,7 @@ jobs:
       id: transfer-issue
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
-        router: Triage:TestRepo
+        router: undefined:TestRepo
     - name: Update Transferred Issue
       uses: actions/github-script@v5
       if: steps.transfer-issue.outputs.new_issue_number != ''
