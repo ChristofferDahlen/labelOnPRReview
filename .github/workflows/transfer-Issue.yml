@@ -4,14 +4,14 @@ on:
       - labeled
 
 
-strategy:
-  matrix:
-    router:
-      - Product - POMA:TestRepo
 
 jobs:
   transfer_issue:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        router:
+          - Product - POMA:TestRepo
     steps:
     - name: Transfer Issue & Comment
       uses: lando/transfer-issue-action@v2
