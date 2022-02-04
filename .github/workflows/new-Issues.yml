@@ -9,12 +9,9 @@ jobs:
   Product:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Product Name
-        run: |
-          echo "::set-output name=name::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
-        id: product
+
     outputs:
-      Name: ${{ steps.product.outputs.name }}
+      ProdLineName: ${{ steps.product.outputs.name }}
 
   Add_Other_Labels:
     runs-on: ubuntu-latest
@@ -39,8 +36,13 @@ jobs:
 
   Add_To_Project:
     runs-on: ubuntu-latest
-    needs: Product
+    needs: Product    
     steps:
+    - name: Get Product Name
+        run: |
+          echo "::set-output name=name::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
+        id: product
+
     - uses: alex-page/github-project-automation-plus@v0.8.1
       if: ${{ contains( needs.Product.outputs.name, 'shop' ) }}
       with:
@@ -84,8 +86,14 @@ jobs:
           - poma:TestRepo
           - shop:TestRepo
     steps:
+    - uses: actions-ecosystem/action-regex-match@v2
+        id: regex-match
+        with:
+          text: ${{ github.event.comment.body }}
+          regex: '^/Product[\s*(.*?)\s*$'
+
     - name: Transfer Issue & Comment
-      uses: lando/transfer-issue-action@v2
+      uses: christofferDahlen/transfer-issue-action@v3
       id: transfer-issue
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
