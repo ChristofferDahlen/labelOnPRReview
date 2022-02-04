@@ -1,0 +1,32 @@
+on:
+  issues:
+    types:
+      - labeled
+
+
+strategy:
+  matrix:
+    router:
+      - Product - POMA:TestRepo
+
+jobs:
+  transfer_issue:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Transfer Issue & Comment
+      uses: lando/transfer-issue-action@v2
+      id: transfer-issue
+      with:
+        token: ${{ secrets.OPT_GH_TOKEN }}
+        router: :TestRepo
+    - name: Update Transferred Issue
+      uses: actions/github-script@v5
+      if: steps.transfer-issue.outputs.new_issue_number != ''
+      with:
+        script: |
+          await github.rest.issues.createComment({
+            issue_number: `${{ steps.transfer-issue.outputs.new_issue_number}}`,
+            owner: context.repo.owner,
+            repo: `${{ steps.transfer-issue.outputs.destinatiom_repo }}`,
+            body: `@${ context.payload.issue.user.login } your issue is over here now!`
+          });
