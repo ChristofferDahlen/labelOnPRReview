@@ -90,6 +90,6 @@ jobs:
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
         router: ${{ matrix.router }}
-        test: : :${{ needs.Product.outputs.name }}
+        test: :${{ needs.Product.outputs.name }}
         debug: true
         create_stub: true
