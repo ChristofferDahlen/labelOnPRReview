@@ -24,6 +24,7 @@ jobs:
       id: transfer-issue
       with:
         target_repo: testRepo
+        token: '${{ secrets.OPT_GH_TOKEN }}'
         req_regexp_match: '(?i)Product[^\w\r\n]*POMA'
         debug: true
         create_stub: true
