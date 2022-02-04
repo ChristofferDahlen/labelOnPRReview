@@ -97,9 +97,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: Get Product Name
-        run: |
-          echo "::set-output name=name::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
-        id: product
+      run: |
+        echo "::set-output name=name::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
+      id: product
 
     - uses: alex-page/github-project-automation-plus@v0.8.1
       if: ${{ contains( steps.product.outputs.name, 'shop' ) }}
