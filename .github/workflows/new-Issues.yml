@@ -78,7 +78,7 @@ jobs:
   transfer_issue:
     runs-on: ubuntu-latest
     needs: Product
-        strategy:
+    strategy:
       matrix:
         router:
           - poma:TestRepo
