@@ -26,21 +26,19 @@ jobs:
   Add_To_Project:
     runs-on: ubuntu-latest
     steps:
-      - name: Find the branch Name
+      - name: Get Product Name
         run: |
-          echo "::set-output name=Product::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
-        id: find-product
-      - run: |
-          echo "This is product ${{ steps.find-product.outputs.Product }}"
+          echo "::set-output name=name::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
+        id: product
       - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ contains(steps.find-product.outputs.Product, 'shop' ) }}
+        if: ${{ contains(steps.product.outputs.name, 'shop' ) }}
         with:
           project: Connecting Shop Board 
           column: Triage
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
       - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ !contains(steps.find-product.outputs.Product, 'shop' ) }}
+        if: ${{ !contains(steps.product.outputs.name, 'shop' ) }}
         with:
           project: Optimisation Core Board
           column: Triage
@@ -65,3 +63,26 @@ jobs:
             Seems like you have forgotten to fill out the title of issue. Please fill it in properly.
 
             If this is wrong just ignore this comment
+
+  transfer_issue:
+    needs: Add_To_Project
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Transfer Issue & Comment
+      uses: lando/transfer-issue-action@v2
+      id: transfer-issue
+      with:
+        token: ${{ secrets.OPT_GH_TOKEN }}
+        router: TestRepo
+    - name: Update Transferred Issue
+      uses: actions/github-script@v5
+      if: steps.transfer-issue.outputs.new_issue_number != ''
+      with:
+        script: |
+          await github.rest.issues.createComment({
+            issue_number: `${{ steps.transfer-issue.outputs.new_issue_number}}`,
+            owner: context.repo.owner,
+            repo: `${{ steps.transfer-issue.outputs.destinatiom_repo }}`,
+            body: `@${ context.payload.issue.user.login } your issue is over here now!`
+          });
