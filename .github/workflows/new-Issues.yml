@@ -14,18 +14,18 @@ jobs:
     strategy:
       matrix:
         include:
-          - regexp: '(?i)Product[^\w\r\n]*POMA'
+          - regexp: '/Product[^\w\r\n]*POMA/im'
             repo: testRepo
-          - regexp: '(?i)Product[^\w\r\n]*shop'
+          - regexp: '/Product[^\w\r\n]*shop/im'
             repo: testRepo
     steps:
     - name: Transfer Issue & Comment
       uses: christofferDahlen/transfer-issue-action@v3
       id: transfer-issue
       with:
-        target_repo: testRepo
+        target_repo: ${{ matrix.repo }}
         token: '${{ secrets.OPT_GH_TOKEN }}'
-        req_regexp_match: '(?i)Product[^\w\r\n]*POMA'
+        req_regexp_match: ${{ matrix.regexp }}
         debug: true
         create_stub: true
     - name: Set transfer status
