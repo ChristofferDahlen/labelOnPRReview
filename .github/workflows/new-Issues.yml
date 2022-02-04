@@ -29,7 +29,7 @@ jobs:
         debug: true
         create_stub: true
     - run: |
-        echo "::set-output status=name::${{ steps.transfer-issue.outputs.destination_repo }}"
+        echo "::set-output status=name::DestRepo${{ steps.transfer-issue.outputs.destination_repo }}"
     - name: Set transfer status
       if: steps.transfer-issue.outputs.destination_repo != ''
       run: echo "::set-output remain=action_fruit::true"
