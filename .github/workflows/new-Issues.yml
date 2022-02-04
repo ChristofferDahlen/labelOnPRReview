@@ -5,6 +5,17 @@ on:
     types: [opened]
 
 jobs:
+
+  Product:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Product Name
+        run: |
+          echo "::set-output name=name::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
+        id: product
+    outputs:
+      Name: ${{ steps.product.outputs.name }}
+
   Add_Other_Labels:
     runs-on: ubuntu-latest
     steps:
@@ -13,6 +24,8 @@ jobs:
       uses: jimschubert/labeler-action@v1
       with:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
   Add_Synced_Labels:
     runs-on: ubuntu-latest
     name: Add Synced Labels
@@ -23,26 +36,23 @@ jobs:
         name: Labeling
         with:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
+
   Add_To_Project:
     runs-on: ubuntu-latest
-    steps:
-      - name: Get Product Name
-        run: |
-          echo "::set-output name=name::$(echo "${{ github.event.issue.body }}" | grep -oe 'Product: .*' | tr '[:upper:]' '[:lower:]')"
-        id: product
-      - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ contains(steps.product.outputs.name, 'shop' ) }}
-        with:
-          project: Connecting Shop Board 
-          column: Triage
-          repo-token: '${{ secrets.OPT_GH_TOKEN }}'
+    needs: Product
+    - uses: alex-page/github-project-automation-plus@v0.8.1
+      if: ${{ contains( needs.Product.outputs.name, 'shop' ) }}
+      with:
+        project: Connecting Shop Board 
+        column: Triage
+        repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
-      - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ !contains(steps.product.outputs.name, 'shop' ) }}
-        with:
-          project: Optimisation Core Board
-          column: Triage
-          repo-token: '${{ secrets.OPT_GH_TOKEN }}'
+    - uses: alex-page/github-project-automation-plus@v0.8.1
+      if: ${{ !contains( needs.Product.outputs.name, 'shop' ) }}
+      with:
+        project: Optimisation Core Board
+        column: Triage
+        repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
 
   create_comment:
@@ -65,10 +75,9 @@ jobs:
             If this is wrong just ignore this comment
 
   transfer_issue:
-    needs: Add_To_Project
+    needs: Product
     runs-on: ubuntu-latest
     steps:
-
     - name: Transfer Issue & Comment
       uses: lando/transfer-issue-action@v2
       id: transfer-issue
