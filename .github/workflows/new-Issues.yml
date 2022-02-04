@@ -78,13 +78,18 @@ jobs:
   transfer_issue:
     runs-on: ubuntu-latest
     needs: Product
+        strategy:
+      matrix:
+        router:
+          - poma:TestRepo
+          - shop:TestRepo
     steps:
     - name: Transfer Issue & Comment
-      if: $${{ contains( needs.Product.outputs.name, 'poma') }}
       uses: lando/transfer-issue-action@v2
       id: transfer-issue
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
-        router: :TestRepo
+        router: ${{ matrix.router }}
+        test: : :${{ needs.Product.outputs.name }}
         debug: true
         create_stub: true
