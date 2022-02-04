@@ -29,11 +29,19 @@ jobs:
         debug: true
         create_stub: true
     - run: |
-        echo "${{ steps.transfer-issue.outputs.destination_repo }}"
+          if [ "${{ steps.transfer-issue.outputs.destination_repo }}" == "" ]; then
+            echo ::set-output name=secretspresent::false
+          else
+            echo ::set-output name=secretspresent::true
+          fi
+      id: state
     - name: Set transfer status
-      if: steps.transfer-issue.outputs.destination_repo != ''
+      if: steps.state.outputs.destination_repo
       run: |
         echo "::set-output name=remain::true"
+      id: remain
+    output:
+      remain: ${{ steps.reamin.output.remain }}
 
 ########
 ## Check if the title is correct 
@@ -44,7 +52,6 @@ jobs:
     if: needs.transfer_issue.output.remain == 'true'
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions-ecosystem/action-regex-match@v2
         id: regex-match
         with:
