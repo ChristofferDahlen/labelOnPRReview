@@ -35,13 +35,33 @@ jobs:
       - uses: alex-page/github-project-automation-plus@v0.8.1
         if: ${{ contains(steps.find-product.outputs.Product, 'shop' ) }}
         with:
-          project: SHOP
+          project: Connecting Shop Board 
           column: Triage
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
       - uses: alex-page/github-project-automation-plus@v0.8.1
         if: ${{ !contains(steps.find-product.outputs.Product, 'shop' ) }}
         with:
-          project: MULTIASSET
+          project: Optimisation Core Board
           column: Triage
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
+
+
+  create_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: regex-match
+        with:
+          text: ${{ github.event.issue.title }}
+          regex: '^(\[[^\]]*\]:?\s?(title)?)?$'
+          flags: gm
+
+      - uses: actions-ecosystem/action-create-comment@v1
+        if: ${{ steps.regex-match.outputs.match != '' }}
+        with:
+          github_token: ${{ secrets.github_token }}
+          body: |
+            Seems like you have forgotten to fill out the title of issue. Please fill it in properly.
+
+            If this is wrong just ignore this comment

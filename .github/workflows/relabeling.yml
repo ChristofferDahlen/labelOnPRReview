@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [edited, closed, reopened, synchronize, ready_for_review, review_requested, review_request_removed]
   pull_request_review:
-    tpyes: [submitted]
+    types: [submitted]
 
 jobs:
   Relabeling:

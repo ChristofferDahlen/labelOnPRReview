@@ -13,9 +13,9 @@ comments:
     Please review the labels and make any necessary changes.
 
 
+## Uses Go Regex
+
 ## Labels
-
-
 
 labels:
 
@@ -23,6 +23,17 @@ labels:
     include:
       - 'CR'
       - '(?i)Change Request'
+  'Urgent :bangbang:':
+    include:
+      - '(?i)Urgent'
+  Deployment:
+    include: 
+      - '(?i)Deployment'
+  Req. Design:
+    include:
+      - '(?i)have to design'
+      - '(?i)needs design'
+      - '(?i)requires design'
 
 ## Product Labels
   Product - POMA:
@@ -46,6 +57,12 @@ labels:
   Product - Connecting Prodrisk:
     include:
       - '(?i)Product[^\w\r\n]*(Connecting[^\w\r\n]+)?Prodrisk'
+  Product - Optimal Log:
+    include:
+      - '(?i)Product[^\w\r\n]*(Optimal[^\w\r\n]+)?log'
+  Product - Battery:
+    include:
+      - '(?i)Product[^\w\r\n]*Battery'
 
 ## Severity Labels
   'Severity - Critical :boom:':
@@ -80,19 +97,29 @@ labels:
   'Customer - A2A':
     include:
       - '(?i)Customer[^\w\r\n]*A2A'
+
 ## Version Labels
   'v1.5.0':
     include:
-    - '(?i)v?\s*1.5(.0|\s|$)'
+      - '(?i)v?\s*1(\.|,)5((\.|,)0|\s|$)'
   'v1.6.0':
     include:
-    - '(?i)v?\s*1.6(.0|\s|$)'
+      - '(?i)v?\s*1(\.|,)6((\.|,)0|\s|$)'
   'v1.7.0':
     include:
-    - '(?i)v?\s*1.7(.0|\s|$)'
+      - '(?i)v?\s*1(\.|,)7((\.|,)0|\s|$)'
   'v1.8.0':
     include:
-    - '(?i)v?\s*1.8.0'
+      - '(?i)v?\s*1(\.|,)8((\.|,)0|\s|$)'
+  'v1.9.0':
+    include:
+      - '(?i)v?\s*1(\.|,)9((\.|,)0|\s|$)'
+  'v1.10.0':
+    include:
+      - '(?i)v?\s*1(\.|,)10((\.|,)0|\s|$)'
+  'v1.11.0':
+    include:
+      - '(?i)v?\s*1(\.|,)11((\.|,)0|\s|$)'
   'develop':
     include:
     - '(?i)Version:[^\n\r]*v?\s*develop'

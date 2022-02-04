@@ -12,7 +12,7 @@ jobs:
           stale-issue-message: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days'
           stale-pr-message: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days'
           exempt-all-pr-milestones: true
-          any-of-labels: 'Type - Bug,Type - Feature,Type - Enhancement'
+          any-of-labels: 'Type - Bug,Type - Feature,Type - Enhancement,Type - Test'
           stale-issue-label: '[X] Stale'
           days-before-stale: 30
           days-before-close: 10

@@ -48,7 +48,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
   
   AuthorTeamResponseLabeling:
-    #if: ${{ !github.event.issue.pull_request }}
+    if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
 
@@ -64,7 +64,6 @@ jobs:
 
       - name: Add author repose
         uses: siegerts/pending-author-response@v1
-        if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pending-response-label: "[X] :basketball:"
@@ -72,7 +71,6 @@ jobs:
 
       - name: Add author repose if waiting
         uses: siegerts/pending-author-response@v1
-        if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pending-response-label: "[X] Waiting On Author"
@@ -80,12 +78,12 @@ jobs:
 
       - name: Add developer response
         uses: siegerts/pending-response@v1
-        if: ${{ !contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          member-associations: "OWNER, COLLABORATOR"
+          member-associations: "OWNER, COLLABORATOR, CONTRIBUTOR"
           pending-response-label: "[X] :mailbox:"
           actionable-label: "[X] :basketball:"
+
 
       - name: Add Waiting for Author
         uses: actions-ecosystem/action-add-labels@v1.1.0
@@ -93,13 +91,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: "[X] Waiting On Author"
-
-      - name: Add Waiting for Author
-        uses: actions-ecosystem/action-remove-labels@v1.1.0
-        if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: |
-            [X] :mailbox:
-            [X] :basketball:
       

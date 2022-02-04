@@ -20,7 +20,7 @@
  - name: "Urgent :bangbang:"
    color: "ce4727"
  - name: "On Hold"
-   description: ""
+   description: "Its on hold"
    color: "645460"
  - name: "Support Issue"
    description: "This issue comes from support"
@@ -33,7 +33,16 @@
  - name: "Test Ready"
    description: "This issue is ready for testing"
    color: "ea02b6"
-
+ - name: "Deployment"
+   description: "This issue is related to deployment"
+   color: "8B354D"
+ - name: "CR"
+   description: "Change Request"
+   color: "ffe600"
+ - name: "Req. Design"
+   description: "Requires design"
+   color: "FBCA04"
+   
 #########################
 ##### Resolutions #######
 #########################
@@ -46,7 +55,6 @@
  - name: "Resolution - Rejected"
    description: "This issue has been rejected"
    color: "A9E98F"
-
 #########################
 ######## Costs  #########
 #########################
@@ -114,6 +122,10 @@
    color: "5319e7"
  - name: "Product - POMA"
    color: "5319e7"
+ - name: "Product - Optimal Log"
+   color: "5319e7"
+ - name: "Product - Battery"
+   color: "5319e7"
 #################
 #### RISKS ######
 #################
@@ -161,6 +173,9 @@
    color: "9032f7"
  - name: "Type - Feature"
    color: "8feb7b"
+ - name: "Type - Test"
+   description: "Some test that has to be written"
+   color: "ecb39f"
  - name: "Type - Other"
    description: "A miscellaneous issue"
    color: "ecb39f"
@@ -170,7 +185,7 @@
 ##################
 ### Versions #####
 ##################
- - name: "develop"
+ - name: "Develop"
    description: "Current development"
    color: "5978d8"
  - name: "v1.5.0"
@@ -190,6 +205,12 @@
    color: "5978d8"
  - name: "v1.9.0"
    description: "Version 1.9.0"
+   color: "5978d8"
+ - name: "v1.10.0"
+   description: "Version 1.10.0"
+   color: "5978d8"
+ - name: "v1.11.0"
+   description: "Version 1.11.0"
    color: "5978d8"
 ################################
 ### Fully Automated Labels #####

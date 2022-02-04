@@ -28,22 +28,22 @@ jobs:
   Add_To_Project:
     runs-on: ubuntu-latest
     steps:
-      - name: Find the lowercase branch name
-        run: |
-          echo "::set-output name=Branch::$(echo "${{ github.event.pull_request.title }}" | tr '[:upper:]' '[:lower:]')"
-        id: lowercase
+      - name: Extract branch name
+        shell: bash
+        run: echo "::set-output name=branch::$(echo ${{ github.event.pull_request.head.ref }} | tr '[:upper:]' '[:lower:]')"
+        id: extract_branch
       - run: |
-          echo "This is product ${{ steps.lowercase.outputs.Branch }}"
+          echo "This is product ${{ steps.extract_branch.outputs.branch }}"
       - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ contains(steps.lowercase.outputs.Branch, 'shop' ) }}
+        if: ${{ contains(steps.extract_branch.outputs.branch, 'shop' ) }}
         with:
-          project: SHOP
-          column: Triage
+          project: Connecting Shop Board
+          column: Pull Requests
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
       - uses: alex-page/github-project-automation-plus@v0.8.1
-        if: ${{ !contains(steps.lowercase.outputs.Branch, 'shop' ) }}
+        if: ${{ !contains(steps.extract_branch.outputs.branch, 'shop' ) }}
         with:
-          project: MUTLIASSET
-          column: Triage
+          project: Optimisation Core Board
+          column: Pull Requests
           repo-token: '${{ secrets.OPT_GH_TOKEN }}'
