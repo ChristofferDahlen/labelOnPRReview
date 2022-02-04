@@ -17,7 +17,7 @@ jobs:
       uses: lando/transfer-issue-action@v2
       id: transfer-issue
       with:
-        token: ${{ secrets.TRANSFER_ISSUE_TOKEN }}
+        token: ${{ secrets.OPT_GH_TOKEN }}
         router: ${{ matrix.router }}
     - name: Update Transferred Issue
       uses: actions/github-script@v5
