@@ -68,7 +68,7 @@ jobs:
 ## Adding other labels
 ########
   Add_Other_Labels:
-    needs: [transfer_issue, check_title]
+    needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps:
@@ -83,7 +83,7 @@ jobs:
 ########
 
   Add_Synced_Labels:
-    needs: [transfer_issue, check_title]
+    needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     name: Add Synced Labels
@@ -100,7 +100,7 @@ jobs:
 ########
 
   Add_To_Project:
-    needs: [transfer_issue, check_title]
+    needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps: 
