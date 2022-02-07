@@ -37,7 +37,7 @@ jobs:
         token: '${{ secrets.OPT_GH_TOKEN }}'
         debug: true
         create_stub: true
-    output:
+    outputs:
       remain: ${{ steps.state.outputs.remain }}
 
 ########
@@ -46,7 +46,7 @@ jobs:
 
   check_title:
     needs: transfer_issue
-    if: needs.transfer_issue.output.remain == 'true'
+    if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions-ecosystem/action-regex-match@v2
@@ -69,7 +69,7 @@ jobs:
 ########
   Add_Other_Labels:
     needs: [transfer_issue, check_title]
-    if: needs.transfer_issue.output.remain == 'true'
+    if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps:
     - name: Add_Other_Labels
@@ -84,7 +84,7 @@ jobs:
 
   Add_Synced_Labels:
     needs: [transfer_issue, check_title]
-    if: needs.transfer_issue.output.remain == 'true'
+    if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     name: Add Synced Labels
     steps:
