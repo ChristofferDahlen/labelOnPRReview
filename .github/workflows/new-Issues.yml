@@ -13,12 +13,6 @@ jobs:
     name: Tranfser issue
     runs-on: ubuntu-latest
     steps:
-#    - name: Dump GitHub context
-#      env:
-#        GITHUB_CONTEXT: ${{ toJson(github) }}
-#      run: |
-#        echo "$GITHUB_CONTEXT"   
-#    - run: echo "${{ github.event.issue.body }}"
     - name: Match body
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
@@ -29,9 +23,9 @@ jobs:
         }'
     - run: |
           if [ "${{ steps.match.outputs.result }}" == "" ]; then
-            echo ::set-output name=remain::false
-          else
             echo ::set-output name=remain::true
+          else
+            echo ::set-output name=remain::false
           fi
       id: state
 
