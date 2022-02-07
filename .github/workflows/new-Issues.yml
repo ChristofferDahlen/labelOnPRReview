@@ -6,40 +6,37 @@ on:
 
 jobs:
 
-########
+########          
 ## Check if the issue should be transfered to another repo
 ########
   transfer_issue:
+    name: Tranfser issue
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - regexp: '/Product[^\w\r\n]*POMA/im'
-            repo: testRepo
-          - regexp: '/Product[^\w\r\n]*shop/im'
-            repo: testRepo
     steps:
-    - name: Transfer Issue & Comment
-      uses: christofferDahlen/transfer-issue-action@v3
-      id: transfer-issue
+    - name: Match body
+      id: match
+      uses: chrsitofferDahlen/Multi-Regex-Match@v1.0
       with:
-        target_repo: ${{ matrix.repo }}
-        token: '${{ secrets.OPT_GH_TOKEN }}'
-        req_regexp_match: ${{ matrix.regexp }}
-        debug: true
-        create_stub: true
+        input: ${{ github.event.comment.body }}
+        json_match: '{ 
+          "testRepo" : "/Product[^\w\r\n]*POMA/im"
+        }'
     - run: |
-          if [ "${{ steps.transfer-issue.outputs.destination_repo }}" == "" ]; then
-            echo ::set-output name=secretspresent::false
+          if [ "${{ steps.match.outputs.result }}" == "" ]; then
+            echo ::set-output name=remain::false
           else
-            echo ::set-output name=secretspresent::true
+            echo ::set-output name=remain::true
           fi
       id: state
-    - name: Set transfer status
-      if: steps.state.outputs.destination_repo
-      run: |
-        echo "::set-output name=remain::true"
-      id: remain
+
+    - name: Transfer Issue & Comment
+      if: steps.reamin.output.remain == 'false'
+      uses: christofferDahlen/transfer-issue-action@v3
+      with:
+        target_repo: ${{ steps.match.outputs.result }}
+        token: '${{ secrets.OPT_GH_TOKEN }}'
+        debug: true
+        create_stub: true
     output:
       remain: ${{ steps.reamin.output.remain }}
 
