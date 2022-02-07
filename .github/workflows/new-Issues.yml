@@ -30,7 +30,7 @@ jobs:
       id: state
 
     - name: Transfer Issue & Comment
-      if: steps.reamin.output.remain == 'false'
+      if: steps.state.outputs.remain == 'false'
       uses: christofferDahlen/transfer-issue-action@v3
       with:
         target_repo: ${{ steps.match.outputs.result }}
@@ -38,7 +38,7 @@ jobs:
         debug: true
         create_stub: true
     output:
-      remain: ${{ steps.reamin.output.remain }}
+      remain: ${{ steps.state.outputs.remain }}
 
 ########
 ## Check if the title is correct 
