@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Match body
       id: match
-      uses: chrsitofferDahlen/Multi-Regex-Match@v1.0
+      uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: ${{ github.event.comment.body }}
         json_match: '{ 
@@ -101,7 +101,7 @@ jobs:
 
   Add_To_Project:
     needs: [transfer_issue, check_title]
-    if: needs.transfer_issue.output.remain == 'true'
+    if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps: 
     - name: Get Product Name
