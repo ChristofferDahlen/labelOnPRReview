@@ -17,7 +17,7 @@ jobs:
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: ${{ github.event.comment.body }}
+        input: "${{ github.event.comment.body }}"
         json_match: '{ 
           "testRepo" : "/Product[^\\w\\r\\n]*POMA/im"
         }'
