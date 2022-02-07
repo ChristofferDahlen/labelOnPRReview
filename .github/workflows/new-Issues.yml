@@ -19,7 +19,7 @@ jobs:
       run: |
         echo "$GITHUB_CONTEXT"   
     - run: echo "${{ github.event.issue.comment.body }}"
-     - name: Match body
+    - name: Match body
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
