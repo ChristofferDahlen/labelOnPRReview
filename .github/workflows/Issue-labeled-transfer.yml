@@ -9,7 +9,7 @@ on:
 jobs:
   transfer_issue:
     name: transfer issue
-    if: ${{ !contains(github.event.issue.labels, '[X] Transfered') }}
+    if: "${{ contains(github.event.label, 'Product') }}"
     runs-on: ubuntu-latest
     strategy:
       matrix:
