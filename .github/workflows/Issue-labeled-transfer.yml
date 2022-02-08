@@ -9,19 +9,57 @@ on:
 jobs:
   transfer_issue:
     name: transfer issue
-    if: "${{ contains(github.event.label, 'Product') }}"
+#    if: "${{ contains(github.event.label.name, 'Product') }}"
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        router:
-          - Product - POMA:TestRepo
-          - Product - SHOP:TestRepo
     steps:
-    - name: Transfer Issue & Comment
+    - name: Transfer ${{ env.LABEL }}
+      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, 'Product - POMA')
       uses: lando/transfer-issue-action@v2
       id: transfer-issue
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
-        router: ${{ matrix.router }}
+        router: ${{ env.LABEL}}:${{ env.REPO }}
         debug: true
         create_stub: true
+      env:
+        LABEL: Product - POM
+        REPO: TestRepo
+
+    - name: Transfer ${{ env.LABEL }}
+      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, 'Product - POMA')
+      uses: lando/transfer-issue-action@v2
+      id: transfer-issue
+      with:
+        token: ${{ secrets.OPT_GH_TOKEN }}
+        router: ${{ env.LABEL}}:${{ env.REPO }}
+        debug: true
+        create_stub: true
+      env:
+        LABEL: Product - POH
+        REPO: TestRepo
+
+    - name: Transfer ${{ env.LABEL }}
+      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, 'Product - POMA')
+      uses: lando/transfer-issue-action@v2
+      id: transfer-issue
+      with:
+        token: ${{ secrets.OPT_GH_TOKEN }}
+        router: ${{ env.LABEL}}:${{ env.REPO }}
+        debug: true
+        create_stub: true
+      env:
+        LABEL: Product - Connecting Shop
+        REPO: TestRepo
+
+    - name: Transfer ${{ env.LABEL }}
+      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, 'Product - POMA')
+      uses: lando/transfer-issue-action@v2
+      id: transfer-issue
+      with:
+        token: ${{ secrets.OPT_GH_TOKEN }}
+        router: ${{ env.LABEL}}:${{ env.REPO }}
+        debug: true
+        create_stub: true
+      env:
+        LABEL: Product - Optimal Log
+        REPO: TestRepo
