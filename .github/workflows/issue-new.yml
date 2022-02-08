@@ -90,7 +90,6 @@ jobs:
     needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
-    name: Add Synced Labels
     steps:
       - uses: actions/checkout@v2
         name: Checkout
