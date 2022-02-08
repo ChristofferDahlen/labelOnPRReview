@@ -1,4 +1,4 @@
-name: transfer
+name: "Issue - Labled: Transfer"
 
 on:
   issues:
@@ -8,6 +8,8 @@ on:
 
 jobs:
   transfer_issue:
+    name: transfer issue
+    if: ${{ !contains(github.event.issue.labels, '[X] Transfered') }}
     runs-on: ubuntu-latest
     strategy:
       matrix:

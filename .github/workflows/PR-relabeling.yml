@@ -1,8 +1,6 @@
-name: Relabeling
+name: "PR Edit: Sync labels"
 
 on:
-  issues:
-    types: [edited, closed, reopened]
   pull_request:
     types: [edited, closed, reopened, synchronize, ready_for_review, review_requested, review_request_removed]
   pull_request_review:

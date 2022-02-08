@@ -1,0 +1,19 @@
+name: "Issue edit: Sync labels"
+
+on:
+  issues:
+    types: [edited, closed, reopened, unlocked]
+
+jobs:
+  Relabeling:
+    runs-on: ubuntu-latest
+    name: Label issues and pull requests
+    if: ${{ !github.event.issue.locked }}
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+      - uses: Resnovas/label-mastermind@2.1.3
+        name: Labeling
+        with:
+          skipDelete: true
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'

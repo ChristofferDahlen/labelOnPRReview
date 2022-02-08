@@ -1,4 +1,4 @@
-name: Setup new Issues
+name: "Issue: New"
 
 on:
   issues:
@@ -23,7 +23,7 @@ jobs:
           "(?i)Product[^\\w\\r\\n]*POM\b" : "testRepo"
         }'
     - run: |
-          if [ "${{ steps.match.outputs.result }}" == "" ]; then
+          if [ "${{ steps.match.outputs.result }}" == "" ] || [ "${{ contains(github.event.issue.labels, '[X] Transfered') }}" == "true"]; then
             echo ::set-output name=remain::true
           else
             echo ::set-output name=remain::false
@@ -46,6 +46,7 @@ jobs:
 ########
 
   check_title:
+    name: Check Empty title
     needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
@@ -69,6 +70,7 @@ jobs:
 ## Adding other labels
 ########
   Add_Other_Labels:
+    name: Add unsynced labels
     needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
@@ -84,6 +86,7 @@ jobs:
 ########
 
   Add_Synced_Labels:
+    name: Add synced labels
     needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
@@ -101,6 +104,7 @@ jobs:
 ########
 
   Add_To_Project:
+    name: Add to project
     needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest

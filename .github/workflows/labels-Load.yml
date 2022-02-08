@@ -1,4 +1,5 @@
-name: Update/Sync Labels
+name: "Labels: Update Repo labels"
+
 on:
   push:
     branches:
