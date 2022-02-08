@@ -1,8 +1,9 @@
+name: transfer
+
 on:
   issues:
     types:
       - labeled
-
 
 
 jobs:

@@ -251,7 +251,6 @@
  - name: "[X] Needs documentation :pencil2:"
    description: "This needs to be documented!"
    color: "0052cc"
-   
 ### STATE ####
  - name: "[X] :mailbox:"
    description: "New response to author"
