@@ -1,4 +1,5 @@
-name: AssignReviewers
+name: "PR: Assign Reviewerss"
+
 on:
   pull_request:
     types: [review_requested]
