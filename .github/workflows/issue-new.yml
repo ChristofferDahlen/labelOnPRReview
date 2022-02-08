@@ -23,7 +23,7 @@ jobs:
           "(?i)Product[^\\w\\r\\n]*POM\b" : "testRepo"
         }'
     - run: |
-          if [ "${{ steps.match.outputs.result }}" == "" ] || [ "${{ contains(github.event.issue.labels, '[X] Transfered') }}" == "true"]; then
+          if [ "${{ steps.match.outputs.result }}" == "" ]; then
             echo ::set-output name=remain::true
           else
             echo ::set-output name=remain::false
