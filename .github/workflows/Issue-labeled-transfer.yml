@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Transfer ${{ env.LABEL }}
-      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }})
+      if: ${{ github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }}) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
@@ -27,7 +27,7 @@ jobs:
         REPO: TestRepo
 
     - name: Transfer ${{ env.LABEL }}
-      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }})
+      if: ${{ github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }}) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
         REPO: TestRepo
 
     - name: Transfer ${{ env.LABEL }}
-      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }})
+      if: ${{ github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }}) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
@@ -51,7 +51,7 @@ jobs:
         REPO: TestRepo
 
     - name: Transfer ${{ env.LABEL }}
-      if: github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }})
+      if: ${{ github.event.label.name == ${{ env.LABEL}} && !contains(github.issue.labels.*.name, ${{ env.BASE_LABEL }}) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
