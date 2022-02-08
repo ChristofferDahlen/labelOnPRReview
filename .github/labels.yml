@@ -17,6 +17,8 @@
    color: "A5F5A0"
  - name: "Waiting On Future :calendar:"
    color: "C5DEF5"
+ - name: "Waiting On Product"
+   color: "C5DEF5"
  - name: "Urgent :bangbang:"
    color: "ce4727"
  - name: "On Hold"
