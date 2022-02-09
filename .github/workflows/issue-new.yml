@@ -35,6 +35,7 @@ jobs:
             echo ::set-output name=remain::false
           fi
       shell: bash
+      name: Check if we should move from ${{ github.repository }} to ${{ steps.match.outputs.result }}
       id: state
 
     - name: Transfer Issue & Comment

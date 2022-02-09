@@ -41,9 +41,9 @@ jobs:
     steps:
     - name: Check Protection
       run: |
-        PROTECTED = ${{ matrix.PROTECTED }}
-        PROTECTED += ${{ env.Protected }}
-        CHECK += ${{ github.event.issue.labels.*.name}} 
+        PROTECTED=${{ matrix.PROTECTED }}
+        PROTECTED+=${{ env.PROTECTED }}
+        CHECK+=${{ github.event.issue.labels.*.name}} 
         echo $CHECK
         STOP = "false"
         for check in ${PROTECTED[*]}
