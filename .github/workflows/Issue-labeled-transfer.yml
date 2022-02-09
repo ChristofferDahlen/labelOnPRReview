@@ -7,6 +7,7 @@ on:
 
 env:
   BASE_LABEL: Product - POMA
+  Protected
 
 jobs:
   transfer_issue:
@@ -30,8 +31,27 @@ jobs:
             REPO: "TestRepo"
 
     steps:
+    - name: Check Protection
+      run: |
+        PROTECTED = ${{ matrix.Protected }}
+        PROTECTED += ${{ env.Protected }}
+        CHECK += ${{ github.event.issue.labels.*.name}} 
+        echo $CHECK
+        STOP = "false"
+        for check in ${PROTECTED[*]}
+        do
+          for against in ${CHECK[*]}
+            if [[ $check == $against]]
+              STOP = "true"
+            fi
+          done
+        done
+        echo ::set-output name=stop::${STOP}
+
+      id: check
+      shell: bash
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
+      if: ${{ steps.check.outputs.stop != true && github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
