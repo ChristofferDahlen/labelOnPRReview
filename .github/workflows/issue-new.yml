@@ -29,7 +29,8 @@ jobs:
           "(?i)Product[^\\r\\n]*(Optimal[^\\w\\r\\n]+)?log\\b" : "testRepo"
         }'
     - run: |
-          if [ "${{ steps.match.outputs.result }}" == "" ]; then
+          if [ "${{ steps.match.outputs.result }}" == "" ] 
+          || [ "${{ steps.match.outputs.result }}" == "false"]; then
             echo ::set-output name=remain::true
           else
             echo ::set-output name=remain::false
