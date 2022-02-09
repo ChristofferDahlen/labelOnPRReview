@@ -18,7 +18,7 @@ jobs:
       with:
         input: "${{ github.event.issue.body }}"
         json_match: '{ 
-          "(?i)#\\s*Product[^\\r\\n]*POMA\\b" : "false",
+          "(?i)#\\s*Product[^\\r\\n]*POMA\\b" : "labelOnPRReview",
           "(?i)#\\s*Product[^\\r\\n]*Gateway\\b" : "testRepo",
           "(?i)#\\s*Product[^\\r\\n]*POM\\b" : "testRepo",
           "(?i)#\\s*Product[^\\r\\n]*POH\\b" : "testRepo",
