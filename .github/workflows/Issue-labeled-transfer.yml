@@ -6,16 +6,16 @@ on:
       - labeled
 
 env:
-  MAINLABEL: Product - POMA
+  BASE_LABEL: Product - POMA
 
 jobs:
   transfer_issue:
     name: transfer issue
-    if: ${{ contains(github.event.label.name, 'Product') && github.event.label.name != env.MAINLABEL && !contains(github.event.issue.labels.*.name,  env.MAINLABEL) }}
+    if: ${{ contains(github.event.label.name, 'Product') && github.event.label.name != 'Product - POMA' && !contains(github.event.issue.labels.*.name,  'Product - POMA') }}
     runs-on: ubuntu-latest
     steps:
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.MAINLABEL) }}
+      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
@@ -27,7 +27,7 @@ jobs:
         REPO: TestRepo
 
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.MAINLABEL) }}
+      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
         REPO: TestRepo
 
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.MAINLABEL) }}
+      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
@@ -51,7 +51,7 @@ jobs:
         REPO: TestRepo
 
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.MAINLABEL) }}
+      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
