@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && $GITHUB_REPOSITORY != 'github.repository_owner/matrix.REPO' && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
+      if: ${{ github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
