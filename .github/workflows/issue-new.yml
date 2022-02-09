@@ -19,14 +19,14 @@ jobs:
       with:
         input: "${{ github.event.issue.body }}"
         json_match: '{ 
-          "(?i)# Product[^\\r\\n]*POMA\\b" : "false",
-          "(?i)# Product[^\\r\\n]*Gateway\\b" : "testRepo",
-          "(?i)# Product[^\\r\\n]*POM\\b" : "testRepo",
-          "(?i)# Product[^\\r\\n]*POH\\b" : "testRepo",
-          "(?i)# Product[^\\r\\n]*Spotbid\\b" : "false",
-          "(?i)# Product[^\\r\\n]*(Connecting[^\\w\\r\\n]+)?Shop\\b" : "testRepo",
-          "(?i)# Product[^\\r\\n]*Prodrisk\\b" : "testRepo",
-          "(?i)# Product[^\\r\\n]*(Optimal[^\\w\\r\\n]+)?log\\b" : "testRepo"
+          "(?i)#\\s*Product[^\\r\\n]*POMA\\b" : "false",
+          "(?i)#\\s*Product[^\\r\\n]*Gateway\\b" : "testRepo",
+          "(?i)#\\s*Product[^\\r\\n]*POM\\b" : "testRepo",
+          "(?i)#\\s*Product[^\\r\\n]*POH\\b" : "testRepo",
+          "(?i)#\\s*Product[^\\r\\n]*Spotbid\\b" : "false",
+          "(?i)#\\s*Product[^\\r\\n]*(Connecting[^\\w\\r\\n]+)?Shop\\b" : "testRepo",
+          "(?i)#\\s*Product[^\\r\\n]*Prodrisk\\b" : "testRepo",
+          "(?i)#\\s*Product[^\\r\\n]*(Optimal[^\\w\\r\\n]+)?log\\b" : "testRepo"
         }'
     - run: |
           if [[ "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"]]; then

@@ -38,31 +38,31 @@ labels:
 ## Product Labels
   Product - POMA:
     include:
-      - '(?i)Product[^\r\n]*POMA\b'
+      - '(?i)#\s*Product[^\r\n]*POMA\b'
   Product - Gateway:
     include:
-      - '(?i)Product[^\r\n]*Gateway\b'
+      - '(?i)#\s*Product[^\r\n]*Gateway\b'
   Product - POM:
     include:
-      - '(?i)Product[^\r\n]*POM\b'
+      - '(?i)#\s*Product[^\r\n]*POM\b'
   Product - POH:
     include:
-      - '(?i)Product[^\r\n]*POH\b'
+      - '(?i)#\s*Product[^\r\n]*POH\b'
   Product - Spotbid:
     include:
-      - '(?i)Product[^\r\n]*Spotbid\b'
+      - '(?i)#\s*Product[^\r\n]*Spotbid\b'
   Product - Connecting Shop:
     include:
-      - '(?i)Product[^\r\n]*(Connecting[^\w\r\n]+)?Shop\b'
+      - '(?i)#\s*Product[^\r\n]*(Connecting[^\w\r\n]+)?Shop\b'
   Product - Connecting Prodrisk:
     include:
-      - '(?i)Product[^\r\n]*Prodrisk\b'
+      - '(?i)#\s*Product[^\r\n]*Prodrisk\b'
   Product - Optimal Log:
     include:
-      - '(?i)Product[^\r\n]*(Optimal[^\w\r\n]+)?log\b'
+      - '(?i)#\s*Product[^\r\n]*(Optimal[^\w\r\n]+)?log\b'
   Product - Battery:
     include:
-      - '(?i)Product[^\r\n]*Battery\b'
+      - '(?i)#\s*Product[^\r\n]*Battery\b'
 
 ## Severity Labels
   'Severity - Critical :boom:':
