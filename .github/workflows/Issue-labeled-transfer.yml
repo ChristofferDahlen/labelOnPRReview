@@ -6,44 +6,48 @@ on:
       - labeled
 
 env:
-  PROTECTED: '{ "\\bProduct - POMA\\b" : "true" }'
+  PROTECTED: 
 
 jobs:
   transfer_issue:
     name: transfer issue
     if: ${{ contains(github.event.label.name, 'Product') }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix: 
-        include:
-          - LABEL: "Product - POMA"
-            REPO: "labelOnPRReview"
-          - LABEL: "Product - Gateway"
-            REPO: "TestRepo"
-          - LABEL: "Product - POM" 
-            REPO: "TestRepo"
-          - LABEL: "Product - POH"
-            REPO: "TestRepo"
-          - LABEL: "Product - Connecting Shop"
-            REPO: "TestRepo"
-          - LABEL: "Product - Connecting Prodrisk"
-            REPO: "TestRepo"
-          - LABEL: "Product - Optimal Log"
-            REPO: "TestRepo"
-
     steps:
-    - name: Match body
-      if:  github.event.label.name == matrix.LABEL && github.repository != 'github.repository_owner/matrix.REPO'
-      id: match
+
+## Check if any labels are protected
+
+    - name: Check Protection
+      id: protect
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: "${{toJSON(github.event.issue.labels.*.name) }}"
-        json_match: ${{ env.PROTECTED }}
-    - name: Transfer ${{ env.LABEL }}
-      if: ${{ steps.match.outputs.result != true && github.event.label.name == matrix.LABEL && github.repository != 'github.repository_owner/matrix.REPO' }}
-      uses: lando/transfer-issue-action@v2
+        json_match: '{ "\\bProduct - POMA\\b" : "true" }'
+
+## Match label with repo
+    - name: Match Label
+      if: steps.protect.outputs.result == 'false' && github.repository != 'github.repository_owner/matrix.REPO' 
+      id: match
+      uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        token: ${{ secrets.OPT_GH_TOKEN }}
-        router: ${{ matrix.LABEL}}:${{ matrix.REPO }}
+        input: "${{ github.event.label.name }}"
+        json_match: '{
+          "Product - POMA\\b" : "labelOnPRReview",
+          "Product - Gateway\\b" : "testRepo",
+          "Product - POM\\b" : "testRepo",
+          "Product - POH\\b" : "testRepo",
+          "Product - Spotbid\\b" : "false",
+          "Product - Connecting Shop\\b" : "testRepo",
+          "Product - Prodrisk\\b" : "testRepo",
+          "Product - Optimal log\\b" : "testRepo"
+        }'
+
+## Check
+    - name: Transfer Issue to ${{ steps.match.outputs.result }}
+      if: steps.protect.outputs.result != true && steps.match.outputs.result != 'false' && github.repository != 'github.repository_owner/steps.match.outputs.result' 
+      uses: christofferDahlen/transfer-issue-action@v3
+      with:
+        target_repo: ${{ steps.match.outputs.result }}
+        token: '${{ secrets.OPT_GH_TOKEN }}'
         debug: true
         create_stub: true
