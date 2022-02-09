@@ -11,53 +11,33 @@ env:
 jobs:
   transfer_issue:
     name: transfer issue
-    if: ${{ contains(github.event.label.name, 'Product') && github.event.label.name != 'Product - POMA' && !contains(github.event.issue.labels.*.name,  'Product - POMA') }}
+    if: ${{ contains(github.event.label.name, 'Product') }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        include:
+          - LABEL: "Product - POMA"
+            REPO: "labelOnPRReview"
+          - LABEL: "Product - POM" 
+            REPO: "TestRepo"
+          - LABEL: "Product - POH"
+            REPO: "Powel.SmE.Optimal.Hydro"
+          - LABEL: "Product - Connecting Shop"
+            REPO: "Powel.Optimal.Gateway"
+          - LABEL: "Product - Connecting Prodrisk"
+            REPO: "Powel.Optimal.Gateway"
+          - LABEL: "Product - Optimal Log"
+            REPO: "Powel.Optimal.Log"
+
     steps:
+    - name: Get Repo Name
+      run: echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}')
+      shell: bash
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
+      if: ${{ github.event.label.name == env.LABEL && $REPOSITORY_NAME != matrix.REPO && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
-        router: ${{ env.LABEL}}:${{ env.REPO }}
+        router: ${{ matrix.LABEL}}:${{ matrix.REPO }}
         debug: true
         create_stub: true
-      env:
-        LABEL: Product - POM
-        REPO: TestRepo
-
-    - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
-      uses: lando/transfer-issue-action@v2
-      with:
-        token: ${{ secrets.OPT_GH_TOKEN }}
-        router: ${{ env.LABEL}}:${{ env.REPO }}
-        debug: true
-        create_stub: true
-      env:
-        LABEL: Product - POH
-        REPO: TestRepo
-
-    - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
-      uses: lando/transfer-issue-action@v2
-      with:
-        token: ${{ secrets.OPT_GH_TOKEN }}
-        router: ${{ env.LABEL}}:${{ env.REPO }}
-        debug: true
-        create_stub: true
-      env:
-        LABEL: Product - Connecting Shop
-        REPO: TestRepo
-
-    - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL) }}
-      uses: lando/transfer-issue-action@v2
-      with:
-        token: ${{ secrets.OPT_GH_TOKEN }}
-        router: ${{ env.LABEL}}:${{ env.REPO }}
-        debug: true
-        create_stub: true
-      env:
-        LABEL: Product - Optimal Log
-        REPO: TestRepo
