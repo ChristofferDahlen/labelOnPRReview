@@ -21,20 +21,17 @@ jobs:
           - LABEL: "Product - POM" 
             REPO: "TestRepo"
           - LABEL: "Product - POH"
-            REPO: "Powel.SmE.Optimal.Hydro"
+            REPO: "TestRepo"
           - LABEL: "Product - Connecting Shop"
-            REPO: "Powel.Optimal.Gateway"
+            REPO: "TestRepo"
           - LABEL: "Product - Connecting Prodrisk"
-            REPO: "Powel.Optimal.Gateway"
+            REPO: "TestRepo"
           - LABEL: "Product - Optimal Log"
-            REPO: "Powel.Optimal.Log"
+            REPO: "TestRepo"
 
     steps:
-    - name: Get Repo Name
-      run: echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}')
-      shell: bash
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ github.event.label.name == env.LABEL && $REPOSITORY_NAME != matrix.REPO && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
+      if: ${{ github.event.label.name == env.LABEL && $GITHUB_REPOSITORY != 'github.repository_owner/matrix.REPO' && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}

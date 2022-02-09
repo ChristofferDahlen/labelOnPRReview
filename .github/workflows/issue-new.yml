@@ -5,7 +5,6 @@ on:
     types: [opened]
 
 jobs:
-
 ########          
 ## Check if the issue should be transfered to another repo
 ########
@@ -13,9 +12,6 @@ jobs:
     name: Tranfser issue
     runs-on: ubuntu-latest
     steps:
-    - name: Get Repo Name
-      run: echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}')
-      shell: bash
     - name: Match body
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
@@ -32,7 +28,7 @@ jobs:
           "(?i)#\\s*Product[^\\r\\n]*(Optimal[^\\w\\r\\n]+)?log\\b" : "testRepo"
         }'
     - run: |
-          if [[ "${{ steps.match.outputs.result }}" != "${{ REPOSITORY_NAME }}" && ( "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false" ) ]]
+          if [[ "${{github.repository_owner}}/${{ steps.match.outputs.result }}" != "${{ github.repository }}" && ( "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false" ) ]]
           then
             echo ::set-output name=remain::true
           else
