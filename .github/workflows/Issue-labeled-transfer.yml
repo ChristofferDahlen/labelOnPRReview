@@ -43,7 +43,7 @@ jobs:
       run: |
         PROTECTED=${{ matrix.PROTECTED }}
         PROTECTED+=${{ env.PROTECTED }}
-        CHECK+=${{ github.event.issue.labels.*.name}} 
+        CHECK+=${{ fromJSON(github.event.issue.labels.*.name) }} 
         echo $CHECK
         STOP = "false"
         for check in ${PROTECTED[*]}
