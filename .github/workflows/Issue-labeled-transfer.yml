@@ -6,8 +6,7 @@ on:
       - labeled
 
 env:
-  BASE_LABEL: Product - POMA
-  Protected
+  PROTECTED: ("Product - POMA")
 
 jobs:
   transfer_issue:
@@ -19,21 +18,30 @@ jobs:
         include:
           - LABEL: "Product - POMA"
             REPO: "labelOnPRReview"
+            PROTECTED: "('Product - Gateway')"
+          - LABEL: "Product - Gateway"
+            REPO: "TestRepo"
+            PROTECTED: "('Product - POMA')"
           - LABEL: "Product - POM" 
             REPO: "TestRepo"
+            PROTECTED: "()"
           - LABEL: "Product - POH"
             REPO: "TestRepo"
+            PROTECTED: "()"
           - LABEL: "Product - Connecting Shop"
             REPO: "TestRepo"
+            PROTECTED: "()"
           - LABEL: "Product - Connecting Prodrisk"
             REPO: "TestRepo"
+            PROTECTED: "()"
           - LABEL: "Product - Optimal Log"
             REPO: "TestRepo"
+            PROTECTED: "()"
 
     steps:
     - name: Check Protection
       run: |
-        PROTECTED = ${{ matrix.Protected }}
+        PROTECTED = ${{ matrix.PROTECTED }}
         PROTECTED += ${{ env.Protected }}
         CHECK += ${{ github.event.issue.labels.*.name}} 
         echo $CHECK
@@ -51,7 +59,7 @@ jobs:
       id: check
       shell: bash
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ steps.check.outputs.stop != true && github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' && !contains(github.event.issue.labels.*.name,  env.BASE_LABEL)}}
+      if: ${{ steps.check.outputs.stop != true && github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
