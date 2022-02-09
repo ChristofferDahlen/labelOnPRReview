@@ -6,7 +6,7 @@ on:
       - labeled
 
 env:
-  PROTECTED: ("Product - POMA")
+  PROTECTED: '{ "\\bProduct - POMA\\b" : "true" }'
 
 jobs:
   transfer_issue:
@@ -18,48 +18,28 @@ jobs:
         include:
           - LABEL: "Product - POMA"
             REPO: "labelOnPRReview"
-            PROTECTED: "('Product - Gateway')"
           - LABEL: "Product - Gateway"
             REPO: "TestRepo"
-            PROTECTED: "('Product - POMA')"
           - LABEL: "Product - POM" 
             REPO: "TestRepo"
-            PROTECTED: "()"
           - LABEL: "Product - POH"
             REPO: "TestRepo"
-            PROTECTED: "()"
           - LABEL: "Product - Connecting Shop"
             REPO: "TestRepo"
-            PROTECTED: "()"
           - LABEL: "Product - Connecting Prodrisk"
             REPO: "TestRepo"
-            PROTECTED: "()"
           - LABEL: "Product - Optimal Log"
             REPO: "TestRepo"
-            PROTECTED: "()"
 
     steps:
-    - name: Check Protection
-      run: |
-        PROTECTED=${{ matrix.PROTECTED }}
-        PROTECTED+=${{ env.PROTECTED }}
-        CHECK+=${{ fromJSON(github.event.issue.labels.*.name) }} 
-        echo $CHECK
-        STOP = "false"
-        for check in ${PROTECTED[*]}
-        do
-          for against in ${CHECK[*]}
-            if [[ $check == $against]]
-              STOP = "true"
-            fi
-          done
-        done
-        echo ::set-output name=stop::${STOP}
-
-      id: check
-      shell: bash
+    - name: Match body
+      id: match
+      uses: ChristofferDahlen/Multi-Regex-Match@v1.0
+      with:
+        input: "${{toJSON(github.event.issue.labels.*.name) }}"
+        json_match: ${{ env.PROTECTED }}
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ steps.check.outputs.stop != true && github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' }}
+      if: ${{ steps.match.outputs.result != true && github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
