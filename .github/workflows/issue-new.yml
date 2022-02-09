@@ -34,6 +34,7 @@ jobs:
           else
             echo ::set-output name=remain::false
           fi
+      shell: bash
       id: state
 
     - name: Transfer Issue & Comment
