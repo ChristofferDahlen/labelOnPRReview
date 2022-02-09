@@ -33,7 +33,7 @@ jobs:
 
     steps:
     - name: Match body
-      if:  github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO'
+      if:  github.event.label.name == matrix.LABEL && github.repository != 'github.repository_owner/matrix.REPO'
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
