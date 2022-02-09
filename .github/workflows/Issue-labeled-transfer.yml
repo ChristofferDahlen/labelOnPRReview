@@ -40,7 +40,7 @@ jobs:
         input: "${{toJSON(github.event.issue.labels.*.name) }}"
         json_match: ${{ env.PROTECTED }}
     - name: Transfer ${{ env.LABEL }}
-      if: ${{ steps.match.outputs.result != true && github.event.label.name == env.LABEL && github.repository != 'github.repository_owner/matrix.REPO' }}
+      if: ${{ steps.match.outputs.result != true && github.event.label.name == matrix.LABEL && github.repository != 'github.repository_owner/matrix.REPO' }}
       uses: lando/transfer-issue-action@v2
       with:
         token: ${{ secrets.OPT_GH_TOKEN }}
