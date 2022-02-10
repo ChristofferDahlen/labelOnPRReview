@@ -41,10 +41,29 @@ jobs:
           "Product - Prodrisk\\b" : "testRepo",
           "Product - Optimal log\\b" : "testRepo"
         }'
+    - run: |
+          if [[ "${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false" || "${{ steps.protect.outputs.result}}" == "true" ]]
+          then
+            echo ::set-output name=remain::true
+          else
+            echo ::set-output name=remain::false
+          fi
+      shell: bash
+      name: Check if we should move from ${{ github.repository }} to ${{ steps.match.outputs.result }}
+      id: state
+
+    - name: Transfer Issue & Comment
+      if: steps.state.outputs.remain == 'false'
+      uses: christofferDahlen/transfer-issue-action@v3
+      with:
+        target_repo: ${{ steps.match.outputs.result }}
+        token: '${{ secrets.OPT_GH_TOKEN }}'
+        debug: true
+        create_stub: true
 
 ## Check
     - name: Transfer Issue to ${{ steps.match.outputs.result }}
-      if: ${{ steps.protect.outputs.result != true && steps.match.outputs.result != false && github.repository != github.repository_owner\/steps.match.outputs.result }} 
+      if: ${{  && steps.match.outputs.result != false && github.repository != github.repository_owner steps.match.outputs.result }} 
       uses: christofferDahlen/transfer-issue-action@v3
       with:
         target_repo: ${{ steps.match.outputs.result }}
