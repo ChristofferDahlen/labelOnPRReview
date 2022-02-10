@@ -119,7 +119,7 @@ jobs:
     if: needs.transfer_issue.outputs.remain == 'true' 
     runs-on: ubuntu-latest
     steps: 
-    - run: echo ::set-output name=result::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
+    - run: echo "::set-output name=result::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")"
       id: repo
       shell: bash
     - uses: octokit/request-action@v2.x
@@ -127,7 +127,7 @@ jobs:
       with:
         route: GET /repos/{owner}/{repo}/issues/${{ github.event.issue.number}}
         owner: ${{ github.repository_owner }}
-        repo: ${{ steps.repo.output.result }}
+        repo: ${{ steps.repo.outputs.result }}
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
