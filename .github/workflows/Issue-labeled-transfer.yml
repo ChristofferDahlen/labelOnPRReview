@@ -11,7 +11,7 @@ env:
 jobs:
   transfer_issue:
     name: transfer issue
-    if: ${{ contains(github.event.label.name, 'Product') }}
+    if: ${{ contains(github.event.label.name, 'Product') && !github.event.issue.locked && github.event.issue.state != 'closed' }}
     runs-on: ubuntu-latest
     steps:
 
