@@ -26,7 +26,7 @@ jobs:
 
 ## Match label with repo
     - name: Match Label
-      if: steps.protect.outputs.result != true && github.repository != 'github.repository_owner/matrix.REPO' 
+      if: steps.protect.outputs.result != true
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
