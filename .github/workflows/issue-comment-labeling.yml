@@ -19,7 +19,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Amwam/issue-comment-action@v1.3.1
         with:
-          keywords: '["help"]'
+          keywords: '["help @", "need help"]'
           labels: '["Help Wanted :hand:"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Amwam/issue-comment-action@v1.3.1
@@ -29,7 +29,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Amwam/issue-comment-action@v1.3.1
         with:
-          keywords: '["blocked"]'
+          keywords: '["blocked by"]'
           labels: '["Blocked :no_entry_sign:"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Amwam/issue-comment-action@v1.3.1
@@ -39,7 +39,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Amwam/issue-comment-action@v1.3.1
         with:
-          keywords: '["Duplicate"]'
+          keywords: '["Duplicate of"]'
           labels: '["Duplicate :grey_exclamation:"]'
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: Amwam/issue-comment-action@v1.3.1
