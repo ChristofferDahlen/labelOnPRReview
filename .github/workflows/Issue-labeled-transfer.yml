@@ -44,7 +44,7 @@ jobs:
 
 ## Check
     - name: Transfer Issue to ${{ steps.match.outputs.result }}
-      if: ${{ steps.protect.outputs.result != true && steps.match.outputs.result != false && github.repository != ${{ github.repository_owner}}/${{steps.match.outputs.result}} }} 
+      if: ${{ steps.protect.outputs.result != true && steps.match.outputs.result != false && github.repository != github.repository_owner\/steps.match.outputs.result }} 
       uses: christofferDahlen/transfer-issue-action@v3
       with:
         target_repo: ${{ steps.match.outputs.result }}
