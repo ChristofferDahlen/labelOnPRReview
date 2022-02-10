@@ -60,13 +60,3 @@ jobs:
         token: '${{ secrets.OPT_GH_TOKEN }}'
         debug: true
         create_stub: true
-
-## Check
-    - name: Transfer Issue to ${{ steps.match.outputs.result }}
-      if: ${{  && steps.match.outputs.result != false && github.repository != github.repository_owner steps.match.outputs.result }} 
-      uses: christofferDahlen/transfer-issue-action@v3
-      with:
-        target_repo: ${{ steps.match.outputs.result }}
-        token: '${{ secrets.OPT_GH_TOKEN }}'
-        debug: true
-        create_stub: true
