@@ -91,7 +91,7 @@ jobs:
       with:
         github_token: ${{ secrets.github_token }}
         body: |
-          @${{ secrets.SCRUM_MASTER }} @${{github.event.issue.user.login}} The automation wasn't able to determine which repository this issue belongs to.
+          @${{github.event.issue.user.login}} The automation wasn't able to determine which repository this issue belongs to.
     - run: |
           if [[ "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
@@ -128,7 +128,7 @@ jobs:
       id: regex-match
       with:
         text: ${{ github.event.issue.title }}
-        regex: '^(\[[^\]]*\]:?\s?(title)?)?$'
+        regex: '^(\[[^\]]*\]:?\s*(title)?)?$'
         flags: gm
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ steps.regex-match.outputs.match != '' }}
@@ -136,9 +136,6 @@ jobs:
         github_token: ${{ secrets.github_token }}
         body: |
           @${{github.event.issue.user.login}} Seems like you have forgotten to fill out the title of issue. Please fill it in properly.
-
-          If this is wrong just ignore this comment
-
 
 ########
 ## Add issue to the appropriate 
@@ -175,17 +172,19 @@ jobs:
 
     - uses: alex-page/github-project-automation-plus@v0.8.1
       if: ${{ steps.match.outputs.result != ''}} 
-      id: project-shop
+      id: add-to-project
       with:
         project: ${{ steps.match.outputs.result }} 
         column: Triage
         repo-token: '${{ secrets.OPT_GH_TOKEN }}'
     
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ steps.project-core.outcome != 'success' }}
+      if: ${{ steps.add-to-project.outcome != 'success' }}
       with:
         github_token: ${{ secrets.github_token }}
         body: |
-          @${{github.event.issue.user.login}} The automation hasn't been able to add this to a appropriate project. 
+          @${{github.event.issue.user.login}} The automation hasn't been able to add this to a appropriate project. This could lead to the issue not being handled.
 
-          Please close or delete this issue and open a new with either the proper format.
+          Please add it to a appropraite project or close the issue and open a new one with either 
+          1. A template correctly filled out
+          2. A issue with a set product label
