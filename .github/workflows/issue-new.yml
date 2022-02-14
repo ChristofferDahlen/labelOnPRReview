@@ -143,7 +143,7 @@ jobs:
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{ fromJson(steps.get_body.outputs.data).labels }}"
+        input: "${{ toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
         json_match: '{ 
           "Product - POMA\\b" : "Optimisation Core Board",
           "Product - Gateway\\b" : "Optimisation Core Board",
