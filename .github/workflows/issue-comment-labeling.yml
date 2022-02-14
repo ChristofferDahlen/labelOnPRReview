@@ -29,42 +29,42 @@ jobs:
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
-      if: success()
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["help @"]'
         labels: '["Help Wanted :hand:"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
-      if: success()
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["blocking"]'
         labels: '["Blocking :exclamation:"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
-      if: success()
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["blocked by"]'
         labels: '["Blocked :no_entry_sign:"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
-      if: success()
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["Cannot Reproduce"]'
         labels: '["Cannot Reproduce"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
-      if: success()
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["Duplicate of"]'
         labels: '["Duplicate :grey_exclamation:"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
-      if: success()
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["Urgent"]'
         labels: '["Urgent :bangbang:"]'
@@ -106,6 +106,7 @@ jobs:
         actionable-label: "[X] :mailbox:"
 
     - name: Add author repose if waiting
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       uses: siegerts/pending-author-response@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -113,6 +114,7 @@ jobs:
         actionable-label: "[X] :mailbox:"
 
     - name: Add developer response
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       uses: siegerts/pending-response@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -121,6 +123,7 @@ jobs:
         actionable-label: "[X] :basketball:"
 
     - name: Add Waiting for Author
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       uses: actions-ecosystem/action-add-labels@v1.1.0
       if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
       with:

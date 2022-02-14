@@ -58,6 +58,7 @@ jobs:
         create_stub: true
     outputs:
       remain: ${{ steps.state.outputs.remain }}
+      state: ${{ fromJson(steps.get_body.outputs.data).state }}
 
 ########
 ## Check if the title is correct 
@@ -66,7 +67,7 @@ jobs:
   check_title:
     name: Check Empty title
     needs: transfer_issue
-    if: needs.transfer_issue.outputs.remain == 'true' 
+    if: needs.transfer_issue.outputs.remain == 'true' && needs.transfer_issue.outputs.state = 'open'
     runs-on: ubuntu-latest
     steps:
     - uses: actions-ecosystem/action-regex-match@v2
@@ -90,7 +91,7 @@ jobs:
   Add_Labels:
     name: Add labels
     needs: transfer_issue
-    if: needs.transfer_issue.outputs.remain == 'true'
+    if: needs.transfer_issue.outputs.remain == 'true' && needs.transfer_issue.outputs.state = 'open'
     runs-on: ubuntu-latest
     steps:
     - name: Add_Other_Labels
@@ -112,7 +113,7 @@ jobs:
   Add_To_Project:
     name: Add to project
     needs: transfer_issue
-    if: needs.transfer_issue.outputs.remain == 'true' 
+    if: needs.transfer_issue.outputs.remain == 'true' && needs.transfer_issue.outputs.state = 'open'
     runs-on: ubuntu-latest
     steps: 
     - uses: octokit/request-action@v2.x
