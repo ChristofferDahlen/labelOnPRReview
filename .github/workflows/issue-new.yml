@@ -144,7 +144,7 @@ jobs:
         github_token: ${{ secrets.github_token }}
         body: |
           @${{github.event.issue.user.login}} Seems like you have forgotten to fill out the title of the issue. Please fill it in properly.
-  
+
   check_body:
     name: Check Empty body
     needs: [Check_Status,transfer_issue]
