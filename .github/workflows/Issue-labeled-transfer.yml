@@ -35,6 +35,7 @@ jobs:
         created=$(date -d "${{fromJson(steps.get_body.outputs.data).created_at}}" +"%s")
         now=$(date -d now +"%s")
         diff=$(($now - $created))
+        echo $diff
         if [[ $diff > 600 ]]; then
           echo ::set-output name=after::true
         else
