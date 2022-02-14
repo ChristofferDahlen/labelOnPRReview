@@ -9,13 +9,13 @@ env:
   PROTECTED_JSON: '{ "Product - POMA\\b" : "true" }'
   TRANSFER_MAP: '{ 
           "Product - POMA\\b" : "labelOnPRReview",
-          "Product - Gateway\\b" : "testRepo",
-          "Product - POM\\b" : "testRepo",
-          "Product - POH\\b" : "testRepo",
+          "Product - Gateway\\b" : "TestRepo",
+          "Product - POM\\b" : "TestRepo",
+          "Product - POH\\b" : "TestRepo",
           "Product - Spotbid\\b" : "false",
-          "Product - Connecting Shop\\b" : "testRepo",
-          "Product - Connecting Prodrisk\\b" : "testRepo",
-          "Product - Optimal Log\\b" : "testRepo"
+          "Product - Connecting Shop\\b" : "TestRepo",
+          "Product - Connecting Prodrisk\\b" : "TestRepo",
+          "Product - Optimal Log\\b" : "TestRepo"
         }'
 
 jobs:
