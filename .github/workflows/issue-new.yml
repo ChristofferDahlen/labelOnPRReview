@@ -128,14 +128,14 @@ jobs:
       id: product
 
     - uses: alex-page/github-project-automation-plus@v0.8.1
-      if: ${{ contains( steps.product.outputs.name, 'shop' ) }}
+      if: ${{ contains( steps.product.outputs.name, 'shop' ) && fromJson(steps.get_body.outputs.data).state == 'open'}}
       with:
         project: Connecting Shop Board 
         column: Triage
         repo-token: '${{ secrets.OPT_GH_TOKEN }}'
 
     - uses: alex-page/github-project-automation-plus@v0.8.1
-      if: ${{ !contains( steps.product.outputs.name, 'shop' ) }}
+      if: ${{ !contains( steps.product.outputs.name, 'shop' ) && fromJson(steps.get_body.outputs.data).state == 'open'}}
       with:
         project: Optimisation Core Board
         column: Triage
