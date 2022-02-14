@@ -153,6 +153,7 @@ jobs:
 
   Add_Comment:
     name: Add Comment
+    runs-on: ubuntu-latest
     needs: [Check_Status,transfer_issue]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     steps:
