@@ -167,8 +167,12 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+    - name: get Comment
+      id: com
+      run: |
+        echo "::set-output name=comment::${{env.OPENING_COMMENT}}"
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), env.OPENING_COMMENT)}}
+      if: ${{ !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), steps.com.outputs.comment)}}
       with:
         github_token: ${{ secrets.github_token }}
         body: ${{ env.OPENING_COMMENT }}
@@ -189,6 +193,10 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+    - name: get Comment
+      id: com
+      run: |
+        echo "::set-output name=comment::${{env.EMPTY_TITLE_COMMENT}}"
     - uses: actions-ecosystem/action-regex-match@v2
       id: regex-match
       with:
@@ -196,7 +204,7 @@ jobs:
         regex: '^(\[[^\]]*\]:?\s*(title)?)?$'
         flags: gm
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ steps.regex-match.outputs.match != '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), env.EMPTY_TITLE_COMMENT)}}
+      if: ${{ steps.regex-match.outputs.match != '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), steps.com.outputs.comment)}}
       with:
         github_token: ${{ secrets.github_token }}
         body: |
@@ -214,6 +222,12 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+  
+    - name: get Comment
+      id: com
+      run: |
+        echo "::set-output name=comment::${{env.EMPTY_BODY_COMMENT}}"
+
     - uses: octokit/request-action@v2.x
       id: get_comment
       with:
@@ -222,7 +236,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ fromJson(steps.get_body.outputs.data).body == '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), env.EMPTY_BODY_COMMENT)}}
+      if: ${{ fromJson(steps.get_body.outputs.data).body == '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), setps.com.outputs.comment)}}
       with:
         github_token: ${{ secrets.github_token }}
         body: |

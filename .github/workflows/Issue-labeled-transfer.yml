@@ -43,7 +43,7 @@ jobs:
         now=$(date -d now +"%s")
         diff=$(($now - $created))
         echo $diff
-        if [[ $diff > 300 ]]; then
+        if [[ $(($diff > 300)) ]]; then
           echo ::set-output name=after::true
         else
           echo ::set-output name=after::false
@@ -91,7 +91,7 @@ jobs:
       id: state
 
     - name: Transfer Issue & Comment
-      if: steps.state.outputs.remain == 'false' && steps.time.outputs.after == 'true'
+      if: steps.state.outputs.remain == 'false' 
       uses: christofferDahlen/transfer-issue-action@v3
       with:
         target_repo: ${{ steps.match.outputs.result }}
