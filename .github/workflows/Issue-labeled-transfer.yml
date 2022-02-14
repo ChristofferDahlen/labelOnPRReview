@@ -76,7 +76,9 @@ jobs:
         input: "${{ github.event.label.name }}"
         json_match: ${{ env.TRANSFER_MAP }}
     - run: |
-          if [[ "${{ needs.check_time.outputs.transfer.state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          fromRepo="${{github.repository_owner}}/${{ steps.match.outputs.result }}"
+          toRepo="${{ github.repository }}"
+          if [[ "${{ needs.check_time.outputs.transfer.state}}" == "closed" || ${fromRepo^^} == ${toRepo^^} ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
