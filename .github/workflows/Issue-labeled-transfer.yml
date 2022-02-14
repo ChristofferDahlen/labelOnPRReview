@@ -5,6 +5,10 @@ on:
     types:
       - labeled
 
+env:
+  Protected-Key: ${{ secrets.STOP_TRANSFER_FOR_LABEL }}
+
+
 jobs:
   transfer_issue:
     name: transfer issue
@@ -13,7 +17,7 @@ jobs:
     steps:
 
     - name: Check STOP_TRANSFER_SECRET
-      if: ${{secrets.STOP_TRANSFER_FOR_LABEL}} == ''
+      if: ${{env.Protected-Key == ''}}
       uses: actions/github-script@v3
       with:
         script: |
@@ -33,7 +37,7 @@ jobs:
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
-        json_match: '{ "${{ secrets.STOP_TRANSFER_FOR_LABEL }} \\b" : "true" }'
+        json_match: '{ "${{ env.Protected-Key }} \\b" : "true" }'
 
     - name: Check Time
       id: time
