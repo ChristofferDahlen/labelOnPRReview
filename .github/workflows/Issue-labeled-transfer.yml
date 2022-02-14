@@ -12,6 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Check STOP_TRANSFER_SECRET
+      if: ${{secrets.STOP_TRANSFER_FOR_LABEL}} == ''
+      uses: actions/github-script@v3
+      with:
+        script: |
+            core.setFailed('secret STOP_TRANSFER_FOR_LABEL is not set')
+
 ## Check if any labels are protected
     - name: Get Current Issue State
       uses: octokit/request-action@v2.x

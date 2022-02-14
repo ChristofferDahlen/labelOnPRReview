@@ -72,6 +72,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
+    - name: Check STOP_TRANSFER_SECRET
+      if: ${{secrets.STOP_TRANSFER_FOR_LABEL}} == ''
+      uses: actions/github-script@v3
+      with:
+        script: |
+            core.setFailed('secret STOP_TRANSFER_FOR_LABEL is not set')
+
     - name: Check Protection
       id: protect
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
