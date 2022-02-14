@@ -135,7 +135,7 @@ jobs:
 
   Add_To_Project:
     name: Add to project
-    needs: transfer_issue, Add_Labels
+    needs: [transfer_issue, Add_Labels]
     if: needs.transfer_issue.outputs.remain == 'true' && needs.transfer_issue.outputs.state == 'open'
     runs-on: ubuntu-latest
     steps: 
