@@ -33,6 +33,7 @@ jobs:
 
     - name: Check Time
       id: time
+      shell: bash
       run: |
       created=$(date -d "${{fromJson(steps.get_body.outputs.data).created_at}}" +"%s")
       now=$(date -d now +"%s")
