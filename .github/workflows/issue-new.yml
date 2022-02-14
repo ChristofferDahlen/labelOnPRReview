@@ -130,7 +130,9 @@ jobs:
         body: |
           @${{github.event.issue.user.login}} The automation wasn't able to determine which repository this issue belongs to.
     - run: |
-          if [[ "${{ steps.protect.outputs.result}}" == "true" || "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          fromRepo="${{github.repository_owner}}/${{ steps.match.outputs.result }}"
+          toRepo="${{ github.repository }}"
+          if [[ "${{ steps.protect.outputs.result}}" == "true" || "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" || ${fromRepo^^} == ${toRepo^^}  ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
