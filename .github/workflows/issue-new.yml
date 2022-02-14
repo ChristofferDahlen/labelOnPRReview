@@ -5,6 +5,18 @@ on:
     types: [opened]
 
 env:
+  EMPTY_TITLE_COMMENT: Seems like you have forgotten to fill out the title of the issue. Please fill it in properly.
+  EMPTY_BODY_COMMENT: Seems like you have forgotten to fill out the description of the issue. Please fill it in properly
+  OPENING_COMMENT: |
+          Thanks for opening this issue!
+          I have applied labels matching the template and attempted to move the issue to the correct repository. 
+
+          Please review if this is correct. 
+
+          If the issue has been moved to the wrong repositorty it can be moved again after 5min by removing all Product labels and setting the correct ones.
+
+
+
   PROTECTED_JSON: '{ "Product - POMA\\b" : "true" }'
   TRANSFER_MAP: '{ 
           "Product - POMA\\b" : "labelOnPRReview",
@@ -144,16 +156,17 @@ jobs:
     needs: [Check_Status,transfer_issue]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     steps:
+    - uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
     - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), env.OPENING_COMMENT)}}
       with:
         github_token: ${{ secrets.github_token }}
-        body: |
-          Thanks for opening this issue!
-          I have applied labels matching the template and attempted to move the issue to the correct repository. 
-
-          Please review if this is correct. 
-
-          If the issue has been moved to the wrong repositorty it can be moved again after 5min by removing all Product labels and setting the correct ones.
+        body: ${{ env.OPENING_COMMENT }}
 
 ########
 ## Check if the title is correct 
@@ -165,6 +178,12 @@ jobs:
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps:
+    - uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
     - uses: actions-ecosystem/action-regex-match@v2
       id: regex-match
       with:
@@ -172,11 +191,11 @@ jobs:
         regex: '^(\[[^\]]*\]:?\s*(title)?)?$'
         flags: gm
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ steps.regex-match.outputs.match != '' }}
+      if: ${{ steps.regex-match.outputs.match != '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), env.EMPTY_TITLE_COMMENT)}}
       with:
         github_token: ${{ secrets.github_token }}
         body: |
-          @${{github.event.issue.user.login}} Seems like you have forgotten to fill out the title of the issue. Please fill it in properly.
+          @${{github.event.issue.user.login}} ${{ env.EMPTY_TITLE_COMMENT }}
 
   check_body:
     name: Check Empty body
@@ -190,14 +209,19 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-
+    - uses: octokit/request-action@v2.x
+      id: get_comment
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ fromJson(steps.get_body.outputs.data).body == '' }}
+      if: ${{ fromJson(steps.get_body.outputs.data).body == '' !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), env.EMPTY_BODY_COMMENT)}}
       with:
         github_token: ${{ secrets.github_token }}
         body: |
-          @${{github.event.issue.user.login}} Seems like you have forgotten to fill out the description of the issue. Please fill it in properly.
+          @${{github.event.issue.user.login}} ${{env.EMPTY_BODY_COMMENT}}
 
 
 
