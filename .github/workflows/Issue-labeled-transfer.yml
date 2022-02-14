@@ -46,7 +46,7 @@ jobs:
         else
           echo ::set-output name=after::false
         fi
-    output:
+    outputs:
       transfer: ${{ steps.time.outputs.after }}
       issue: fromJson(steps.get_body.outputs.data)
 
