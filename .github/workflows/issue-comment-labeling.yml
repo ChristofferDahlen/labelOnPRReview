@@ -12,83 +12,118 @@ jobs:
     if: ${{ !github.event.issue.locked && github.event.issue.state != 'closed' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '["ready for test"]'
-          labels: '["Test Ready"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '["help @"]'
-          labels: '["Help Wanted :hand:"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '["blocking"]'
-          labels: '["Blocking :exclamation:"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '["blocked by"]'
-          labels: '["Blocked :no_entry_sign:"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '["Cannot Reproduce"]'
-          labels: '["Cannot Reproduce"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '["Duplicate of"]'
-          labels: '["Duplicate :grey_exclamation:"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: Amwam/issue-comment-action@v1.3.1
-        with:
-          keywords: '["Urgent"]'
-          labels: '["Urgent :bangbang:"]'
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+
+    - uses: Amwam/issue-comment-action@v1.3.1
+      if: fromJson(steps.get_body.outputs.data).state}} == 'open'
+      with:
+        keywords: '["ready for test"]'
+        labels: '["Test Ready"]'
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - uses: Amwam/issue-comment-action@v1.3.1
+      if: success()
+      with:
+        keywords: '["help @"]'
+        labels: '["Help Wanted :hand:"]'
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - uses: Amwam/issue-comment-action@v1.3.1
+      if: success()
+      with:
+        keywords: '["blocking"]'
+        labels: '["Blocking :exclamation:"]'
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - uses: Amwam/issue-comment-action@v1.3.1
+      if: success()
+      with:
+        keywords: '["blocked by"]'
+        labels: '["Blocked :no_entry_sign:"]'
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - uses: Amwam/issue-comment-action@v1.3.1'
+      if: success()
+      with:
+        keywords: '["Cannot Reproduce"]'
+        labels: '["Cannot Reproduce"]'
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - uses: Amwam/issue-comment-action@v1.3.1
+      if: success()
+      with:
+        keywords: '["Duplicate of"]'
+        labels: '["Duplicate :grey_exclamation:"]'
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+    - uses: Amwam/issue-comment-action@v1.3.1
+      if: success()
+      with:
+        keywords: '["Urgent"]'
+        labels: '["Urgent :bangbang:"]'
+        github-token: "${{ secrets.GITHUB_TOKEN }}"
   
+
+
+
+
   AuthorTeamResponseLabeling:
     if: ${{ !github.event.issue.pull_request && !github.event.issue.locked && github.event.issue.state != 'closed' }}
     runs-on: ubuntu-latest
     steps:
 
-      - name: Get lowercase body
-        run: |
-          echo "::set-output name=lc::$(echo "${{ github.event.comment.body }}" | tr '[:upper:]' '[:lower:]')"
-        id: lowercaseComment
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
-      - name: Get lowercase author
-        run: |
-          echo "::set-output name=lc::$(echo "@${{ github.event.issue.user.login }}" | tr '[:upper:]' '[:lower:]')"
-        id: AtAuthor
+    - name: Get lowercase body
+      run: |
+        echo "::set-output name=lc::$(echo "${{ github.event.comment.body }}" | tr '[:upper:]' '[:lower:]')"
+      id: lowercaseComment
 
-      - name: Add author repose
-        uses: siegerts/pending-author-response@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          pending-response-label: "[X] :basketball:"
-          actionable-label: "[X] :mailbox:"
+    - name: Get lowercase author
+      run: |
+        echo "::set-output name=lc::$(echo "@${{ github.event.issue.user.login }}" | tr '[:upper:]' '[:lower:]')"
+      id: AtAuthor
 
-      - name: Add author repose if waiting
-        uses: siegerts/pending-author-response@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          pending-response-label: "[X] Waiting On Author"
-          actionable-label: "[X] :mailbox:"
+    - name: Add author repose
+      if: fromJson(steps.get_body.outputs.data).state}} == 'open'
+      uses: siegerts/pending-author-response@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        pending-response-label: "[X] :basketball:"
+        actionable-label: "[X] :mailbox:"
 
-      - name: Add developer response
-        uses: siegerts/pending-response@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          member-associations: "OWNER, COLLABORATOR, CONTRIBUTOR"
-          pending-response-label: "[X] :mailbox:"
-          actionable-label: "[X] :basketball:"
+    - name: Add author repose if waiting
+      uses: siegerts/pending-author-response@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        pending-response-label: "[X] Waiting On Author"
+        actionable-label: "[X] :mailbox:"
 
-      - name: Add Waiting for Author
-        uses: actions-ecosystem/action-add-labels@v1.1.0
-        if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: "[X] Waiting On Author"
+    - name: Add developer response
+      uses: siegerts/pending-response@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        member-associations: "OWNER, COLLABORATOR, CONTRIBUTOR"
+        pending-response-label: "[X] :mailbox:"
+        actionable-label: "[X] :basketball:"
+
+    - name: Add Waiting for Author
+      uses: actions-ecosystem/action-add-labels@v1.1.0
+      if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        labels: "[X] Waiting On Author"
       

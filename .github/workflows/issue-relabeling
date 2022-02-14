@@ -10,10 +10,19 @@ jobs:
     name: Label issues and pull requests
     if: ${{ !github.event.issue.locked && github.event.issue.state != 'closed'  }}
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout
-      - uses: Resnovas/label-mastermind@2.1.3
-        name: Labeling
-        with:
-          skipDelete: true
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+    - uses: actions/checkout@v2
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
+      name: Checkout
+    - uses: Resnovas/label-mastermind@2.1.3
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
+      name: Labeling
+      with:
+        skipDelete: true
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'

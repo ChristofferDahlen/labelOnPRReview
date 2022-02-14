@@ -17,6 +17,14 @@ jobs:
 
 ## Check if any labels are protected
 
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+
     - name: Check Protection
       id: protect
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
@@ -26,7 +34,7 @@ jobs:
 
 ## Match label with repo
     - name: Match Label
-      if: steps.protect.outputs.result != true
+      if: steps.protect.outputs.result != true 
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
@@ -42,7 +50,7 @@ jobs:
           "Product - Optimal log\\b" : "testRepo"
         }'
     - run: |
-          if [[ "${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false" || "${{ steps.protect.outputs.result}}" == "true" ]]
+          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" != "open" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
