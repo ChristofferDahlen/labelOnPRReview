@@ -63,7 +63,7 @@ jobs:
       id: protect
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
+        input: "${{toJson(needs.check_time.outputs.issue.labels.*.name) }}"
         json_match: ${{ env.PROTECTED_JSON }}
 
 
