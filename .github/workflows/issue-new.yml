@@ -15,6 +15,13 @@ jobs:
     if: ${{ !github.event.issue.locked && github.event.issue.state != 'closed' }}
     runs-on: ubuntu-latest
     steps:
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/{owner}/{repo}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
     - name: Match body
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
@@ -31,7 +38,7 @@ jobs:
           "(?i)#\\s*Product[^\\r\\n]*(Optimal[^\\w\\r\\n]+)?log\\b" : "testRepo"
         }'
     - run: |
-          if [[ "${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" != "open" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
@@ -62,26 +69,26 @@ jobs:
     if: needs.transfer_issue.outputs.remain == 'true' 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-ecosystem/action-regex-match@v2
-        id: regex-match
-        with:
-          text: ${{ github.event.issue.title }}
-          regex: '^(\[[^\]]*\]:?\s?(title)?)?$'
-          flags: gm
-      - uses: actions-ecosystem/action-create-comment@v1
-        if: ${{ steps.regex-match.outputs.match != '' }}
-        with:
-          github_token: ${{ secrets.github_token }}
-          body: |
-            Seems like you have forgotten to fill out the title of issue. Please fill it in properly.
+    - uses: actions-ecosystem/action-regex-match@v2
+      id: regex-match
+      with:
+        text: ${{ github.event.issue.title }}
+        regex: '^(\[[^\]]*\]:?\s?(title)?)?$'
+        flags: gm
+    - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ steps.regex-match.outputs.match != '' }}
+      with:
+        github_token: ${{ secrets.github_token }}
+        body: |
+          Seems like you have forgotten to fill out the title of issue. Please fill it in properly.
 
-            If this is wrong just ignore this comment
+          If this is wrong just ignore this comment
 
 ########
 ## Adding other labels
 ########
-  Add_Other_Labels:
-    name: Add unsynced labels
+  Add_Labels:
+    name: Add labels
     needs: transfer_issue
     if: needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
@@ -91,23 +98,12 @@ jobs:
       uses: jimschubert/labeler-action@v1
       with:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-########
-## Add the sync labels
-########
-
-  Add_Synced_Labels:
-    name: Add synced labels
-    needs: transfer_issue
-    if: needs.transfer_issue.outputs.remain == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        name: Checkout
-      - uses: Resnovas/label-mastermind@2.1.3
-        name: Labeling
-        with:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
+    - uses: actions/checkout@v2
+      name: Checkout
+    - uses: Resnovas/label-mastermind@2.1.3
+      name: Labeling
+      with:
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
 
 ########
 ## Add issue to the appropriate 
@@ -119,15 +115,10 @@ jobs:
     if: needs.transfer_issue.outputs.remain == 'true' 
     runs-on: ubuntu-latest
     steps: 
-    - run: echo "::set-output name=result::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")"
-      id: repo
-      shell: bash
     - uses: octokit/request-action@v2.x
       id: get_body
       with:
-        route: GET /repos/{owner}/{repo}/issues/${{ github.event.issue.number}}
-        owner: ${{ github.repository_owner }}
-        repo: ${{ steps.repo.outputs.result }}
+        route: GET /repos/{owner}/{repo}/issues/${{ github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
