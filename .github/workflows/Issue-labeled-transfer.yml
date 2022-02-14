@@ -6,7 +6,9 @@ on:
       - labeled
 
 env:
-  PROTECTED_JSON: '{ "Product - POMA\\b" : "true" }'
+  PROTECTED_JSON: '{ 
+          "Product - POMA\\b" : "true"
+        }'
   TRANSFER_MAP: '{ 
           "Product - POMA\\b" : "labelOnPRReview",
           "Product - Gateway\\b" : "TestRepo",
