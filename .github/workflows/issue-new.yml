@@ -5,8 +5,29 @@ on:
     types: [opened]
 
 env:
-  Protected-Key: ${{ secrets.STOP_TRANSFER_FOR_LABEL }}
+  PROTECTED_JSON: '{ "Product - POMA\\b" : "true" }'
+  TRANSFER_MAP: '{ 
+          "Product - POMA\\b" : "labelOnPRReview",
+          "Product - Gateway\\b" : "testRepo",
+          "Product - POM\\b" : "testRepo",
+          "Product - POH\\b" : "testRepo",
+          "Product - Spotbid\\b" : "false",
+          "Product - Connecting Shop\\b" : "testRepo",
+          "Product - Connecting Prodrisk\\b" : "testRepo",
+          "Product - Optimal Log\\b" : "testRepo"
+        }'
+  BOARD_MAP: '{ 
+          "Product - Connecting Shop\\b" : "Connecting Shop Board",
+          "Product - Connecting Prodrisk\\b" : "Connecting Shop Board",
+          "Product - POMA\\b" : "Optimisation Core Board",
+          "Product - Gateway\\b" : "Optimisation Core Board",
+          "Product - POM\\b" : "Optimisation Core Board",
+          "Product - POH\\b" : "Optimisation Core Board",
+          "Product - Spotbid\\b" : "Optimisation Core Board",
+          "Product - Optimal Log\\b" : "Optimisation Core Board"
+        }'
 
+  
 
 jobs:
 
@@ -76,35 +97,20 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
         
-    - name: Check STOP_TRANSFER_SECRET
-      if: ${{env.Protected-Key == ''}}
-      uses: actions/github-script@v3
-      with:
-        script: |
-            core.setFailed('secret STOP_TRANSFER_FOR_LABEL is not set')
 
     - name: Check Protection
       id: protect
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{toJSON(github.event.issue.labels.*.name) }}"
-        json_match: '{ "${{ env.Protected-Key }} \\b" : "true" }'
+        input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
+        json_match: ${{ env.PROTECTED_JSON }}
 
     - name: Check Labels
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: "${{ toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
-        json_match: '{ 
-          "Product - POMA\\b" : "labelOnPRReview",
-          "Product - Gateway\\b" : "testRepo",
-          "Product - POM\\b" : "testRepo",
-          "Product - POH\\b" : "testRepo",
-          "Product - Spotbid\\b" : "false",
-          "Product - Connecting Shop\\b" : "testRepo",
-          "Product - Connecting Prodrisk\\b" : "testRepo",
-          "Product - Optimal Log\\b" : "testRepo"
-        }'
+        json_match: ${{ env.TRANSFER_MAP }}
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ steps.match.outputs.result == 'false' || steps.match.outputs.result == '' }}
       with:
@@ -202,16 +208,7 @@ jobs:
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: "${{ toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
-        json_match: '{ 
-          "Product - Connecting Shop\\b" : "Connecting Shop Board",
-          "Product - Connecting Prodrisk\\b" : "Connecting Shop Board",
-          "Product - POMA\\b" : "Optimisation Core Board",
-          "Product - Gateway\\b" : "Optimisation Core Board",
-          "Product - POM\\b" : "Optimisation Core Board",
-          "Product - POH\\b" : "Optimisation Core Board",
-          "Product - Spotbid\\b" : "Optimisation Core Board",
-          "Product - Optimal Log\\b" : "Optimisation Core Board"
-        }'
+        json_match: ${{ env.BOARD_MAP }}
 
     - uses: alex-page/github-project-automation-plus@v0.8.1
       if: ${{ steps.match.outputs.result != ''}} 

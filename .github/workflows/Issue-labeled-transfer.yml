@@ -6,8 +6,17 @@ on:
       - labeled
 
 env:
-  Protected-Key: ${{ secrets.STOP_TRANSFER_FOR_LABEL }}
-
+  PROTECTED_JSON: '{ "Product - POMA\\b" : "true" }'
+  TRANSFER_MAP: '{ 
+          "Product - POMA\\b" : "labelOnPRReview",
+          "Product - Gateway\\b" : "testRepo",
+          "Product - POM\\b" : "testRepo",
+          "Product - POH\\b" : "testRepo",
+          "Product - Spotbid\\b" : "false",
+          "Product - Connecting Shop\\b" : "testRepo",
+          "Product - Connecting Prodrisk\\b" : "testRepo",
+          "Product - Optimal Log\\b" : "testRepo"
+        }'
 
 jobs:
   transfer_issue:
@@ -17,11 +26,11 @@ jobs:
     steps:
 
     - name: Check STOP_TRANSFER_SECRET
-      if: ${{env.Protected-Key == ''}}
+      if: ${{env.PROTECTED_JSON == ''}}
       uses: actions/github-script@v3
       with:
         script: |
-            core.setFailed('secret STOP_TRANSFER_FOR_LABEL is not set')
+            core.setFailed('secret PROTECTED_JSON is not set')
 
 ## Check if any labels are protected
     - name: Get Current Issue State
@@ -37,7 +46,7 @@ jobs:
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
-        json_match: '{ "${{ env.Protected-Key }} \\b" : "true" }'
+        json_match: ${{ env.PROTECTED_JSON }}
 
     - name: Check Time
       id: time
@@ -60,16 +69,7 @@ jobs:
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: "${{ github.event.label.name }}"
-        json_match: '{
-          "Product - POMA\\b" : "labelOnPRReview",
-          "Product - Gateway\\b" : "testRepo",
-          "Product - POM\\b" : "testRepo",
-          "Product - POH\\b" : "testRepo",
-          "Product - Spotbid\\b" : "false",
-          "Product - Connecting Shop\\b" : "testRepo",
-          "Product - Prodrisk\\b" : "testRepo",
-          "Product - Optimal log\\b" : "testRepo"
-        }'
+        json_match: ${{ env.TRANSFER_MAP }}
     - run: |
           if [[ "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
