@@ -19,7 +19,7 @@ jobs:
       uses: octokit/request-action@v2.x
       id: get_body
       with:
-        route: GET /repos/{owner}/{repo}/issues/${{github.event.issue.number}}      
+        route: GET /repos/$GITHUB_REPOSITORY/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
     - name: Match body
