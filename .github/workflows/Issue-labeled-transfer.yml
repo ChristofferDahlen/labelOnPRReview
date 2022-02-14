@@ -35,14 +35,14 @@ jobs:
       id: time
       shell: bash
       run: |
-      created=$(date -d "${{fromJson(steps.get_body.outputs.data).created_at}}" +"%s")
-      now=$(date -d now +"%s")
-      diff = $now - $created
-      if [[ $diff > 600 ]]; then
-        echo ::set-output name=after::true
-      else
-        echo ::set-output name=after::false
-      fi
+        created=$(date -d "${{fromJson(steps.get_body.outputs.data).created_at}}" +"%s")
+        now=$(date -d now +"%s")
+        diff = $now - $created
+        if [[ $diff > 600 ]]; then
+          echo ::set-output name=after::true
+        else
+          echo ::set-output name=after::false
+        fi
 
 ## Match label with repo
     - name: Match Label
