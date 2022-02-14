@@ -5,40 +5,78 @@ on:
     types: [opened]
 
 jobs:
-########          
-## Check if the issue should be transfered to another repo
+
+
 ########
-  transfer_issue:
-
-
-    name: Tranfser issue
+## Adding other labels
+########
+  Add_Labels:
+    name: Add labels
     if: ${{ !github.event.issue.locked && github.event.issue.state != 'closed' }}
     runs-on: ubuntu-latest
     steps:
     - name: Get Current Issue State
       uses: octokit/request-action@v2.x
-      id: get_body
+      id: get_state
       with:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+    - name: Add_Other_Labels
+      if: fromJson(steps.get_state.outputs.data).labels == 'open'
+      id: labeler
+      uses: jimschubert/labeler-action@v1
+      with:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - uses: actions/checkout@v2
+      if: fromJson(steps.get_state.outputs.data).labels == 'open'
+      name: Checkout
+    - uses: Resnovas/label-mastermind@2.1.3
+      if: fromJson(steps.get_state.outputs.data).labels == 'open'
+      name: Labeling
+      with:
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
+    - name: Get Labeled Issue State
+      uses: octokit/request-action@v2.x
+      id: get_done
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+    output:
+      labels: ${{ fromJson(steps.get_done.outputs.data).labels }}
+
+########          
+## Check if the issue should be transfered to another repo
+########
+  transfer_issue:
+    name: Tranfser issue
+    needs: Add_Labels
+    runs-on: ubuntu-latest
+    steps:
     - name: Match body
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{ github.event.issue.body }}"
+        input: "${{ needs.github.event.issue.body }}"
         json_match: '{ 
-          "(?i)#\\s*Product[^\\r\\n]*POMA\\b" : "labelOnPRReview",
-          "(?i)#\\s*Product[^\\r\\n]*Gateway\\b" : "testRepo",
-          "(?i)#\\s*Product[^\\r\\n]*POM\\b" : "testRepo",
-          "(?i)#\\s*Product[^\\r\\n]*POH\\b" : "testRepo",
-          "(?i)#\\s*Product[^\\r\\n]*Spotbid\\b" : "false",
-          "(?i)#\\s*Product[^\\r\\n]*(Connecting[^\\w\\r\\n]+)?Shop\\b" : "testRepo",
-          "(?i)#\\s*Product[^\\r\\n]*Prodrisk\\b" : "testRepo",
-          "(?i)#\\s*Product[^\\r\\n]*(Optimal[^\\w\\r\\n]+)?log\\b" : "testRepo"
+          "Product - POMA\\b" : "labelOnPRReview",
+          "Product - Gateway\\b" : "testRepo",
+          "Product - POM\\b" : "testRepo",
+          "Product - POH\\b" : "testRepo",
+          "Product - Spotbid\\b" : "false",
+          "Product - Connecting Shop\\b" : "testRepo",
+          "Product - Connecting Prodrisk\\b" : "testRepo",
+          "Product - Optimal Log\\b" : "testRepo"
         }'
+    - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ steps.match.outputs.result == 'false' || steps.match.outputs.result == '' }}
+      with:
+        github_token: ${{ secrets.github_token }}
+        body: |
+          @${{ secrets.SCRUM_MASTER }}: The automation wasn't able to determine which repository to transfer this issue to.
     - run: |
-          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          if [[ "${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
@@ -85,26 +123,6 @@ jobs:
 
           If this is wrong just ignore this comment
 
-########
-## Adding other labels
-########
-  Add_Labels:
-    name: Add labels
-    needs: transfer_issue
-    if: needs.transfer_issue.outputs.remain == 'true' && needs.transfer_issue.outputs.state == 'open'
-    runs-on: ubuntu-latest
-    steps:
-    - name: Add_Other_Labels
-      id: labeler
-      uses: jimschubert/labeler-action@v1
-      with:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    - uses: actions/checkout@v2
-      name: Checkout
-    - uses: Resnovas/label-mastermind@2.1.3
-      name: Labeling
-      with:
-        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
 
 ########
 ## Add issue to the appropriate 
