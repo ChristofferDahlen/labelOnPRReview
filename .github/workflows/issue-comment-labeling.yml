@@ -123,9 +123,8 @@ jobs:
         actionable-label: "[X] :basketball:"
 
     - name: Add Waiting for Author
-      if: fromJson(steps.get_body.outputs.data).state == 'open'
+      if: contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) && fromJson(steps.get_body.outputs.data).state == 'open'
       uses: actions-ecosystem/action-add-labels@v1.1.0
-      if: ${{ contains(steps.lowercaseComment.outputs.lc, steps.AtAuthor.outputs.lc ) }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         labels: "[X] Waiting On Author"
