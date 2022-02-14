@@ -139,6 +139,22 @@ jobs:
     outputs:
       remain: ${{ steps.state.outputs.remain }}
 
+  Add_Comment:
+    name: Add Comment
+    needs: [Check_Status,transfer_issue]
+    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
+    steps:
+    - uses: actions-ecosystem/action-create-comment@v1
+      with:
+        github_token: ${{ secrets.github_token }}
+        body: |
+          Thanks for opening this issue!
+          I have applied labels matching the template and attempted to move the issue to the correct repository. 
+
+          Please review if this is correct. 
+
+          If the issue has been moved to the wrong repositorty it can be moved again after 5min by removing all Product labels and setting the correct ones.
+
 ########
 ## Check if the title is correct 
 ########

@@ -5,13 +5,6 @@ enable:
   prs: true
 # comments object allows you to specify a different message for issues and prs
 
-comments:
-  issues: |
-    Thanks for opening this issue!
-    I have applied any labels matching special text in your title and description.
-
-    Please review the labels and make any necessary changes.
-
 
 ## Uses Go Regex
 

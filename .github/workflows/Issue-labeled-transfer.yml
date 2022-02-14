@@ -41,7 +41,7 @@ jobs:
         now=$(date -d now +"%s")
         diff=$(($now - $created))
         echo $diff
-        if [[ $diff > 600 ]]; then
+        if [[ $diff > 300 ]]; then
           echo ::set-output name=after::true
         else
           echo ::set-output name=after::false
