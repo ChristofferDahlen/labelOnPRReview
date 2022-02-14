@@ -34,8 +34,7 @@ jobs:
     - name: Check Time
       id: time
       run: |
-      #!/bin/bash
-      created=$(date -d "${{fromJson(steps.get_body.outputs.data).created_at}}")
+      created=$(date -d "${{fromJson(steps.get_body.outputs.data).created_at}}" +"%s")
       now=$(date -d now +"%s")
       diff = $now - $created
       if [[ $diff > 600 ]]; then
