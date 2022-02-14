@@ -23,16 +23,16 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
     - name: Add_Other_Labels
-      if: fromJson(steps.get_state.outputs.data).labels == 'open'
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
       id: labeler
       uses: jimschubert/labeler-action@v1
       with:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - uses: actions/checkout@v2
-      if: fromJson(steps.get_state.outputs.data).labels == 'open'
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
       name: Checkout
     - uses: Resnovas/label-mastermind@2.1.3
-      if: fromJson(steps.get_state.outputs.data).labels == 'open'
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
       name: Labeling
       with:
         GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
@@ -63,7 +63,7 @@ jobs:
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{ fromJson(steps.get_body.outputs.data).labels }}"
+        input: "${{ toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
         json_match: '{ 
           "Product - POMA\\b" : "labelOnPRReview",
           "Product - Gateway\\b" : "testRepo",
