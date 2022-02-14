@@ -43,8 +43,6 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-    output:
-      labels: ${{ fromJson(steps.get_done.outputs.data).labels }}
 
 ########          
 ## Check if the issue should be transfered to another repo
@@ -54,11 +52,18 @@ jobs:
     needs: Add_Labels
     runs-on: ubuntu-latest
     steps:
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
     - name: Match body
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{ needs.github.event.issue.body }}"
+        input: "${{ fromJson(steps.get_body.outputs.data).labels }}"
         json_match: '{ 
           "Product - POMA\\b" : "labelOnPRReview",
           "Product - Gateway\\b" : "testRepo",
@@ -76,7 +81,7 @@ jobs:
         body: |
           @${{ secrets.SCRUM_MASTER }}: The automation wasn't able to determine which repository to transfer this issue to.
     - run: |
-          if [[ "${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
