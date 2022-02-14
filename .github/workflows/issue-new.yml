@@ -164,7 +164,7 @@ jobs:
       with:
         github_token: ${{ secrets.github_token }}
         body: |
-          @${{github.event.issue.user.login}} Seems like you have forgotten to fill out the body of the issue. Please fill it in properly.
+          @${{github.event.issue.user.login}} Seems like you have forgotten to fill out the description of the issue. Please fill it in properly.
 
 
 
@@ -175,7 +175,7 @@ jobs:
 
   Add_To_Project:
     name: Add to project
-    needs: [transfer_issue, Add_Labels, Check_Status]
+    needs: [transfer_issue, Check_Status]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps: 
