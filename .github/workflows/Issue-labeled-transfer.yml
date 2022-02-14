@@ -25,7 +25,7 @@ jobs:
       id: protect
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name)) }}"
+        input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
         json_match: '{ "${{ secrets.STOP_TRANSFER_FOR_LABEL }} \\b" : "true" }'
 
     - name: Check Time
