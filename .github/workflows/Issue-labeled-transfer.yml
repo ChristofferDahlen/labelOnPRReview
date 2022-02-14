@@ -25,8 +25,8 @@ jobs:
       id: protect
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
-        input: "${{toJSON(github.event.issue.labels.*.name) }}"
-        json_match: '{ "${{ secrets.PROTECTED_LABEL }} \\b" : "true" }'
+        input: "${{toJson(fromJson(steps.get_body.outputs.data).created_at}}.labels.*.name)) }}"
+        json_match: '{ "${{ secrets.STOP_TRANSFER_FOR_LABEL }} \\b" : "true" }'
 
     - name: Check Time
       id: time

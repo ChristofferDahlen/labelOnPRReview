@@ -77,7 +77,7 @@ jobs:
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
         input: "${{toJSON(github.event.issue.labels.*.name) }}"
-        json_match: '{ "${{ secrets.PROTECTED_LABEL }} \\b" : "true" }'
+        json_match: '{ "${{ secrets.STOP_TRANSFER_FOR_LABEL }} \\b" : "true" }'
 
     - name: Check Labels
       id: match
