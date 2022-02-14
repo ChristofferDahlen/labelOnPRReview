@@ -21,7 +21,7 @@ jobs:
       if: fromJson(steps.get_body.outputs.data).state == 'open'
       name: Checkout
     - uses: Resnovas/label-mastermind@2.1.3
-      if: fromJson(steps.get_body.outputs.data).state == 'open'
+      if: success()
       name: Labeling
       with:
         skipDelete: true

@@ -22,7 +22,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
     - uses: Amwam/issue-comment-action@v1.3.1
-      if: fromJson(steps.get_body.outputs.data).state}} == 'open'
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["ready for test"]'
         labels: '["Test Ready"]'
@@ -98,7 +98,7 @@ jobs:
       id: AtAuthor
 
     - name: Add author repose
-      if: fromJson(steps.get_body.outputs.data).state}} == 'open'
+      if: fromJson(steps.get_body.outputs.data).state == 'open'
       uses: siegerts/pending-author-response@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}

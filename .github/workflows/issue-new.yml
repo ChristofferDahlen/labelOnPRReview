@@ -38,7 +38,7 @@ jobs:
           "(?i)#\\s*Product[^\\r\\n]*(Optimal[^\\w\\r\\n]+)?log\\b" : "testRepo"
         }'
     - run: |
-          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" != "open" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
