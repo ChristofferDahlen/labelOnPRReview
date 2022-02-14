@@ -163,13 +163,13 @@ jobs:
       with:
         input: "${{ toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
         json_match: '{ 
+          "Product - Connecting Shop\\b" : "Connecting Shop Board",
+          "Product - Connecting Prodrisk\\b" : "Connecting Shop Board",
           "Product - POMA\\b" : "Optimisation Core Board",
           "Product - Gateway\\b" : "Optimisation Core Board",
           "Product - POM\\b" : "Optimisation Core Board",
           "Product - POH\\b" : "Optimisation Core Board",
           "Product - Spotbid\\b" : "Optimisation Core Board",
-          "Product - Connecting Shop\\b" : "Connecting Shop Board",
-          "Product - Connecting Prodrisk\\b" : "Connecting Shop Board",
           "Product - Optimal Log\\b" : "Optimisation Core Board"
         }'
 
