@@ -71,7 +71,15 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-    - name: Match body
+
+    - name: Check Protection
+      id: protect
+      uses: ChristofferDahlen/Multi-Regex-Match@v1.0
+      with:
+        input: "${{toJSON(github.event.issue.labels.*.name) }}"
+        json_match: '{ "${{ secrets.PROTECTED_LABEL }} \\b" : "true" }'
+
+    - name: Check Labels
       id: match
       uses: ChristofferDahlen/Multi-Regex-Match@v1.0
       with:
@@ -93,7 +101,7 @@ jobs:
         body: |
           @${{github.event.issue.user.login}} The automation wasn't able to determine which repository this issue belongs to.
     - run: |
-          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          if [[ "${{ steps.protect.outputs.result}} == "true" || "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
