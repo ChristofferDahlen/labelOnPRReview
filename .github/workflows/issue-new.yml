@@ -120,8 +120,8 @@ jobs:
 
   check_title:
     name: Check Empty title
-    needs: transfer_issue
-    if: needs.transfer_issue.outputs.remain == 'true'
+    needs: [Check_Status,transfer_issue]
+    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps:
     - uses: actions-ecosystem/action-regex-match@v2
