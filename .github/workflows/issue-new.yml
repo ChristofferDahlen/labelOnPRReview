@@ -39,12 +39,6 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-    - name: Add_Other_Labels
-      if: fromJson(steps.get_state.outputs.data).state == 'open'
-      id: labeler
-      uses: jimschubert/labeler-action@v1
-      with:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - uses: actions/checkout@v2
       if: fromJson(steps.get_state.outputs.data).state == 'open'
       name: Checkout
@@ -53,6 +47,12 @@ jobs:
       name: Labeling
       with:
         GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
+    - name: Add_Other_Labels
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
+      id: labeler
+      uses: jimschubert/labeler-action@v1
+      with:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
 
 
