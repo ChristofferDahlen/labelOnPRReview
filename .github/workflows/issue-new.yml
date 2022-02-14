@@ -112,7 +112,7 @@ jobs:
 
   Add_To_Project:
     name: Add to project
-    needs: transfer_issue
+    needs: transfer_issue, Add_Labels
     if: needs.transfer_issue.outputs.remain == 'true' && needs.transfer_issue.outputs.state == 'open'
     runs-on: ubuntu-latest
     steps: 
@@ -123,29 +123,32 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
-    - name: Get Product Name
-      run: |
-        echo "::set-output name=name::$(echo "${{ fromJson(steps.get_body.outputs.data).body }}" | grep -oe '#\s*Product: .*' | tr '[:upper:]' '[:lower:]')"
-      id: product
+    - name: Match body
+      id: match
+      uses: ChristofferDahlen/Multi-Regex-Match@v1.0
+      with:
+        input: "${{ fromJson(steps.get_body.outputs.data).labels }}"
+        json_match: '{ 
+          "Product - POMA\\b" : "Optimisation Core Board",
+          "Product - Gateway\\b" : "Optimisation Core Board",
+          "Product - POM\\b" : "Optimisation Core Board",
+          "Product - POH\\b" : "Optimisation Core Board",
+          "Product - Spotbid\\b" : "Optimisation Core Board",
+          "Product - Connecting Shop\\b" : "Connecting Shop Board",
+          "Product - Connecting Prodrisk\\b" : "Connecting Shop Board",
+          "Product - Optimal Log\\b" : "Optimisation Core Board"
+        }'
 
     - uses: alex-page/github-project-automation-plus@v0.8.1
+      if: ${{ steps.match.outputs.result != ''}} 
       id: project-shop
-      if: ${{ contains( steps.product.outputs.name, 'shop' ) && fromJson(steps.get_body.outputs.data).state == 'open'}}
       with:
-        project: Connecting Shop Board 
-        column: Triage
-        repo-token: '${{ secrets.OPT_GH_TOKEN }}'
-
-    - uses: alex-page/github-project-automation-plus@v0.8.1
-      id: project-core
-      if: ${{ steps.product.outputs.name != '' && !contains( steps.product.outputs.name, 'shop' ) && fromJson(steps.get_body.outputs.data).state == 'open'}}
-      with:
-        project: Optimisation Core Board
+        project: ${{ steps.match.outputs.result }} 
         column: Triage
         repo-token: '${{ secrets.OPT_GH_TOKEN }}'
     
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ fromJson(steps.get_body.outputs.data).state == 'open' && steps.project-core.outcome != 'success' && steps.project-shop.outcome != 'success' }}
+      if: ${{ fromJson(steps.get_body.outputs.data).state == 'open' && steps.project-core.outcome != 'success' }}
       with:
         github_token: ${{ secrets.github_token }}
         body: |
