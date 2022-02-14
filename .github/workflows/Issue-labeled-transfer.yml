@@ -19,34 +19,19 @@ env:
         }'
 
 jobs:
-  transfer_issue:
-    name: transfer issue
+
+  check_time:
+    name: check Time
     if: ${{ contains(github.event.label.name, 'Product') && !github.event.issue.locked && github.event.issue.state != 'closed' }}
     runs-on: ubuntu-latest
     steps:
-
-    - name: Check STOP_TRANSFER_SECRET
-      if: ${{env.PROTECTED_JSON == ''}}
-      uses: actions/github-script@v3
-      with:
-        script: |
-            core.setFailed('secret PROTECTED_JSON is not set')
-
-## Check if any labels are protected
     - name: Get Current Issue State
       uses: octokit/request-action@v2.x
       id: get_body
       with:
-        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+        route: GET /repos/${{github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-
-    - name: Check Protection
-      id: protect
-      uses: ChristofferDahlen/Multi-Regex-Match@v1.0
-      with:
-        input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
-        json_match: ${{ env.PROTECTED_JSON }}
 
     - name: Check Time
       id: time
@@ -61,6 +46,26 @@ jobs:
         else
           echo ::set-output name=after::false
         fi
+    output:
+      transfer: ${{ steps.time.outputs.after }}
+      issue: fromJson(steps.get_body.outputs.data)
+
+
+  transfer_issue:
+    needs: check_time
+    if: ${{ needs.check_time.outputs.transfer == 'true' }}
+    name: transfer issue
+    runs-on: ubuntu-latest
+    steps:
+## Check if any labels are protected
+
+    - name: Check Protection
+      id: protect
+      uses: ChristofferDahlen/Multi-Regex-Match@v1.0
+      with:
+        input: "${{toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
+        json_match: ${{ env.PROTECTED_JSON }}
+
 
 ## Match label with repo
     - name: Match Label
@@ -71,7 +76,7 @@ jobs:
         input: "${{ github.event.label.name }}"
         json_match: ${{ env.TRANSFER_MAP }}
     - run: |
-          if [[ "${{fromJson(steps.get_body.outputs.data).state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
+          if [[ "${{ needs.check_time.outputs.transfer.state}}" == "closed" ||"${{github.repository_owner}}/${{ steps.match.outputs.result }}" == "${{ github.repository }}" ||  "${{ steps.match.outputs.result }}" == "" || "${{ steps.match.outputs.result }}" == "false"  ]]
           then
             echo ::set-output name=remain::true
           else
