@@ -16,7 +16,6 @@ jobs:
     steps:
 
 ## Check if any labels are protected
-
     - name: Get Current Issue State
       uses: octokit/request-action@v2.x
       id: get_body
@@ -31,6 +30,19 @@ jobs:
       with:
         input: "${{toJSON(github.event.issue.labels.*.name) }}"
         json_match: '{ "\\bProduct - POMA\\b" : "true" }'
+
+    - name: Check Time
+      id: time
+      run: |
+      #!/bin/bash
+      created=$(date -d "${{fromJson(steps.get_body.outputs.data).created_at}}")
+      now=$(date -d now +"%s")
+      diff = $now - $created
+      if [[ $diff > 600 ]]; then
+        echo ::set-output name=after::true
+      else
+        echo ::set-output name=after::false
+      fi
 
 ## Match label with repo
     - name: Match Label
@@ -61,7 +73,7 @@ jobs:
       id: state
 
     - name: Transfer Issue & Comment
-      if: steps.state.outputs.remain == 'false'
+      if: steps.state.outputs.remain == 'false' && steps.time.outputs.after == 'true'
       uses: christofferDahlen/transfer-issue-action@v3
       with:
         target_repo: ${{ steps.match.outputs.result }}
