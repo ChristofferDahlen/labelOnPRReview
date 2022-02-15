@@ -276,13 +276,13 @@ jobs:
         project: ${{ steps.match.outputs.result }} 
         column: Triage
         repo-token: '${{ secrets.OPT_GH_TOKEN }}'
-    
+
     - uses: actions-ecosystem/action-create-comment@v1
       if: ${{ steps.add-to-project.outcome != 'success' }}
       with:
         github_token: ${{ secrets.github_token }}
         body: |
-          @${{github.event.issue.user.login}} The automation hasn't been able to add this to a appropriate project. This could lead to the issue not being handled.
+          @${{github.event.issue.user.login}} @{{ secrets.SCRUM_MASTER }} The automation hasn't been able to add this to a appropriate project.
 
           Please add it to a appropraite project or close the issue and open a new one with either 
           1. A template correctly filled out
