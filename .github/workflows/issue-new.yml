@@ -250,7 +250,7 @@ jobs:
 
   Add_To_Project:
     name: Add to project
-    needs: [transfer_issue, Check_Status]
+    needs: [Check_Status, transfer_issue]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps: 
