@@ -47,7 +47,7 @@ jobs:
 
 
 ########
-## Adding other labels
+## Add labels
 ########
 
   Check_Status:
@@ -78,14 +78,6 @@ jobs:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-    - uses: actions/checkout@v2
-      if: fromJson(steps.get_state.outputs.data).state == 'open'
-      name: Checkout
-    - uses: Resnovas/label-mastermind@2.1.3
-      if: fromJson(steps.get_state.outputs.data).state == 'open'
-      name: Labeling
-      with:
-        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
     - name: Add_Other_Labels
       if: fromJson(steps.get_state.outputs.data).state == 'open'
       id: labeler
@@ -130,7 +122,7 @@ jobs:
       with:
         github_token: ${{ secrets.github_token }}
         body: |
-          @${{github.event.issue.user.login}} The automation wasn't able to determine which repository this issue belongs to.
+          @${{github.event.issue.user.login}} The automation wasn't able to determine which repository this issue should belong to.
     - run: |
           fromRepo="${{github.repository_owner}}/${{ steps.match.outputs.result }}"
           toRepo="${{ github.repository }}"
@@ -217,12 +209,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: octokit/request-action@v2.x
-      id: get_body
+      id: get_comments
       with:
         route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-  
+
+    - uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+
     - name: get Comment
       id: com
       run: |
@@ -236,7 +235,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
 
     - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ fromJson(steps.get_body.outputs.data).body == '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), steps.com.outputs.comment)}}
+      if: ${{ fromJson(steps.get_body.outputs.data).body == '' && !contains(toJson(fromJson(steps.get_comments.outputs.data).*.body), steps.com.outputs.comment)}}
       with:
         github_token: ${{ secrets.github_token }}
         body: |
@@ -287,3 +286,25 @@ jobs:
           Please add it to a appropraite project or close the issue and open a new one with either 
           1. A template correctly filled out
           2. A issue with a set product label
+
+  Add_Synced_Labels:
+    name: Add labels
+    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
+    runs-on: ubuntu-latest
+    needs: [Check_Status, transfer_issue]
+    steps:
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_state
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+    - uses: actions/checkout@v2
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
+      name: Checkout
+    - uses: Resnovas/label-mastermind@2.1.3
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
+      name: Labeling
+      with:
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
