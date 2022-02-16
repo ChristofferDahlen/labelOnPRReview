@@ -147,10 +147,35 @@ jobs:
     outputs:
       remain: ${{ steps.state.outputs.remain }}
 
+
+
+  Add_Synced_Labels:
+    name: Add labels
+    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
+    runs-on: ubuntu-latest
+    needs: [Check_Status, transfer_issue]
+    steps:
+    - name: Get Current Issue State
+      uses: octokit/request-action@v2.x
+      id: get_state
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+    - uses: actions/checkout@v2
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
+      name: Checkout
+    - uses: Resnovas/label-mastermind@2.1.3
+      if: fromJson(steps.get_state.outputs.data).state == 'open'
+      name: Labeling
+      with:
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
+
+
   Add_Comment:
     name: Add Comment
     runs-on: ubuntu-latest
-    needs: [Check_Status,transfer_issue]
+    needs: [Check_Status,transfer_issue, Add_Synced_Labels]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     steps:
     - uses: octokit/request-action@v2.x
@@ -169,88 +194,14 @@ jobs:
         github_token: ${{ secrets.github_token }}
         body: ${{ env.OPENING_COMMENT }}
 
-########
-## Check if the title is correct 
-########
-
-  check_title:
-    name: Check Empty title 
-    needs: [Check_Status,transfer_issue]
-    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
-    runs-on: ubuntu-latest
-    steps:
-    - uses: octokit/request-action@v2.x
-      id: get_body
-      with:
-        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
-      env:
-        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-    - name: get Comment
-      id: com
-      run: |
-        echo "::set-output name=comment::${{env.EMPTY_TITLE_COMMENT}}"
-    - uses: actions-ecosystem/action-regex-match@v2
-      id: regex-match
-      with:
-        text: ${{ github.event.issue.title }}
-        regex: '^(\[[^\]]*\]:?\s*(title)?)?$'
-        flags: gm
-    - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ steps.regex-match.outputs.match != '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), steps.com.outputs.comment)}}
-      with:
-        github_token: ${{ secrets.github_token }}
-        body: |
-          @${{github.event.issue.user.login}} ${{ env.EMPTY_TITLE_COMMENT }}
-
-  check_body:
-    name: Check Empty body
-    needs: [Check_Status,transfer_issue]
-    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
-    runs-on: ubuntu-latest
-    steps:
-    - uses: octokit/request-action@v2.x
-      id: get_comments
-      with:
-        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments
-      env:
-        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-
-    - uses: octokit/request-action@v2.x
-      id: get_body
-      with:
-        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}
-      env:
-        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-
-    - name: get Comment
-      id: com
-      run: |
-        echo "::set-output name=comment::${{env.EMPTY_BODY_COMMENT}}"
-
-    - uses: octokit/request-action@v2.x
-      id: get_comment
-      with:
-        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
-      env:
-        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-
-    - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ fromJson(steps.get_body.outputs.data).body == '' && !contains(toJson(fromJson(steps.get_comments.outputs.data).*.body), steps.com.outputs.comment)}}
-      with:
-        github_token: ${{ secrets.github_token }}
-        body: |
-          @${{github.event.issue.user.login}} ${{env.EMPTY_BODY_COMMENT}}
-
-
-
 
 ########
-## Add issue to the appropriate 
+## Add issue to the appropriate Project
 ########
 
   Add_To_Project:
     name: Add to project
-    needs: [Check_Status, transfer_issue]
+    needs: [Check_Status, transfer_issue, Add_Comment]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps: 
@@ -287,24 +238,78 @@ jobs:
           1. A template correctly filled out
           2. A issue with a set product label
 
-  Add_Synced_Labels:
-    name: Add labels
+########
+## Check if the title is correct 
+########
+
+  check_title:
+    name: Check Empty title 
+    needs: [Check_Status,transfer_issue, Add_Comment]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
-    needs: [Check_Status, transfer_issue]
     steps:
-    - name: Get Current Issue State
-      uses: octokit/request-action@v2.x
-      id: get_state
+    - uses: octokit/request-action@v2.x
+      id: get_body
       with:
-        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}      
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
       env:
         GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-    - uses: actions/checkout@v2
-      if: fromJson(steps.get_state.outputs.data).state == 'open'
-      name: Checkout
-    - uses: Resnovas/label-mastermind@2.1.3
-      if: fromJson(steps.get_state.outputs.data).state == 'open'
-      name: Labeling
+    - name: get Comment
+      id: com
+      run: |
+        echo "::set-output name=comment::${{env.EMPTY_TITLE_COMMENT}}"
+    - uses: actions-ecosystem/action-regex-match@v2
+      id: regex-match
       with:
-        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
+        text: ${{ github.event.issue.title }}
+        regex: '^(\[[^\]]*\]:?\s*(title)?)?$'
+        flags: gm
+    - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ steps.regex-match.outputs.match != '' && !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), steps.com.outputs.comment)}}
+      with:
+        github_token: ${{ secrets.github_token }}
+        body: |
+          @${{github.event.issue.user.login}} ${{ env.EMPTY_TITLE_COMMENT }}
+
+###########
+## Check if the body is filled out
+########
+
+  check_body:
+    name: Check Empty body
+    needs: [Check_Status,transfer_issue, Add_Comment]
+    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: octokit/request-action@v2.x
+      id: get_comments
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+
+    - uses: octokit/request-action@v2.x
+      id: get_body
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+
+    - name: get Comment
+      id: com
+      run: |
+        echo "::set-output name=comment::${{env.EMPTY_BODY_COMMENT}}"
+
+    - uses: octokit/request-action@v2.x
+      id: get_comment
+      with:
+        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
+
+    - uses: actions-ecosystem/action-create-comment@v1
+      if: ${{ fromJson(steps.get_body.outputs.data).body == '' && !contains(toJson(fromJson(steps.get_comments.outputs.data).*.body), steps.com.outputs.comment)}}
+      with:
+        github_token: ${{ secrets.github_token }}
+        body: |
+          @${{github.event.issue.user.login}} ${{env.EMPTY_BODY_COMMENT}}
