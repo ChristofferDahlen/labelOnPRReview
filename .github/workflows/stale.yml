@@ -1,7 +1,7 @@
 name: 'Stale: Check'
 on:
   schedule:
-    - cron: '10 * * * *'
+    - cron: '5 * * * *'
 
 jobs:
   stale:
@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: Sonia-corporation/stale@1.51.0
         with:
-          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days. If you want it to stay apply the sticky label'
+          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
           issue-days-before-stale: 10
           issue-days-before-close: 10
           issue-stale-label: '[X] Stale'
-          issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days. If you want it to stay apply the sticky label'
+          issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
           issue-close-comment: 'This issue is now closed due to a lack of activity!'
           issue-ignore-any-labels: |
             type - Feature
