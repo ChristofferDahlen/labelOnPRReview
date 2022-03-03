@@ -117,12 +117,6 @@ jobs:
       with:
         input: "${{ toJson(fromJson(steps.get_body.outputs.data).labels.*.name) }}"
         json_match: ${{ env.TRANSFER_MAP }}
-    - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ steps.match.outputs.result == 'false' || steps.match.outputs.result == '' }}
-      with:
-        github_token: ${{ secrets.github_token }}
-        body: |
-          @${{github.event.issue.user.login}} The automation wasn't able to determine which repository this issue should belong to.
     - run: |
           fromRepo="${{github.repository_owner}}/${{ steps.match.outputs.result }}"
           toRepo="${{ github.repository }}"
@@ -146,8 +140,6 @@ jobs:
         create_stub: true
     outputs:
       remain: ${{ steps.state.outputs.remain }}
-
-
 
   Add_Synced_Labels:
     name: Add labels
