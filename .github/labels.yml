@@ -164,7 +164,7 @@
  - name: "Type - Other"
    description: "A miscellaneous issue"
    color: "ecb39f"
- - name: "Type - EPIC"
+ - name: "Type - Epic"
    description: "A Epic"
    color: "ecb39f"
  - name: "Type - RFC"

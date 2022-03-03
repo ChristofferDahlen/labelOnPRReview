@@ -22,13 +22,13 @@ jobs:
           issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
           issue-close-comment: 'This issue is now closed due to a lack of activity!'
           issue-ignore-any-labels: |
-            type - Feature
-            type - Enchancement
-            type - Documentation
-            type - EPIC
-            type - Test
-            type - Other
-            type - Bugfix
+            Type - Feature
+            Type - Enchancement
+            Type - Documentation
+            Type - Epic
+            Type - Test
+            Type - Other
+            Type - Bugfix
           issue-only-any-project-cards: | 
             Optimisation Core Board
             Connecting Shop Board
@@ -46,11 +46,11 @@ jobs:
           issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
           issue-close-comment: 'This issue is now closed due to a lack of activity!'
           issue-ignore-any-labels: |
-            type - Feature
-            type - Enchancement
-            type - Documentation
-            type - EPIC
-            type - Test
-            type - Other
-            type - Bugfix
+            Type - Feature
+            Type - Enchancement
+            Type - Documentation
+            Type - Epic
+            Type - Test
+            Type - Other
+            Type - Bugfix
           issue-ignore-all-project-cards: true
