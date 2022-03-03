@@ -1,7 +1,7 @@
 name: 'Stale: Check'
 on:
   schedule:
-    - cron: '5 * * * *'
+    - cron: '30 1 * * *'
   push:
     branches:
       - develop
@@ -46,6 +46,28 @@ jobs:
           issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
           issue-close-comment: 'This issue is now closed due to a lack of activity!'
           issue-ignore-any-labels: |
+            Type - Feature
+            Type - Enchancement
+            Type - Documentation
+            Type - Epic
+            Type - Test
+            Type - Other
+            Type - Bugfix
+          issue-ignore-all-project-cards: true
+
+  stale_last:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Sonia-corporation/stale@1.51.0
+        with:
+          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          pull-request-stale-label: '[X] Stale'
+          issue-days-before-stale: 180
+          issue-days-before-close: 40
+          issue-stale-label: '[X] Stale'
+          issue-stale-comment: 'This issue is stale because it has been open 180 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          issue-close-comment: 'This issue is now closed due to a lack of activity!'
+          issue-any-labels: |
             Type - Feature
             Type - Enchancement
             Type - Documentation
