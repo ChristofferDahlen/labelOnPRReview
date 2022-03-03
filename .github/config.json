@@ -1,13 +1,9 @@
 {
   "labels": {
     "[X] Documented :scroll:": {
-      "name": "[X] Documented :scroll:",
+      "name": "[X] Documented",
       "description": "Has been documented!",
       "color": "0052cc"
-    },
-    "[X] Investigation :mag:": {
-      "name": "[X] Investigation :mag:",
-      "color": "D107F7"
     },
     "[X] Size - L": {
       "name": "[X] Size - L",
@@ -39,50 +35,27 @@
       "description": "PR: Changes between 1000+ lines",
       "color": "0eb7c7"
     },
-    "[X] Accepted :heavy_check_mark:": {
-      "name": "[X] Accepted :heavy_check_mark:",
+    "[X] Accepted": {
+      "name": "[X] Accepted",
       "color": "072dbc"
     },
-    "[X] Awaiting Review :eyes:": {
-      "name": "[X] Awaiting Review :eyes:",
+    "[X] Awaiting Review": {
+      "name": "[X] Awaiting Review",
       "color": "FBCA04"
     },
-    "[X] Changes Requested :diamonds:": {
-      "name": "[X] Changes Requested :diamonds:",
+    "[X] Changes Requested": {
+      "name": "[X] Changes Requested",
       "color": "f4ff1f"
     },
     "[X] In Progress :gear:": {
       "name": "[X] In Progress :gear:",
       "color": "C5DEF5"
     },
-    "[X] Needs documentation :pencil2:": {
-      "name": "[X] Needs documentation :pencil2:",
+    "[X] Needs documentation": {
+      "name": "[X] Needs documentation",
       "description": "This needs to be documented!",
       "color": "0052cc"
-    },
-    "Type - Bugfix" : {
-      "name": "Type - Bugfix",
-      "color": "9E0717"
-    },
-    "Type - Feature" : {
-      "name": "Type - Feature",
-      "color": "8feb7b"
-    },
-    "Type - Enhancement :sparkler:" : {
-      "name": "Type - Enhancement :sparkler:",
-      "description": "Make something better",
-      "color": "9032f7"
-    },
-    "Type - Cleanup :broom:": {
-      "name": "Type - Cleanup :broom:",
-      "description": "Somebody needs to clean",
-      "color": "bfdadc"
-    },
-    "Type - Documentation :black_nib:": {
-      "name": "Type - Documentation :black_nib:",
-      "description": "Time to document!",
-      "color": "0052cc"
-    } 
+    }
   },
   "runners": [
     {
@@ -121,7 +94,7 @@
             "conditions": [
               {
                 "type": "changesSize",
-                "min": 40,
+                "min": 31,
                 "max": 100
               }
             ]
@@ -131,7 +104,7 @@
             "conditions": [
               {
                 "type": "changesSize",
-                "min": 100,
+                "min": 101,
                 "max": 500
               }
             ]
@@ -141,7 +114,7 @@
             "conditions": [
               {
                 "type": "changesSize",
-                "min": 500,
+                "min": 501,
                 "max": 1000
               }
             ]
@@ -155,7 +128,7 @@
               }
             ]
           },
-          "[X] Accepted :heavy_check_mark:": {
+          "[X] Accepted": {
             "requires": 1,
             "conditions": [
               {
@@ -165,7 +138,7 @@
               }
             ]
           },
-          "[X] In Progress :gear:": {
+          "[X] In Progress": {
             "requires": 3,
             "conditions": [
               {
@@ -183,7 +156,7 @@
               }
             ]
           },
-          "[X] Awaiting Review :eyes:": {
+          "[X] Awaiting Review": {
             "requires": 1,
             "conditions": [
               {
@@ -192,7 +165,7 @@
               }
             ]
           },
-          "[X] Changes Requested :diamonds:": {
+          "[X] Changes Requested": {
             "requires": 1,
             "conditions": [
               {
@@ -241,7 +214,7 @@
               }
             ]
           },
-          "Type - Documentation :black_nib:": {
+          "Type - Documentation": {
             "requires": 1,
             "conditions": [
               {
@@ -259,7 +232,7 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "[X] Documented :scroll:": {
+          "[X] Documented": {
             "requires": 1,
             "conditions": [
               {
@@ -268,7 +241,7 @@
               }
             ]
           },
-          "[X] Needs documentation :pencil2:": {
+          "[X] Needs documentation": {
             "requires": 1,
             "conditions": [
               {

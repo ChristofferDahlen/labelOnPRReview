@@ -128,23 +128,6 @@
    color: "5319e7"
  - name: "Product - Battery"
    color: "5319e7"
-#################
-#### RISKS ######
-#################
- - name: "Risk - High"
-   description: "This change will likely break previous functionality"
-   color: "b60205"
- - name: "Risk - Low"
-   description: "This change will probably not break previous functionality"
-   color: "006b75"
- - name: "Risk - Medium"
-   description: "This change could break previous functionality"
-   color: "1d76db"
- - name: "Risk - None"
-   description: "This change will not break previous functionality"
-   color: "006b75"
- - name: "Risk - TBD :question:"
-   color: "006b75"
 ####################
 #### Severity ######
 ####################
@@ -243,7 +226,7 @@
  - name: "[X] Size - XXL"
    description: "PR: Changes between 1000+ lines"
    color: "0eb7c7"
- - name: "[X] Accepted :heavy_check_mark:"
+ - name: "[X] Accepted"
    color: "072dbc"
  - name: "[X] Awaiting Review"
    color: "FBCA04"
