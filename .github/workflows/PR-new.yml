@@ -26,7 +26,7 @@ jobs:
     - name: PR Branch Labeler
       uses: ffittschen/pr-branch-labeler@v1
       with:
-        token: '${{ secrets.GITHUB_TOKEN  }}'
+        repo-token: '${{ secrets.GITHUB_TOKEN  }}'
 
 
   Add_To_Project:
