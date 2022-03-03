@@ -23,6 +23,9 @@ jobs:
       uses: jimschubert/labeler-action@v1
       with:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: PR Branch Labeler
+      uses: ffittschen/pr-branch-labeler@v1
+
 
   Add_To_Project:
     runs-on: ubuntu-latest

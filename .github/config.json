@@ -1,9 +1,13 @@
 {
   "labels": {
     "[X] Documented :scroll:": {
-      "name": "[X] Documented",
+      "name": "[X] Documented :scroll:",
       "description": "Has been documented!",
       "color": "0052cc"
+    },
+    "[X] Investigation :mag:": {
+      "name": "[X] Investigation :mag:",
+      "color": "D107F7"
     },
     "[X] Size - L": {
       "name": "[X] Size - L",
@@ -35,24 +39,24 @@
       "description": "PR: Changes between 1000+ lines",
       "color": "0eb7c7"
     },
-    "[X] Accepted": {
-      "name": "[X] Accepted",
+    "[X] Accepted :heavy_check_mark:": {
+      "name": "[X] Accepted :heavy_check_mark:",
       "color": "072dbc"
     },
-    "[X] Awaiting Review": {
-      "name": "[X] Awaiting Review",
+    "[X] Awaiting Review :eyes:": {
+      "name": "[X] Awaiting Review :eyes:",
       "color": "FBCA04"
     },
-    "[X] Changes Requested": {
-      "name": "[X] Changes Requested",
+    "[X] Changes Requested :diamonds:": {
+      "name": "[X] Changes Requested :diamonds:",
       "color": "f4ff1f"
     },
     "[X] In Progress :gear:": {
       "name": "[X] In Progress :gear:",
       "color": "C5DEF5"
     },
-    "[X] Needs documentation": {
-      "name": "[X] Needs documentation",
+    "[X] Needs documentation :pencil2:": {
+      "name": "[X] Needs documentation :pencil2:",
       "description": "This needs to be documented!",
       "color": "0052cc"
     }
@@ -124,11 +128,11 @@
             "conditions": [
               {
                 "type": "changesSize",
-                "min": 1000
+                "min": 1001
               }
             ]
           },
-          "[X] Accepted": {
+          "[X] Accepted :heavy_check_mark:": {
             "requires": 1,
             "conditions": [
               {
@@ -138,7 +142,7 @@
               }
             ]
           },
-          "[X] In Progress": {
+          "[X] In Progress :gear:": {
             "requires": 3,
             "conditions": [
               {
@@ -156,7 +160,7 @@
               }
             ]
           },
-          "[X] Awaiting Review": {
+          "[X] Awaiting Review :eyes:": {
             "requires": 1,
             "conditions": [
               {
@@ -165,65 +169,12 @@
               }
             ]
           },
-          "[X] Changes Requested": {
+          "[X] Changes Requested :diamonds:": {
             "requires": 1,
             "conditions": [
               {
                 "type": "requestedChanges",
                 "value": true
-              }
-            ]
-          },
-          "Type - Bugfix" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "branchMatches",
-                "pattern": "/bugfix\\//im"
-              }
-            ]
-          },
-          "Type - Feature" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "branchMatches",
-                "pattern": "/feature\\//im"
-              }
-            ]
-          },
-          "Type - Enhancement :sparkler:" : {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "branchMatches",
-                "pattern": "/Enhanc\\//im"
-              },
-              {
-                "type": "branchMatches",
-                "pattern": "/Enhancement\\//im"
-              }
-            ]
-          },
-          "Type - Cleanup :broom:": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "branchMatches",
-                "pattern": "/Cleanup\\//im"
-              }
-            ]
-          },
-          "Type - Documentation": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "branchMatches",
-                "pattern": "/Doc\\//im"
-              },
-              {
-                "type": "branchMatches",
-                "pattern": "/Documentation\\//im"
               }
             ]
           }
@@ -232,7 +183,7 @@
       "issue": {
         "ref": "develop",
         "labels": {
-          "[X] Documented": {
+          "[X] Documented :scroll:": {
             "requires": 1,
             "conditions": [
               {
@@ -241,7 +192,7 @@
               }
             ]
           },
-          "[X] Needs documentation": {
+          "[X] Needs documentation :pencil2:": {
             "requires": 1,
             "conditions": [
               {

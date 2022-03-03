@@ -1,0 +1,31 @@
+
+'Type - Feature':
+  head: ["Feature/*", "feature/*"]
+
+Subtask:
+  head: ["Feature/*", "feature/*"]
+  base: ["Feature/*", "feature/*"]
+
+'Type - Bugfix':
+  head: ["bugfix/*", "Bugfix/*", "hotfix/*", "Hotfix/*"]
+
+'Type - Enhancement :sparkler:':
+  head: [ "Enhanc/*", "enhanc/*", "enhancement/*", "Enhancement/*" ]
+
+'Type - Cleanup :broom:':
+  head: [ "Cleanup/*", "cleanup/*" ]
+
+'Type - Documentation :black_nib:':
+  head: [ "Doc/*", "doc/*", "Documentation/*", "documentation/*" ]
+
+'Develop':
+  base: [ "develop" ]
+
+'1.8.0':
+  base: ["release/1.8"]
+
+'1.8.1':
+  base: ["release/1.8.1"]
+
+'1.8.2':
+  base: ["release/1.8.2"]

@@ -25,7 +25,7 @@ jobs:
       if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["help @"]'
-        labels: '["Help Wanted"]'
+        labels: '["Help Wanted :hand:"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
@@ -53,7 +53,7 @@ jobs:
       if: fromJson(steps.get_body.outputs.data).state == 'open'
       with:
         keywords: '["Duplicate of"]'
-        labels: '["Duplicate"]'
+        labels: '["Duplicate :grey_exclamation:"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
 
     - uses: Amwam/issue-comment-action@v1.3.1
@@ -62,4 +62,3 @@ jobs:
         keywords: '["Urgent"]'
         labels: '["Urgent :bangbang:"]'
         github-token: "${{ secrets.GITHUB_TOKEN }}"
-

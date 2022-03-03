@@ -16,7 +16,6 @@ env:
           If the issue has been moved to the wrong repositorty it can be moved again by removing all Product labels and setting the correct ones.
 
 
-
   PROTECTED_JSON: '{ 
           "Product - POMA\\b" : "true"
         }'
