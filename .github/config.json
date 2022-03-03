@@ -9,36 +9,6 @@
       "name": "[X] Investigation :mag:",
       "color": "D107F7"
     },
-    "[X] Size - L": {
-      "name": "[X] Size - L",
-      "description": "PR: Changes between 100 - 500 lines",
-      "color": "0eb7c7"
-    },
-    "[X] Size - M": {
-      "name": "[X] Size - M",
-      "description": "PR: Changes between 40 - 100 lines",
-      "color": "0eb7c7"
-    },
-    "[X] Size - S": {
-      "name": "[X] Size - S",
-      "description": "PR: Changes between 10 - 30 lines",
-      "color": "0eb7c7"
-    },
-    "[X] Size - XL": {
-      "name": "[X] Size - XL",
-      "description": "PR: Changes between 500 - 1000 lines",
-      "color": "0eb7c7"
-    },
-    "[X] Size - XS": {
-      "name": "[X] Size - XS",
-      "description": "PR: Changes between 0 - 10 lines",
-      "color": "0eb7c7"
-    },
-    "[X] Size - XXL": {
-      "name": "[X] Size - XXL",
-      "description": "PR: Changes between 1000+ lines",
-      "color": "0eb7c7"
-    },
     "[X] Accepted :heavy_check_mark:": {
       "name": "[X] Accepted :heavy_check_mark:",
       "color": "072dbc"
@@ -73,65 +43,6 @@
       },
       "pr": {
         "labels": {
-          "[X] Size - XS": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "changesSize",
-                "min": 0,
-                "max": 10
-              }
-            ]
-          },
-          "[X] Size - S": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "changesSize",
-                "min": 10,
-                "max": 30
-              }
-            ]
-          },
-          "[X] Size - M": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "changesSize",
-                "min": 31,
-                "max": 100
-              }
-            ]
-          },
-          "[X] Size - L": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "changesSize",
-                "min": 101,
-                "max": 500
-              }
-            ]
-          },
-          "[X] Size - XL": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "changesSize",
-                "min": 501,
-                "max": 1000
-              }
-            ]
-          },
-          "[X] Size - XXL": {
-            "requires": 1,
-            "conditions": [
-              {
-                "type": "changesSize",
-                "min": 1001
-              }
-            ]
-          },
           "[X] Accepted :heavy_check_mark:": {
             "requires": 1,
             "conditions": [
