@@ -15,6 +15,7 @@ jobs:
       - uses: Sonia-corporation/stale@1.51.0
         with:
           pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          pull-request-stale-label: '[X] Stale'
           issue-days-before-stale: 10
           issue-days-before-close: 10
           issue-stale-label: '[X] Stale'
