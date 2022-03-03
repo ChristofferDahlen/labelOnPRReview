@@ -1,18 +1,27 @@
 name: 'Stale: Check'
 on:
   schedule:
-    - cron: '30 1 * * *'
+    - cron: '10 * * * *'
 
 jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v4
+      - uses: Sonia-corporation/stale@1.51.0
         with:
-          stale-issue-message: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days'
-          stale-pr-message: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days'
-          exempt-all-pr-milestones: true
-          any-of-labels: 'Type - Bug,Type - Feature,Type - Enhancement,Type - Test'
-          stale-issue-label: '[X] Stale'
-          days-before-stale: 30
-          days-before-close: 10
+          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days. If you want it to stay apply the sticky label'
+          issue-days-before-stale: 20
+          issue-days-before-close: 10
+          issue-stale-label: '[X] Stale'
+          issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days. If you want it to stay apply the sticky label'
+          issue-close-comment: 'This issue is now closed due to a lack of activity!'
+          issue-ignore-any-labels: |
+            type - Feature
+            type - Enchancement
+            type - Documentation
+            type - EPIC
+            type - Test
+            type - Other
+            type - Bugfix
+          issue-ignore-any-project-cards: | 
+            Optimisation Core Backlog Board

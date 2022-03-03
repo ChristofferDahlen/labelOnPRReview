@@ -172,28 +172,6 @@ jobs:
         GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN  }}'
 
 
-  Add_Comment:
-    name: Add Comment
-    runs-on: ubuntu-latest
-    needs: [Check_Status,transfer_issue, Add_Synced_Labels]
-    if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
-    steps:
-    - uses: octokit/request-action@v2.x
-      id: get_body
-      with:
-        route: GET /repos/${{ github.repository}}/issues/${{github.event.issue.number}}/comments     
-      env:
-        GITHUB_TOKEN: ${{ secrets.OPT_GH_TOKEN }}
-    - name: get Comment
-      id: com
-      run: |
-        echo "::set-output name=comment::${{env.OPENING_COMMENT}}"
-    - uses: actions-ecosystem/action-create-comment@v1
-      if: ${{ !contains(toJson(fromJson(steps.get_body.outputs.data).*.body), steps.com.outputs.comment)}}
-      with:
-        github_token: ${{ secrets.github_token }}
-        body: ${{ env.OPENING_COMMENT }}
-
 
 ########
 ## Add issue to the appropriate Project
@@ -201,7 +179,7 @@ jobs:
 
   Add_To_Project:
     name: Add to project
-    needs: [Check_Status, transfer_issue, Add_Comment]
+    needs: [Check_Status, transfer_issue]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps: 
@@ -244,7 +222,7 @@ jobs:
 
   check_title:
     name: Check Empty title 
-    needs: [Check_Status,transfer_issue, Add_Comment]
+    needs: [Check_Status,transfer_issue]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps:
@@ -277,7 +255,7 @@ jobs:
 
   check_body:
     name: Check Empty body
-    needs: [Check_Status,transfer_issue, Add_Comment]
+    needs: [Check_Status,transfer_issue]
     if: needs.Check_Status.outputs.status == 'open' && needs.transfer_issue.outputs.remain == 'true'
     runs-on: ubuntu-latest
     steps:

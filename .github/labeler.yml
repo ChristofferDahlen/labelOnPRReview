@@ -16,7 +16,7 @@ labels:
     include:
       - 'CR'
       - '(?i)Change Request'
-  'Urgent :bangbang:':
+  'Urgent':
     include:
       - '(?i)Urgent'
   Deployment:
@@ -58,16 +58,16 @@ labels:
       - '(?i)#\s*Product[^\r\n]*Battery\b'
 
 ## Severity Labels
-  'Severity - Critical :boom:':
+  'Severity - Critical':
     include:
       - '(?i)Severity[^\w\r\n]*Critical'
-  'Severity - Major :boom:':
+  'Severity - Major':
     include:
       - '(?i)Severity[^\w\r\n]*Major'
-  'Severity - Average :broken_heart:':
+  'Severity - Average':
     include:
       - '(?i)Severity[^\w\r\n]*Average'
-  'Severity - Minor :construction:':
+  'Severity - Minor':
     include:
       - '(?i)Severity[^\w\r\n]*Minor'
 
