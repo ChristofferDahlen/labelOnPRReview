@@ -1,22 +1,67 @@
 
 'Type - Feature':
-  head: ["Feature/*", "feature/*"]
+  head:
+  - "Feature/*"
+  - "feature/*"
 
 Subtask:
-  head: ["Feature/*", "feature/*"]
-  base: ["Feature/*", "feature/*"]
+  head:
+    - "Feature/*"
+    - "feature/*"
+    - "bugfix/*"
+    - "Bugfix/*"
+    - "hotfix/*"
+    - "Hotfix/*"
+    - "Enhanc/*"
+    - "enhanc/*"
+    - "enhancement/*"
+    - "Enhancement/*"
+    - "Doc/*"
+    - "doc/*"
+    - "Documentation/*"
+    - "documentation/*"
+
+  base:
+    - "Feature/*"
+    - "feature/*"
+    - "bugfix/*"
+    - "Bugfix/*"
+    - "hotfix/*"
+    - "Hotfix/*"
+    - "Enhanc/*"
+    - "enhanc/*"
+    - "enhancement/*"
+    - "Enhancement/*"
+    - "Doc/*"
+    - "doc/*"
+    - "Documentation/*"
+    - "documentation/*"
 
 'Type - Bugfix':
-  head: ["bugfix/*", "Bugfix/*", "hotfix/*", "Hotfix/*"]
+  head:
+    - "bugfix/*"
+    - "Bugfix/*"
+    - "hotfix/*"
+    - "Hotfix/*"
 
 'Type - Enhancement :sparkler:':
-  head: [ "Enhanc/*", "enhanc/*", "enhancement/*", "Enhancement/*" ]
+  head:
+   - "Enhanc/*"
+   - "enhanc/*"
+   - "enhancement/*"
+   - "Enhancement/*"
 
 'Type - Cleanup :broom:':
-  head: [ "Cleanup/*", "cleanup/*" ]
+  head:
+    - "Cleanup/*"
+    - "cleanup/*"
 
 'Type - Documentation :black_nib:':
-  head: [ "Doc/*", "doc/*", "Documentation/*", "documentation/*" ]
+  head:
+    - "Doc/*"
+    - "doc/*"
+    - "Documentation/*"
+    - "documentation/*"
 
 'Develop':
   base: [ "develop" ]
