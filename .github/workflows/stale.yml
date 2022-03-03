@@ -14,12 +14,12 @@ jobs:
     steps:
       - uses: Sonia-corporation/stale@1.51.0
         with:
-          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 15 days.'
           pull-request-stale-label: '[X] Stale'
-          issue-days-before-stale: 1
-          issue-days-before-close: 10
+          issue-days-before-stale: 30
+          issue-days-before-close: 15
           issue-stale-label: '[X] Stale'
-          issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 15 days.'
           issue-close-comment: 'This issue is now closed due to a lack of activity!'
           issue-ignore-any-labels: |
             Type - Feature
@@ -38,12 +38,12 @@ jobs:
     steps:
       - uses: Sonia-corporation/stale@1.51.0
         with:
-          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 15 days.'
           pull-request-stale-label: '[X] Stale'
-          issue-days-before-stale: 1
-          issue-days-before-close: 10
+          issue-days-before-stale: 30
+          issue-days-before-close: 15
           issue-stale-label: '[X] Stale'
-          issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          issue-stale-comment: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 15 days.'
           issue-close-comment: 'This issue is now closed due to a lack of activity!'
           issue-ignore-any-labels: |
             Type - Feature
@@ -60,12 +60,12 @@ jobs:
     steps:
       - uses: Sonia-corporation/stale@1.51.0
         with:
-          pull-request-stale-comment: 'This issue is PR because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          pull-request-stale-comment: 'This issue is PR because it has been open 180 days with no activity. Remove stale label or comment or this will be closed in 30 days.'
           pull-request-stale-label: '[X] Stale'
           issue-days-before-stale: 180
-          issue-days-before-close: 40
+          issue-days-before-close: 30
           issue-stale-label: '[X] Stale'
-          issue-stale-comment: 'This issue is stale because it has been open 180 days with no activity. Remove stale label or comment or this will be closed in 10 days.'
+          issue-stale-comment: 'This issue is stale because it has been open 180 days with no activity. Remove stale label or comment or this will be closed in 30 days.'
           issue-close-comment: 'This issue is now closed due to a lack of activity!'
           issue-any-labels: |
             Type - Feature
